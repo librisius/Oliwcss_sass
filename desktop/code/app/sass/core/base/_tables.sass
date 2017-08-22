@@ -1,0 +1,35 @@
+@if $_use_tables == true
+
+	.-ol-table
+		width: 100%
+		text-align: left
+
+		td,
+		th
+			padding: $p_vert-td $p_horiz-td
+			vertical-align: middle
+
+		thead
+
+			th
+				font-size: 1.1em
+				font-weight: 600
+
+		&_even
+
+			tbody
+
+				tr:nth-child(2n)
+					background: $table_even
+
+		&_odd
+
+			tbody
+
+				tr:nth-child(2n-1)
+					background: $table_odd
+
+	.-ol-thead
+		border-color: $table_hr
+		border-style: solid
+		border-bottom-width: $brd_w

@@ -1,0 +1,78 @@
+=col($col: $n-col, $gap: $p_horiz-col, $gap-tb: $p_horiz-col_tb, $valign: $v_align-col)
+
+	[class*=-ol-col-]
+		position: relative
+		vertical-align: $valign
+		padding: 0 $gap
+
+		+md-tablet
+			width: 100%
+			padding: 0 $gap-tb
+
+	.-ol-col
+
+		&_without_inside_space
+			padding: 0
+
+		&_valign_m
+			vertical-align: middle !important
+
+		&_valign_b
+			vertical-align: bottom !important
+
+	[class*=-ol-col-offset-]
+		margin-left: 0
+
+	@for $i from 0 through $col
+
+		$per: 1 / $col * $i
+
+		+md-desk
+
+			.-ol-col-#{$i}
+				width: percentage($per)
+
+			.-ol-col-offset-#{$i}
+				margin-left: percentage($per)
+
+
+
+	@for $i from 0 through $col
+
+		$per: 1 / $col * $i
+
+		+md-desk_sm
+
+			.-ol-col-dm-#{$i}
+				width: percentage($per)
+
+			.-ol-col-dm-offset-#{$i}
+				margin-left: percentage($per)
+
+
+
+	@for $i from 0 through $col
+
+		$per: 1 / $col * $i
+
+		+md-tablet
+
+			.-ol-col-tb-#{$i}
+				width: percentage($per)
+
+			.-ol-col-tb-offset-#{$i}
+				margin-left: percentage($per)
+
+
+
+	@for $i from 0 through $col
+
+		$per: 1 / $col * $i
+
+		+md-mobile
+
+			.-ol-col-mb-#{$i}
+				width: percentage($per)
+
+			.-ol-col-mb-offset-#{$i}
+				margin-left: percentage($per)

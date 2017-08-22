@@ -1,0 +1,22 @@
+@if $_use_container == true
+
+	.-ol-container
+		position: relative
+
+		max-width: $w-container
+
+		margin: 0 auto
+		padding: 0 $m-col
+
+		+md-tablet
+			width: $w-container_tb
+			max-width: none
+			padding: 0 $m-col_tb
+
+		&_full_w
+			width: $w-container_full_w
+			max-width: none
+			padding: 0 $m-col
+
+			+md-tablet
+				padding: 0 $m-col_tb

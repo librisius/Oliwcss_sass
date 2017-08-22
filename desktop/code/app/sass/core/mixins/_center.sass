@@ -1,0 +1,78 @@
+=center
+	display: block
+
+	margin-left: auto
+	margin-right: auto
+
+
+
+=center-pos($w, $h, $t: 50%, $l: 50%)
+	display: block
+	width: $w
+	height: $h
+
+	position: absolute !important
+	top: $t
+	left: $l
+
+	margin: ( -( round($h/2) ) ) 0 0 ( -( round($w/2) ) )
+
+
+
+=center-pos_min($w, $h)
+	width: $w
+	height: $h
+
+	top: 50%
+	left: 50%
+
+	margin: ( -( round($h/2) ) ) 0 0 ( -( round($w/2) ) )
+
+
+
+=center-pos_xm($w, $h)
+	width: $w
+	height: $h
+
+	margin: ( -( round($h/2) ) ) 0 0 ( -( round($w/2) ) )
+
+
+
+/**
+ * this style blurs the images in Safari
+ * and some elements in Chrome (23.02.2015)
+ */
+
+=center-tsf( $x: 50%, $y: 50%, $not: none, $position: absolute )
+	display: block
+
+	position: $position !important
+	top: $y
+	left: $x
+
+	white-space: nowrap
+
+	@if $not == y
+
+		transform: translateX(-50%)
+
+	@else if $not == x
+
+		transform: translateY(-50%)
+	
+	@else
+
+		transform: translate(-50%, -50%)
+
+
+
+=center-tsf_set
+	display: block
+
+	position: static !important
+	top: auto
+	left: auto
+
+	white-space: normal
+
+	transform: none

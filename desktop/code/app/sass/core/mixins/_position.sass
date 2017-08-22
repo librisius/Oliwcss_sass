@@ -1,0 +1,279 @@
+=valign_line( $item: '__item', $h: 100%, $lh: $line-height-base, $h-lh: $h )
+
+	height: $h
+	line-height: $h-lh
+
+	&#{$item}
+		display: inline-block
+		vertical-align: middle
+		line-height: $lh
+
+
+
+// !! $recovery variable is needed if you don't want to have inline style
+// for some children elements
+// !! $display variable is needed if you want to have inline-table
+=inline( $item: '__item', $ind-item: false, $font-size: $font-size-base, $lts: $lts, $valign: top, $recovery: '_recovery', $display: inline-block )
+
+	font-size: 0 !important
+	letter-spacing: 0 !important
+
+	@if $ind-item
+
+		#{$item}
+			display: $display
+
+			vertical-align: $valign
+
+			font-size: $font-size
+			letter-spacing: $lts
+
+		#{$item}#{$recovery}
+			font-size: $font-size
+			letter-spacing: $lts
+	@else
+
+		&#{$item}
+			display: $display
+
+			vertical-align: $valign
+
+			font-size: $font-size
+			letter-spacing: $lts
+
+		&#{$item}#{$recovery}
+			font-size: $font-size
+			letter-spacing: $lts
+
+
+
+// !! $recovery variable is needed if you don't want to have inline style
+// for some children elements
+// !! $display variable is needed if you want to have inline-table
+=justify( $item: '__item', $ind-item: false, $font-size: $font-size-base, $lts: $lts, $valign: top, $recovery: '_recovery', $display: inline-block )
+
+	font-size: 0 !important
+	letter-spacing: 0 !important
+
+	text-align: justify
+
+	// Libris use autoprefix therefore it works in other browsers!!
+	// for example FF, DON'T FORGET RESET IT!!
+	text-align-last: justify //for IE 7 - 6
+	text-justify: newspaper // for all IE
+
+	&::after
+		content: ''
+
+		display: $display
+		width: 100%
+
+		visibility: hidden
+		overflow: hidden
+
+	@if $ind-item
+
+		#{$item}
+			display: $display
+			vertical-align: $valign
+
+			font-size: $font-size
+			letter-spacing: $lts
+
+			text-align: left
+
+			// RESET
+			text-align-last: auto
+			text-justify: auto
+
+		#{$item}#{$recovery}
+			font-size: $font-size
+			letter-spacing: $lts
+			
+			text-align: left
+
+			// RESET
+			text-align-last: auto
+			text-justify: auto
+
+	@else
+
+		&#{$item}
+			display: $display
+			vertical-align: $valign
+
+			font-size: $font-size
+			letter-spacing: $lts
+
+			text-align: left
+
+			// RESET
+			text-align-last: auto
+			text-justify: auto
+
+		&#{$item}#{$recovery}
+			font-size: $font-size
+			letter-spacing: $lts
+			
+			text-align: left
+
+			// RESET
+			text-align-last: auto
+			text-justify: auto
+
+
+
+// !! $recovery variable is needed if you don't want to have inline style
+// for some children elements
+// !! $display variable is needed if you want to have inline-table
+=inline_set( $item: '__item', $recovery: '_recovery', $display: inline-block, $lts: $lts )
+
+	font-size: inherit !important
+	letter-spacing: $lts !important
+
+	text-align: left
+
+	// Libris use autoprefix therefore it works in other browsers!!
+	// for example FF, DON'T FORGET RESET IT!!
+	text-align-last: start //for IE 7 - 6
+	text-justify: auto // for all IE
+
+	&#{$item}
+		display: $display
+
+		vertical-align: auto
+
+		font-size: auto
+		letter-spacing: $lts
+
+		text-align: left
+
+		// RESET
+		text-align-last: auto
+		text-justify: auto
+
+	&#{$item}#{$recovery}
+		font-size: inherit
+		letter-spacing: $lts
+
+		text-align: left
+
+		// RESET
+		text-align-last: auto
+		text-justify: auto
+
+
+
+=row( $item: '__item', $ind-item: false, $w: 100%, $h: 100%, $major: '_major' )
+
+	display: table
+	table-layout: fixed
+	width: $w
+	height: $h
+
+	@if $ind-item
+
+		#{$item}
+			display: table-row
+
+		#{$item}#{$major}
+			height: 100%
+	@else
+
+		&#{$item}
+			display: table-row
+
+		&#{$item}#{$major}
+			height: 100%
+
+
+
+=row_set( $item: '__item', $ind-item: false, $w: auto, $h: auto, $major: '_major', $display: block, $item-display: block, $item-major-height: auto )
+
+	display: $display
+	table-layout: auto
+	width: $w
+	height: $h
+
+	@if $ind-item
+
+		#{$item}
+			display: $item-display
+
+		#{$item}#{$major}
+			height: $item-major-height
+	@else
+
+		&#{$item}
+			display: $item-display
+
+		&#{$item}#{$major}
+			height: $item-major-height
+
+
+
+=cell( $item: '__item', $ind-item: false, $valign: top, $table-layout: true, $w: 100%, $h: 100%, $major: '_major' )
+
+	display: table
+	height: $h
+
+	@if $w != none
+		width: $w
+
+	@if $table-layout
+		table-layout: fixed
+
+	@if $ind-item
+
+		#{$item}
+			display: table-cell
+			vertical-align: $valign // without this value
+			// there is an error in FF and IE
+			// looks like baseline
+
+		#{$item}#{$major}
+			width: 100%
+	@else
+
+		&#{$item}
+			display: table-cell
+			vertical-align: $valign // without this value
+			// there is an error in FF and IE
+			// looks like baseline
+
+		&#{$item}#{$major}
+			width: 100%
+
+
+
+=cell_set( $item: '__item', $ind-item: false, $table-layout: true, $w: auto, $h: auto, $major: '_major', $display: block, $item-display: block, $item-major-height: auto )
+
+	display: $display
+	height: $h
+
+	@if $w != none
+		width: $w
+
+	@if $table-layout
+		table-layout: auto
+
+	@if $ind-item
+
+		#{$item}
+			display: $item-display
+			vertical-align: baseline // without this value
+			// there is an error in FF and IE
+			// looks like baseline
+
+		#{$item}#{$major}
+			width: $item-major-height
+	@else
+
+		&#{$item}
+			display: $item-display
+			vertical-align: baseline // without this value
+			// there is an error in FF and IE
+			// looks like baseline
+
+		&#{$item}#{$major}
+			width: $item-major-height

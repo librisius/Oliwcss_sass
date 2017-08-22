@@ -1,0 +1,74 @@
+=md-desk
+
+	@media only screen and (min-width: $md-tablet)
+		@content
+
+=md-desk_max
+
+	@media only screen and (min-width: $md-desk_sm)
+		@content
+
+=md-desk_mdl
+
+	@media only screen and (max-width: $md-desk_mdl)
+		@content
+
+=md-desk_mdl_only
+
+	@media only screen and (min-width: $md-desk_sm) and (max-width: $md-desk_mdl)
+		@content
+
+=md-desk_sm
+
+	@media only screen and (max-width: $md-desk_sm)
+		@content
+
+=md-desk_sm_only
+
+	@media only screen and (min-width: $md-tablet) and (max-width: $md-desk_sm)
+		@content
+
+=md-desk_mdl_and_min_only
+
+	@media only screen and (min-width: $md-tablet) and (max-width: $md-desk_mdl)
+		@content
+
+=md-tablet
+
+	@media only screen and (max-width: $md-tablet)
+		@content
+
+=md-tablet_only
+
+	@media only screen and (min-width: $md-mobile) and (max-width: $md-tablet)
+		@content
+
+=md-mobile
+
+	@media only screen and (max-width: $md-mobile)
+		@content
+
+=md-mobile_sm
+
+	@media only screen and (max-width: $md-mobile_sm)
+		@content
+
+=md-ie_10-plus
+
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+		@content
+
+=md-ie_9-plus
+
+	@media screen and (min-width: #{0\0})
+		@content
+
+=md-print
+
+	@media print
+		@content
+
+=md-retina
+
+	@media only screen and ( -webkit-min-device-pixel-ratio: 2 ), only screen and ( min--moz-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1 ), only screen and ( min-device-pixel-ratio: 2 ), only screen and ( min-resolution: 192dpi ), only screen and ( min-resolution: 2dppx )
+		@content

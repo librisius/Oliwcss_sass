@@ -1,0 +1,53 @@
+=font-sprite_element
+	font-family: 'icomoon' !important
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	line-height: 1
+	letter-spacing: 0
+	
+	text-transform: none
+	speak: none
+
+	// Better Font Rendering
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: greyscale
+
+=font-sprite( $element: '::after' )
+
+	&#{$element}
+
+		+font-sprite_element
+
+=font-sprite-all_element( $size, $top: 0, $left: 0, $color: $white )
+
+	// write position: relative yourself in the code,
+	// because you can have pos-a or pos-f
+
+	position: absolute
+	top: $top
+	left: $left
+
+	color: $color
+	font-size: $size
+	
+	+font-sprite_element
+
+=font-sprite-all( $content, $size, $top: 0, $left: 0, $color: $white, $element: '::after' )
+
+	// write position: relative yourself in the code,
+	// because you can have pos-a or pos-f
+
+	&#{$element}
+		content: $content
+
+		+font-sprite-all_element( $size, $top: 0, $left: 0, $color: $white )
+
+=sprite-all( $bg_p, $sprite: $sprite )
+	background-image: $sprite
+	background-repeat: no-repeat
+	background-position: $bg_p
+
+=sprite( $sprite: $sprite )
+	background-image: $sprite
+	background-repeat: no-repeat

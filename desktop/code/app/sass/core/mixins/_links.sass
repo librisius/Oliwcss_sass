@@ -1,0 +1,16 @@
+=link-variant ( $color: $c-link, $border: $brd_c-link, $color_hover: $c-link_hover, $border_hover: $brd_c-link_hover )
+
+	display: inline
+	border-bottom: $brd_w-link solid $border
+
+	color: $color
+	line-height: inherit
+	letter-spacing: inherit
+
+	cursor: pointer
+
+	transition: all .2s
+
+	&:hover
+		border-bottom-color: $border_hover
+		color: $color_hover

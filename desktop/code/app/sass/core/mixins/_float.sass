@@ -1,0 +1,32 @@
+/**
+ * extend .-ol-clfx from
+ * core -> snippets -> float.less
+ */
+
+=float($item: '.-ol-item')
+
+	@extend .-ol-clfx
+
+	& > #{$item}
+		float: left
+
+
+
+=float-r($item: '.-ol-item')
+
+	@extend .-ol-clfx
+
+	& > #{$item}
+		float: right
+
+
+
+=float-justify($item: '.-ol-item')
+
+	@extend .-ol-clfx
+
+	& > #{$item}
+		float: left
+
+	& > #{$item} + #{$item}:last-child
+		float: right

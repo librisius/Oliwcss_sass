@@ -1,0 +1,72 @@
+@if $_use_common == true
+
+	*::selection
+		background: $brand-primary
+		color: $white
+
+	*
+		box-sizing: border-box
+		letter-spacing: $lts
+
+	*::before,
+	*::after
+		box-sizing: border-box
+		letter-spacing: $lts
+
+	html
+		font-family: sans-serif
+		font-size: $font-size-main
+		text-size-adjust: 100%
+		line-height: 1.2
+
+		-ms-overflow-style: scrollbar
+		-webkit-tap-highlight-color: rgba(0,0,0,0)
+
+		word-wrap: break-word
+		word-break: normal
+		word-break: break-word
+
+	body
+		position: relative // for iOS to work overflow: hidden
+
+		min-width: $w-min
+		min-height: $h-min
+
+		overflow-x: hidden
+		overflow-y: visible
+
+		background-color: $bg_c-body
+
+		color: $c-text-base
+
+		// use font styles separately because if U'll use rem
+		// That's broken on ie <= 10
+		font-family: $font-family-base
+		font-size: $font-size-body
+		line-height: $line-height-base
+		font-weight: $font-weight-base
+
+		// for iOS smooth scroll and
+		// and to switch on touch scroll when focusing on inputs
+		// more info: http://stackoverflow.com/questions/25596960/issues-with-touch-scroll-on-ios-when-focusing-inputs
+		-webkit-overflow-scrolling: touch
+
+		+md-mobile
+			min-height: auto
+
+		&._no_scroll
+			height: 100%
+			overflow: hidden
+
+		// for testinng mobile version
+		&._mobile_test
+			width: 320px
+
+	button,
+	a
+		letter-spacing: $lts // set reset
+
+	input
+		word-break: normal // set html common styles
+
+	

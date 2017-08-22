@@ -1,0 +1,86 @@
+@if $_use_grid == true
+
+	.-ol-row
+		position: relative
+
+		margin-left: -$p_horiz-col
+		margin-right: -$p_horiz-col
+
+		// @extend .-ol-clfx
+
+		&::before,
+		&::after
+			content: ""
+			display: table
+
+		&::after
+			clear: both
+
+		[class*='-ol-col']
+			float: left
+
+		+md-tablet
+			margin-left: -$p_horiz-col_tb
+			margin-right: -$p_horiz-col_tb
+
+	.-ol-row-inline
+		position: relative
+		margin-left: -$p_horiz-col
+		margin-right: -$p_horiz-col
+
+		+inline( $item: '> .-ol-col', $ind-item: true )
+
+		+md-tablet
+			margin-left: -$p_horiz-col_tb
+			margin-right: -$p_horiz-col_tb
+
+	.-ol-row-table
+		position: relative
+		margin-left: -$p_horiz-col
+		margin-right: -$p_horiz-col
+
+		+cell( $item: '[class*="-ol-col_table"]', $w: calc( 100% '+' $p_horiz-col * 2 ) )
+
+		table-layout: fixed
+
+		+md-tablet
+			width: calc( 100% '+' $p_horiz-col_tb * 2 )
+			margin-left: -$p_horiz-col_tb
+			margin-right: -$p_horiz-col_tb
+
+	.-ol-row-flex
+		position: relative
+
+		display: flex
+		flex-wrap: wrap
+
+		margin-left: -$p_horiz-col
+		margin-right: -$p_horiz-col
+
+		+md-tablet
+			margin-left: -$p_horiz-col_tb
+			margin-right: -$p_horiz-col_tb
+
+	.-ol-row_without_inside_space
+		margin: 0
+
+	+col
+
+	.-ol-gap-remover
+		margin-left: -$p_horiz-col
+		margin-right: -$p_horiz-col
+
+		+md-tablet
+			margin: 0
+
+	.-ol-gap-remover-tb
+
+		+md-tablet
+			margin-left: -$p_horiz-col_tb
+			margin-right: -$p_horiz-col_tb
+
+	.-ol-gap-remover-mb
+
+		+md-mobile
+			margin-left: -$p_horiz-col_tb
+			margin-right: -$p_horiz-col_tb
