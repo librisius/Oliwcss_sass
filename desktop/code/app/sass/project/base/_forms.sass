@@ -1,0 +1,87 @@
+@if $_use_forms == true
+
+	.-ol-input,
+	.-ol-textarea
+		display: block
+
+		width: 100%
+
+		padding: $p_vert-input $p_horiz-input
+		border: $brd_w-input solid $brd_c
+		border-radius: $brd_rd-input
+
+		background: $bg-input
+
+		color: $c-input
+		font-size: $fsz-input
+		line-height: $h-input - $brd_w-input * 2 - $p_vert-input * 2
+
+		text-overflow: ellipsis
+
+		+placeholder
+
+	.-ol-input
+		height: $h-input
+		text-overflow: ellipsis
+
+	.-ol-input-wrap
+		position: relative
+
+		&_error
+
+			.-ol-input
+				border-color: $brd_c-form-error
+				color: $c-form-error
+
+	.-ol-input-file
+		position: relative
+		overflow: hidden
+		width: 100%
+
+		input
+			$h-input-file: 100%
+
+			width: 100%
+			height: $h-input-file
+
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 3
+
+			opacity: 0
+
+			cursor: pointer
+
+	.-ol-textarea
+		height: $h-textarea
+		resize: vertical
+		overflow: auto
+
+	.-ol-label-wrapper
+		display: block
+
+	.-ol-label
+		display: table
+		width: 100%
+		margin-bottom: $m_b-label
+
+		&_last
+			margin-bottom: 0
+
+	.-ol-label-text
+		color: $c-label
+		font-size: $f_sz-label
+		font-weight: $f_w-label
+
+	.-ol-row-input
+		margin-bottom: $m-row-input
+
+		&_last
+			margin-bottom: 0
+
+	.-ol-form-body
+		margin-bottom: $m-form-body
+
+		&_last
+			margin-bottom: 0

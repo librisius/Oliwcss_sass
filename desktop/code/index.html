@@ -11,8 +11,9 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="favicon.png">
     <link rel="stylesheet" href="dist/css/all.min.css"><!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+<![endif]-->
   </head>
   <style>section {
 	margin: 50px 0;
@@ -75,10 +76,10 @@ hr {
         <form>
           <div class="-ol-form-body">
             <div class="-ol-row-input">
-              <input placeholder="Placeholder input" class="-ol-input">
+              <input placeholder="Placeholder input">
             </div>
             <div class="-ol-row-input">
-              <textarea placeholder="Placeholder textarea" class="-ol-textarea"></textarea>
+              <textarea placeholder="Placeholder textarea"></textarea>
             </div>
           </div>
         </form>
@@ -195,6 +196,6 @@ hr {
       </section>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="app/js/specific/app.js"></script>
+    <script src="dist/js/specific/app.js"></script>
   </body>
 </html>

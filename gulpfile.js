@@ -26,10 +26,7 @@ gulp.task('css', function() {
 gulp.task('html', function() {
 
 	html([
-		'desktop/code/app/pug/**/*.pug',
-		'!desktop/code/app/pug/extends/**/*.pug',
-		'!desktop/code/app/pug/includes/**/*.pug',
-		'!desktop/code/app/pug/mixins/**/*.pug' ], 'desktop/code/');
+		'desktop/code/app/pug/**/*', 'desktop/code/');
 });
 
 

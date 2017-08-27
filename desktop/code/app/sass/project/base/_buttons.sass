@@ -1,0 +1,96 @@
+@if $_use_buttons == true
+
+	.-ol-btn
+		display: inline-block
+		vertical-align: middle
+
+		margin-bottom: 0 // For input.-ol-btn
+		border-style: solid
+
+		background-image: none // Reset unusual Firefox-on-Android default style see https://github.com/necolas/normalize.css/issues/214
+
+		font-weight: $btn-font-weight
+
+		text-align: center
+		word-break: break-word
+
+		cursor: pointer
+		touch-action: manipulation
+
+		transition: all .2s
+
+		+btn-size( $w-btn, $h-btn, $brd_rd-btn, $p_vert-btn, $p_horiz-btn, $f_sz-btn, $lh-btn, $brd_w-btn )
+
+		+btn-variant( $c-btn-filled, $bg_c-btn-primary, $per-btn_hover, $per-btn_active )
+
+		&._disabled,
+		&[disabled]
+
+			+btn-variant( $c-btn-disabled, $bg_c-btn-disabled, 0, 0 )
+
+			cursor: not-allowed
+			pointer-events: none // Future-proof disabling of hover, active, click
+
+	.-ol-btn_default
+
+		+btn-variant( $c-btn-default, $bg_c-btn-default, $per-btn_hover, $per-btn_active )
+
+	.-ol-btn_primary
+
+		+btn-variant( $c-btn-filled, $bg_c-btn-primary, $per-btn_hover, $per-btn_active )
+
+	.-ol-btn_success
+		
+		@extend .-ol-btn
+
+		+btn-variant( $c-btn-filled, $bg_c-btn-success, $per-btn_hover, $per-btn_active )
+
+	.-ol-btn_info
+
+		+btn-variant( $c-btn-filled, $bg_c-btn-info, $per-btn_hover, $per-btn_active )
+
+	.-ol-btn_warning
+
+		+btn-variant( $c-btn-filled, $bg_c-btn-warning, $per-btn_hover, $per-btn_active )
+
+	.-ol-btn_danger
+
+		+btn-variant( $c-btn-filled, $bg_c-btn-danger, $per-btn_hover, $per-btn_active )
+
+	.-ol-btn_outline
+
+		+btn-outline-variant( $c-btn-outline, $bg_c-btn-outline, $c-btn-outline_hover )
+
+	.-ol-btn_link
+		width: auto
+		height: auto
+
+		border: 0
+		border-radius: 0
+		padding: 0
+
+		+btn-link( $brd-c-btn-link, $c-btn-link, $brd-c-btn-link_hover, $c-btn-link_hover )
+
+
+	// Button Sizes
+	// --------------------------------------------------
+
+	.-ol-btn_lg
+
+		+btn-size( $w-btn_lg, $h-btn_lg, $brd_rd-btn_lg, $p_vert-btn_lg, $p_horiz-btn_lg, $f_sz-btn_lg, $lh-btn_lg, $brd_w-btn )
+
+	.-ol-btn_sm
+
+		+btn-size( $w-btn_sm, $h-btn_sm, $brd_rd-btn_sm, $p_vert-btn_sm, $p_horiz-btn_sm, $f_sz-btn_sm, $lh-btn_sm, $brd_w-btn )
+
+	.-ol-btn_xs
+
+		+btn-size( $w-btn_xs, $h-btn_xs, $brd_rd-btn_xs, $p_vert-btn_xs, $p_horiz-btn_xs, $f_sz-btn_xs, $lh-btn_xs, $brd_w-btn )
+
+	.-ol-btn_full_w
+		width: 100%
+
+	.-ol-btn_full_w_mb_sm
+
+		+md-mobile_sm
+			width: 100%
