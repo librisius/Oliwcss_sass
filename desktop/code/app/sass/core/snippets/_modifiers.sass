@@ -1,7 +1,10 @@
 @if $_use_modifiers == true
 
-	._events_none
-		pointer-events: none !important
+	._pos_relative
+		position: relative !important
+
+	._pos_absolute
+		position: absolute !important
 
 
 
@@ -50,21 +53,6 @@
 
 
 
-	._none
-		display: none !important
-
-	._none_tb
-
-		+md-tablet
-			display: none !important
-
-	._none_mb
-
-		+md-mobile
-			display: none !important
-
-
-
 	._only_tb
 		display: none !important
 
@@ -105,11 +93,29 @@
 
 
 
+	._none
+		display: none !important
+
+	._none_tb
+
+		+md-tablet
+			display: none !important
+
+	._none_mb
+
+		+md-mobile
+			display: none !important
+
+
+
 	._bind
 		position: relative !important
 
 	._unbind
 		position: static !important
+
+	._flex_horiz_center
+		justify-content: center
 
 	._full_w
 		width: 100% !important
@@ -117,15 +123,28 @@
 	._full_h
 		height: 100% !important
 
+	._full_h_vh
+		height: 100vh !important
+
 	._min_h_auto
 		min-height: auto !important
+
+	._min_h_full_vh
+		min-height: 100vh !important
 
 	._hidden
 		overflow: hidden !important
 
+	._overflow_auto
+		overflow: auto !important
+
 	._block_center
 		margin-left: auto !important
 		margin-right: auto !important
+
+	._block_vert_center
+		margin-top: auto !important
+		margin-bottom: auto !important
 
 	._letter_spacing_inherit
 		letter-spacing: inherit
@@ -149,5 +168,10 @@
 
 		+text-ellipsis
 
-	._text_nowrap
+	._nowrap
 		white-space: nowrap
+
+
+
+	._events_none
+		pointer-events: none !important

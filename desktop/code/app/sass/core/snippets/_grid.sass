@@ -1,12 +1,36 @@
 @if $_use_grid == true
 
-	.-ol-row
-		position: relative
-
+	.-ol-row,
+	.-ol-row-float,
+	.-ol-row-inline,
+	.-ol-row-table
 		margin-left: -$p_horiz-col
 		margin-right: -$p_horiz-col
 
-		// @extend .-ol-clfx
+		+md-tablet
+			margin-left: -$p_horiz-col_tb
+			margin-right: -$p_horiz-col_tb
+
+	.-ol-row
+		position: relative
+
+		display: flex
+		flex-wrap: wrap
+
+	.-ol-row-inline
+		position: relative
+
+		+inline( $item: '> .-ol-col', $ind-item: true )
+
+	.-ol-row-table
+		position: relative
+
+		+cell( $item: '> .-ol-col_table', $w: calc( 100% '+' $p_horiz-col * 2 ) )
+
+		+md-tablet
+
+	.-ol-row-float
+		position: relative
 
 		&::before,
 		&::after
@@ -16,50 +40,8 @@
 		&::after
 			clear: both
 
-		[class*='-ol-col']
+		> [class*='-ol-col']
 			float: left
-
-		+md-tablet
-			margin-left: -$p_horiz-col_tb
-			margin-right: -$p_horiz-col_tb
-
-	.-ol-row-inline
-		position: relative
-		margin-left: -$p_horiz-col
-		margin-right: -$p_horiz-col
-
-		+inline( $item: '> .-ol-col', $ind-item: true )
-
-		+md-tablet
-			margin-left: -$p_horiz-col_tb
-			margin-right: -$p_horiz-col_tb
-
-	.-ol-row-table
-		position: relative
-		margin-left: -$p_horiz-col
-		margin-right: -$p_horiz-col
-
-		+cell( $item: '[class*="-ol-col_table"]', $w: calc( 100% '+' $p_horiz-col * 2 ) )
-
-		table-layout: fixed
-
-		+md-tablet
-			width: calc( 100% '+' $p_horiz-col_tb * 2 )
-			margin-left: -$p_horiz-col_tb
-			margin-right: -$p_horiz-col_tb
-
-	.-ol-row-flex
-		position: relative
-
-		display: flex
-		flex-wrap: wrap
-
-		margin-left: -$p_horiz-col
-		margin-right: -$p_horiz-col
-
-		+md-tablet
-			margin-left: -$p_horiz-col_tb
-			margin-right: -$p_horiz-col_tb
 
 	.-ol-row_without_inside_space
 		margin: 0

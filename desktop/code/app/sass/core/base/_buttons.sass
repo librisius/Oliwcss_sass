@@ -12,46 +12,44 @@
 		font-weight: $btn-font-weight
 
 		text-align: center
-		word-break: break-word
 
 		cursor: pointer
 		touch-action: manipulation
 
 		transition: all .2s
 
-		+btn-size( $w-btn, $h-btn, $brd_rd-btn, $p_vert-btn, $p_horiz-btn, $f_sz-btn, $lh-btn, $brd_w-btn )
+		+btn-size( $h-btn, $brd_rd-btn, $p_vert-btn, $p_horiz-btn, $f_sz-btn, $lh-btn, $brd_w-btn )
 
-		+btn-variant( $c-btn-filled, $bg_c-btn-primary, $per-btn_hover, $per-btn_active )
+		+btn-variant( $c-btn-filled, $bg_c-btn-primary )
 
 		&_default
 
-			+btn-variant( $c-btn-default, $bg_c-btn-default, $per-btn_hover, $per-btn_active )
+			+btn-variant( $c-btn-default, $bg_c-btn-default )
 
 		&_primary
 
-			+btn-variant( $c-btn-filled, $bg_c-btn-primary, $per-btn_hover, $per-btn_active )
+			+btn-variant( $c-btn-filled, $bg_c-btn-primary )
 
 		&_success
 
-			+btn-variant( $c-btn-filled, $bg_c-btn-success, $per-btn_hover, $per-btn_active )
+			+btn-variant( $c-btn-filled, $bg_c-btn-success )
 
 		&_info
 
-			+btn-variant( $c-btn-filled, $bg_c-btn-info, $per-btn_hover, $per-btn_active )
+			+btn-variant( $c-btn-filled, $bg_c-btn-info )
 
 		&_warning
 
-			+btn-variant( $c-btn-filled, $bg_c-btn-warning, $per-btn_hover, $per-btn_active )
+			+btn-variant( $c-btn-filled, $bg_c-btn-warning )
 
 		&_danger
 
-			+btn-variant( $c-btn-filled, $bg_c-btn-danger, $per-btn_hover, $per-btn_active )
+			+btn-variant( $c-btn-filled, $bg_c-btn-danger )
 
 		&_outline
 
-			+btn-outline-variant( $c-btn-outline, $bg_c-btn-outline, $c-btn-outline_hover )
+			+btn-variant( $c-btn-outline, $bg_c-btn-outline )
 
-		&._disabled,
 		&[disabled]
 
 			+btn-variant( $c-btn-disabled, $bg_c-btn-disabled, 0, 0 )
@@ -75,20 +73,12 @@
 
 		&_lg
 
-			+btn-size( $w-btn_lg, $h-btn_lg, $brd_rd-btn_lg, $p_vert-btn_lg, $p_horiz-btn_lg, $f_sz-btn_lg, $lh-btn_lg, $brd_w-btn )
+			+btn-size( $h-btn_lg, $brd_rd-btn_lg, $p_vert-btn_lg, $p_horiz-btn_lg, $f_sz-btn_lg, $lh-btn_lg, $brd_w-btn )
 
 		&_sm
 
-			+btn-size( $w-btn_sm, $h-btn_sm, $brd_rd-btn_sm, $p_vert-btn_sm, $p_horiz-btn_sm, $f_sz-btn_sm, $lh-btn_sm, $brd_w-btn )
+			+btn-size( $h-btn_sm, $brd_rd-btn_sm, $p_vert-btn_sm, $p_horiz-btn_sm, $f_sz-btn_sm, $lh-btn_sm, $brd_w-btn )
 
 		&_xs
 
-			+btn-size( $w-btn_xs, $h-btn_xs, $brd_rd-btn_xs, $p_vert-btn_xs, $p_horiz-btn_xs, $f_sz-btn_xs, $lh-btn_xs, $brd_w-btn )
-
-		&_full_w
-			width: 100%
-
-		&_full_w_mb_sm
-
-			+md-mobile_sm
-				width: 100%
+			+btn-size( $h-btn_xs, $brd_rd-btn_xs, $p_vert-btn_xs, $p_horiz-btn_xs, $f_sz-btn_xs, $lh-btn_xs, $brd_w-btn )

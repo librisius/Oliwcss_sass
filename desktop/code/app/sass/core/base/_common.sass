@@ -15,6 +15,9 @@
 
 	html
 		font-family: sans-serif
+		// font-variant-ligatures: no-common-ligatures; to keep spacing
+		// between some letters such as "fi"
+		font-variant-ligatures: no-common-ligatures !important // features at risk
 		font-size: $font-size-main
 		text-size-adjust: 100%
 		line-height: 1.2
@@ -65,8 +68,5 @@
 	button,
 	a
 		letter-spacing: $lts // set reset
-
-	input
-		word-break: normal // set html common styles
 
 	

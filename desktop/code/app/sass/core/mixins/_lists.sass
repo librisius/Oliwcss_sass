@@ -1,15 +1,16 @@
 =ol($item)
+
 	counter-reset: list
 
 	> #{$item}
 
 		&::before
 			content: counter(list) '. '
-		 	counter-increment: list
-
+			counter-increment: list
 			display: inline-block
 
 =ol-pos($item, $top: 0, $left: 0)
+
 	counter-reset: list
 
 	> #{$item}
@@ -17,7 +18,7 @@
 
 		&::before
 			content: counter(list) '. '
-		 	counter-increment: list
+			counter-increment: list
 
 			display: block
 

@@ -34,7 +34,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section
 	display: block
 
-iframe
+iframe, svg
 	display: block
 
 body
@@ -53,7 +53,6 @@ q::before, q::after
 
 img
 	display: block
-	vertical-align: top
 	max-width: 100%
 
 table
@@ -61,7 +60,7 @@ table
 	border-spacing: 0
 
 /* remember to define focus styles! */
-\:focus
+*:focus
 	outline: 0
 
 /* remember to highlight inserts somehow! */
@@ -98,6 +97,7 @@ input[type='file']
 	text-align: left
 
 input
+	word-break: normal // set browser common styles
 
 	&[type="checkbox"],
 	&[type="radio"]
@@ -117,6 +117,9 @@ a
 mark
 	background-color: transparent
 	color: inherit
+
+pre
+	white-space: pre-wrap
 
 /* remove indent in Firefox */
 @-moz-document url-prefix()

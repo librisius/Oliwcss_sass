@@ -1,5 +1,6 @@
-=font-sprite_element
-	font-family: 'icomoon' !important
+=font-sprite_element( $font-family: 'icomoon' )
+
+	font-family: $font-family !important
 	font-style: normal
 	font-weight: normal
 	font-variant: normal
@@ -9,9 +10,19 @@
 	text-transform: none
 	speak: none
 
-	// Better Font Rendering
+	// Better Font Rendering:
+
+	// Support for all WebKit browsers
 	-webkit-font-smoothing: antialiased
 	-moz-osx-font-smoothing: greyscale
+	// Support for Safari and Chrome
+	text-rendering: optimizeLegibility
+
+	// Support for Firefox
+	-moz-osx-font-smoothing: grayscale
+
+	// Support for IE
+	font-feature-settings: 'liga'
 
 =font-sprite( $element: '::after' )
 
@@ -44,10 +55,12 @@
 		+font-sprite-all_element( $size, $top: 0, $left: 0, $color: $white )
 
 =sprite-all( $bg_p, $sprite: $sprite )
+
 	background-image: $sprite
 	background-repeat: no-repeat
 	background-position: $bg_p
 
 =sprite( $sprite: $sprite )
+
 	background-image: $sprite
 	background-repeat: no-repeat

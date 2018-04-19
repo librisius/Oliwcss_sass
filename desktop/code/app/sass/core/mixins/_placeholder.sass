@@ -1,4 +1,52 @@
-=placeholder( $color: $c-placeholder, $color_focus: transparent, $color_hover: $c-placeholder, $fw: inherit, $lts: $lts )
+=placeholder
+
+	&::-webkit-input-placeholder
+		@content
+
+	&::-moz-placeholder
+		@content
+
+	&:-moz-placeholder
+		@content
+
+	&:-ms-input-placeholder
+		@content
+
+
+
+=placeholder_hover
+
+	&:hover::-webkit-input-placeholder
+		@content
+
+	&:hover::-moz-placeholder
+		@content
+
+	&:hover:-moz-placeholder
+		@content
+
+	&:hover:-ms-input-placeholder
+		@content
+
+
+
+=placeholder_focus
+
+	&:focus::-webkit-input-placeholder
+		@content
+
+	&:focus::-moz-placeholder
+		@content
+
+	&:focus:-moz-placeholder
+		@content
+
+	&:focus:-ms-input-placeholder
+		@content
+
+
+
+=placeholder-style( $color: $c-placeholder, $color_focus: transparent, $color_hover: $c-placeholder, $fw: inherit, $lts: $lts )
 
 	&::-webkit-input-placeholder
 		color: $color

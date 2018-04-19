@@ -1,8 +1,8 @@
-=col($col: $n-col, $gap: $p_horiz-col, $gap-tb: $p_horiz-col_tb, $valign: $v_align-col)
+=col( $col: $n-col, $gap: $p_horiz-col, $gap-tb: $p_horiz-col_tb, $valign: $v_align-col )
 
 	[class*=-ol-col-]
 		position: relative
-		vertical-align: $valign
+		vertical-align: $valign // for .-ol-row-inline
 		padding: 0 $gap
 
 		+md-tablet
@@ -14,14 +14,22 @@
 		&_without_inside_space
 			padding: 0
 
-		&_valign_m
+		&_valign_m // for .-ol-row-inline
 			vertical-align: middle !important
 
-		&_valign_b
+		&_valign_b // for .-ol-row-inline
 			vertical-align: bottom !important
 
-	[class*=-ol-col-offset-]
+	[class*=-ol-col-offset]
 		margin-left: 0
+
+
+
+	// Do not combine desk, desk_sm, tablet, mobile loops
+	// othervise tablet .-ol-col-2 will rewrite
+	// mobile .-ol-col-1
+
+
 
 	@for $i from 0 through $col
 

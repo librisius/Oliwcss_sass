@@ -2,11 +2,11 @@
 
 $black:							#000
 $grey-base:						$black
-$grey-darker:					lighten($grey-base, 13.5%) // #222
-$grey-dark:						lighten($grey-base, 20%)   // #333
-$grey:							lighten($grey-base, 33.5%) // #555
-$grey-light:					lighten($grey-base, 67%) // #777
-$grey-lighter:					lighten($grey-base, 90%) // #eee
+$grey-darker:					lighten( $grey-base, 13.5% ) // #222
+$grey-dark:						lighten( $grey-base, 20% )   // #333
+$grey:							lighten( $grey-base, 33.5% ) // #555
+$grey-light:					lighten( $grey-base, 67% ) // #777
+$grey-lighter:					lighten( $grey-base, 90% ) // #eee
 $white:							#fff
 
 $brand-primary:					#4690d5 // blue
@@ -15,7 +15,7 @@ $brand-info:					#69c1df // cyan
 $brand-warning:					#f5bf53 // yellow
 $brand-danger:					#ed6161 // red
 
-/*----------- main -----------*/
+/*----------- main (end) -----------*/
 
 
 
@@ -47,7 +47,7 @@ $brd_c:							$grey-lighter
 
 $c-link:							$brand-primary
 $brd_c-link:						transparent
-$c-link_hover:						darken($c-link, 10%)
+$c-link_hover:						darken( $c-link, 10% )
 $brd_c-link_hover:					$c-link_hover
 
 /*----------- link (end) -----------*/
@@ -62,6 +62,7 @@ $c-form-error: 						$brand-danger
 $c-label: 							$c-text-base
 
 $bg-input: 							$white
+$brd_c-input: 						$brd_c
 
 $c-input: 							$c-text-base
 
@@ -77,10 +78,10 @@ $c-placeholder:						$grey-light
 
 /*----------- table -----------*/
 
-$table_even:						darken($white, 5%)
-$table_odd:							darken($white, 5%)
+$table_even:						darken( $white, 5% )
+$table_odd:							darken( $white, 5% )
 
-$table_hr:							darken($white, 8%)
+$table_hr:							darken( $white, 8% )
 
 /*----------- table (end) -----------*/
 
@@ -93,9 +94,7 @@ $table_hr:							darken($white, 8%)
 $c-btn-default:						$brand-primary
 $c-btn-filled:						$white
 $c-btn-disabled:					$white
-
 $c-btn-outline:						$brand-primary
-$c-btn-outline_hover:				$white
 
 $c-btn-link:						$c-link
 $c-btn-link_hover:					$c-btn-link
@@ -106,10 +105,10 @@ $bg_c-btn-success:					$brand-success
 $bg_c-btn-info:						$brand-info
 $bg_c-btn-warning:					$brand-warning
 $bg_c-btn-danger:					$brand-danger
-$bg_c-btn-disabled:					darken($white, 20%)
+$bg_c-btn-disabled:					darken( $white, 20% )
 $bg_c-btn-outline:					transparent
 
 $brd-c-btn-link:					transparent
-$brd-c-btn-link_hover:				fadeout($c-btn-link, 20%)
+$brd-c-btn-link_hover:				fadeout( $c-btn-link, 20% )
 
 /*----------- button (end) -----------*/
