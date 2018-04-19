@@ -7,31 +7,32 @@
 		width: 100%
 
 		padding: $p_vert-input $p_horiz-input
-		border: $brd_w-input solid $brd_c
+		border: $brd_w-input solid $brd_c-input
 		border-radius: $brd_rd-input
 
 		background: $bg-input
 
 		color: $c-input
-		font-size: $fsz-input
+		font-size: $f_sz-input
 		line-height: $h-input - $brd_w-input * 2 - $p_vert-input * 2
 
 		text-overflow: ellipsis
 
-		+placeholder
+		+placeholder-style
+
+		&[readonly],
+		&[disabled]
+			color: $grey-light
+			cursor: default
 
 	.-ol-input
 		height: $h-input
 		text-overflow: ellipsis
 
-	.-ol-input-wrap
-		position: relative
-
-		&_error
-
-			.-ol-input
-				border-color: $brd_c-form-error
-				color: $c-form-error
+	.-ol-textarea
+		height: $h-textarea
+		resize: vertical
+		overflow: auto
 
 	.-ol-input-file
 		position: relative
@@ -53,17 +54,11 @@
 
 			cursor: pointer
 
-	.-ol-textarea
-		height: $h-textarea
-		resize: vertical
-		overflow: auto
-
 	.-ol-label-wrapper
 		display: block
 
 	.-ol-label
-		display: table
-		width: 100%
+		display: block
 		margin-bottom: $m_b-label
 
 		&_last
@@ -73,6 +68,26 @@
 		color: $c-label
 		font-size: $f_sz-label
 		font-weight: $f_w-label
+
+	.-ol-input-wrap
+		position: relative
+
+		&_disabled
+			opacity: .6
+
+			.-ol-input,
+			.-ol-textarea
+				color: $c-placeholder
+
+			label
+				cursor: auto
+
+		&_error
+
+			.-ol-input,
+			.-ol-textarea
+				border-color: $brd_c-form-error
+				color: $c-form-error
 
 	.-ol-row-input
 		margin-bottom: $m-row-input
