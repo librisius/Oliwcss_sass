@@ -1,12 +1,15 @@
 {
-  "name": "models",
+  "name": "vizanda-style",
   "version": "0.1.0",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "cssnano": "^3.10.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-jade": "^1.1.0",
     "gulp-postcss": "^7.0.0",
-    "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
