@@ -1,84 +1,82 @@
-@if $_use_buttons == true
+.-ol-btn
+	display: inline-block
+	vertical-align: middle
 
-	.-ol-btn
-		display: inline-block
-		vertical-align: middle
+	margin-bottom: 0 // For input.-ol-btn
+	border-style: solid
 
-		margin-bottom: 0 // For input.-ol-btn
-		border-style: solid
+	background-image: none // Reset unusual Firefox-on-Android default style see https://github.com/necolas/normalize.css/issues/214
 
-		background-image: none // Reset unusual Firefox-on-Android default style see https://github.com/necolas/normalize.css/issues/214
+	font-weight: $btn-font-weight
 
-		font-weight: $btn-font-weight
+	text-align: center
 
-		text-align: center
+	cursor: pointer
+	touch-action: manipulation
 
-		cursor: pointer
-		touch-action: manipulation
+	transition: all .2s
 
-		transition: all .2s
+	+btn-size( $h-btn, $brd_rd-btn, $p_vert-btn, $p_horiz-btn, $f_sz-btn, $lh-btn, $brd_w-btn )
 
-		+btn-size( $h-btn, $brd_rd-btn, $p_vert-btn, $p_horiz-btn, $f_sz-btn, $lh-btn, $brd_w-btn )
+	+btn-variant( $c-btn-filled, $bg_c-btn-primary )
+
+	&_default
+
+		+btn-variant( $c-btn-default, $bg_c-btn-default )
+
+	&_primary
 
 		+btn-variant( $c-btn-filled, $bg_c-btn-primary )
 
-		&_default
+	&_success
 
-			+btn-variant( $c-btn-default, $bg_c-btn-default )
+		+btn-variant( $c-btn-filled, $bg_c-btn-success )
 
-		&_primary
+	&_info
 
-			+btn-variant( $c-btn-filled, $bg_c-btn-primary )
+		+btn-variant( $c-btn-filled, $bg_c-btn-info )
 
-		&_success
+	&_warning
 
-			+btn-variant( $c-btn-filled, $bg_c-btn-success )
+		+btn-variant( $c-btn-filled, $bg_c-btn-warning )
 
-		&_info
+	&_danger
 
-			+btn-variant( $c-btn-filled, $bg_c-btn-info )
+		+btn-variant( $c-btn-filled, $bg_c-btn-danger )
 
-		&_warning
+	&_outline
 
-			+btn-variant( $c-btn-filled, $bg_c-btn-warning )
+		+btn-variant( $c-btn-outline, $bg_c-btn-outline )
 
-		&_danger
+	&[disabled]
 
-			+btn-variant( $c-btn-filled, $bg_c-btn-danger )
+		+btn-variant( $c-btn-disabled, $bg_c-btn-disabled, 0, 0 )
 
-		&_outline
+		cursor: not-allowed
+		pointer-events: none // Future-proof disabling of hover, active, click
 
-			+btn-variant( $c-btn-outline, $bg_c-btn-outline )
+	&_link
+		width: auto
+		height: auto
 
-		&[disabled]
+		border: 0
+		border-radius: 0
+		padding: 0
 
-			+btn-variant( $c-btn-disabled, $bg_c-btn-disabled, 0, 0 )
-
-			cursor: not-allowed
-			pointer-events: none // Future-proof disabling of hover, active, click
-
-		&_link
-			width: auto
-			height: auto
-
-			border: 0
-			border-radius: 0
-			padding: 0
-
-			+btn-link( $brd-c-btn-link, $c-btn-link, $brd-c-btn-link_hover, $c-btn-link_hover )
+		+btn-link( $brd-c-btn-link, $c-btn-link, $brd-c-btn-link_hover, $c-btn-link_hover )
 
 
-		// Button Sizes
-		// --------------------------------------------------
+	// Button Sizes
+	// --------------------------------------------------
 
-		&_lg
+	&_lg
 
-			+btn-size( $h-btn_lg, $brd_rd-btn_lg, $p_vert-btn_lg, $p_horiz-btn_lg, $f_sz-btn_lg, $lh-btn_lg, $brd_w-btn )
+		+btn-size( $h-btn_lg, $brd_rd-btn_lg, $p_vert-btn_lg, $p_horiz-btn_lg, $f_sz-btn_lg, $lh-btn_lg, $brd_w-btn )
 
-		&_sm
+	&_sm
 
-			+btn-size( $h-btn_sm, $brd_rd-btn_sm, $p_vert-btn_sm, $p_horiz-btn_sm, $f_sz-btn_sm, $lh-btn_sm, $brd_w-btn )
+		+btn-size( $h-btn_sm, $brd_rd-btn_sm, $p_vert-btn_sm, $p_horiz-btn_sm, $f_sz-btn_sm, $lh-btn_sm, $brd_w-btn )
 
-		&_xs
+	&_xs
 
-			+btn-size( $h-btn_xs, $brd_rd-btn_xs, $p_vert-btn_xs, $p_horiz-btn_xs, $f_sz-btn_xs, $lh-btn_xs, $brd_w-btn )
+		+btn-size( $h-btn_xs, $brd_rd-btn_xs, $p_vert-btn_xs, $p_horiz-btn_xs, $f_sz-btn_xs, $lh-btn_xs, $brd_w-btn )

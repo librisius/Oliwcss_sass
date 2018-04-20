@@ -1,10 +1,40 @@
 /*----------- images -----------*/
 
-$sprite:							url(../../media/img/sprite.png)
-$sprite_x2:							url(../../media/img/sprite_x2.png)
+$sprite:							url( ../../media/img/sprite.png ) !default
+$sprite_x2:							url( ../../media/img/sprite_x2.png ) !default
 $sprite-size:						100px 100px
 
 /*----------- images (end) -----------*/
+
+
+
+
+
+/*----------- fonts -----------*/
+
+$font-path:							"../fonts" !default
+
+/*----------- fonts (end) -----------*/
+
+
+
+
+
+/*----------- usage -----------*/
+
+$_use_buttons:						true
+$_use_common:						true
+$_use_forms:						true
+$_use_root:							true
+$_use_tables:						true
+$_use_typography:					true
+
+$_use_container:					true
+$_use_float:						true
+$_use_grid:							true
+$_use_modifiers:					true
+
+/*----------- usage (end) -----------*/
 
 
 
@@ -81,30 +111,9 @@ $brd_w:								1px
 
 $w-container:						1170px
 $w-container_tb:					100%
-
 $w-container_full_w:				100%
 
 /*----------- common (end) -----------*/
-
-
-
-
-
-/*----------- usage -----------*/
-
-$_use_buttons:						true
-$_use_common:						true
-$_use_forms:						true
-$_use_tables:						true
-$_use_typography:					true
-
-$_use_container:					true
-$_use_float:						true
-$_use_grid:							true // if true then $_use_float also should 
-$_use_modifiers:					true
-$_use_tabs:							true
-
-/*----------- usage (end) -----------*/
 
 
 
@@ -136,7 +145,7 @@ $brd_w-link:						1px
 
 /*----------- form -----------*/
 
-$m_b-label:							0px
+$m_b-label:							20px
 $f_sz-label:						$font-size-base
 $f_w-label:							700
 
@@ -147,14 +156,26 @@ $brd_w-input:						1px
 $brd_rd-input:						2px
 
 $p_vert-input:						6px
-$p_horiz-input:						12px
+$p_horiz-input:						12px - $brd_w-input
 
 $m-row-input:						10px
 $m-form-body:						$m-row-input*2
 
-$fsz-input:							$font-size-body
+$f_sz-input:						$font-size-body
 
 $per-input_col-many:				50%
+
+$w-checkbox:						14px
+$h-checkbox:						$w-checkbox
+$brd_w-checkbox:					1px
+$brd_w-checkbox_checked:			5px
+$brd_rd-checkbox:					2px
+
+$w-radio:							14px
+$h-radio:							$w-radio
+$brd_w-radio:						1px
+$brd_w-radio_checked:				5px
+$brd_rd-radio:						50%
 
 /*----------- form (end) -----------*/
 
@@ -220,28 +241,27 @@ $btn-font-weight:					700
 
 
 
-$lh-btn:							round($f_sz-btn/1rem * 10 * 1.5) * 1px // $f_sz-btn in rem
-$lh-btn_lg:							round($f_sz-btn_lg/1rem * 10 * 1.5) * 1px // $f_sz-btn in rem
-$lh-btn_sm:							round($f_sz-btn_sm/1rem * 10 * 1.5) * 1px // $f_sz-btn in rem
-$lh-btn_xs:							round($f_sz-btn_xs/1rem * 10 * 1.5) * 1px // $f_sz-btn in rem
+$lh-btn:							round( $f_sz-btn/1rem * 10 * 1.5 ) * 1px // $f_sz-btn in rem
+$lh-btn_lg:							round( $f_sz-btn_lg/1rem * 10 * 1.5 ) * 1px // $f_sz-btn in rem
+$lh-btn_sm:							round( $f_sz-btn_sm/1rem * 10 * 1.5 ) * 1px // $f_sz-btn in rem
+$lh-btn_xs:							round( $f_sz-btn_xs/1rem * 10 * 1.5 ) * 1px // $f_sz-btn in rem
 
 
 
-$p_vert-btn:						($h-btn_wanted - $lh-btn - $brd_w-btn * 2 )/2
+$p_vert-btn:						( $h-btn_wanted - $lh-btn - $brd_w-btn * 2 )/2
 $p_horiz-btn:						25px
 
-$p_vert-btn_lg:						($h-btn_lg_wanted - $lh-btn - $brd_w-btn * 2 )/2
+$p_vert-btn_lg:						( $h-btn_lg_wanted - $lh-btn_lg - $brd_w-btn_lg * 2 )/2
 $p_horiz-btn_lg:					30px
 
-$p_vert-btn_sm:					($h-btn_xs_wanted - $lh-btn - $brd_w-btn * 2 )/2
+$p_vert-btn_sm:						( $h-btn_sm_wanted - $lh-btn_sm - $brd_w-btn_sm * 2 )/2
 $p_horiz-btn_sm:					20px
 
-$p_vert-btn_xs:						($h-btn_xs_wanted - $lh-btn - $brd_w-btn * 2 )/2
+$p_vert-btn_xs:						( $h-btn_xs_wanted - $lh-btn_xs - $brd_w-btn_xs * 2 )/2
 $p_horiz-btn_xs:					15px
 
 
 
-$per-brd-btn:						0%
 $per-btn_hover:						5%
 $per-btn_active:					5%
 

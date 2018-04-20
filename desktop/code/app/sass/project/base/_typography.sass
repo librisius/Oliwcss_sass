@@ -1,92 +1,90 @@
-@if $_use_typography == true
++e-headings
+	color: $c-h
+	line-height: $headings-line-height
+	font-weight: $headings-font-weight
 
-	+e-headings
-		color: $c-h
-		line-height: $headings-line-height
-		font-weight: $headings-font-weight
+.-ol-content h1,
+.-ol-h1
+	margin-bottom: $mb-h1
 
-	.-ol-content h1,
-	.-ol-h1
-		margin-bottom: $mb-h1
+	font-size: $font-size-h1
 
-		font-size: $font-size-h1
+.-ol-content h2,
+.-ol-h2
+	margin-bottom: $mb-h2
 
-	.-ol-content h2,
-	.-ol-h2
-		margin-bottom: $mb-h2
+	font-size: $font-size-h2
 
-		font-size: $font-size-h2
+.-ol-content h3,
+.-ol-h3
+	margin-bottom: $mb-h3
 
-	.-ol-content h3,
-	.-ol-h3
-		margin-bottom: $mb-h3
+	font-size: $font-size-h3
 
-		font-size: $font-size-h3
+.-ol-content h4,
+.-ol-h4
+	margin-bottom: $mb-h4
 
-	.-ol-content h4,
-	.-ol-h4
-		margin-bottom: $mb-h4
+	font-size: $font-size-h4
 
-		font-size: $font-size-h4
+.-ol-content h5,
+.-ol-h5
+	margin-bottom: $mb-h5
 
-	.-ol-content h5,
-	.-ol-h5
-		margin-bottom: $mb-h5
+	font-size: $font-size-h5
 
-		font-size: $font-size-h5
-
-	.-ol-content h6,
-	.-ol-h6
-		margin-bottom: $mb-h6
-		
-		font-size: $font-size-h6
-
-	.-ol-h-none
-		margin-bottom: 0
-
-		color: $c-text-base
-
-		// use font styles separately because if U'll use rem
-		// That's broken on ie <= 10
-		font-family: $font-family-base
-		font-size: $font-size-base
-		line-height: $line-height-base
-		letter-spacing: $lts
-		font-weight: $headings-font-weight
-
-		word-spacing: 0
-
-		text-transform: none
-
-	.-ol-content a,
-	.-ol-link
-
-		+link-variant
-
-	.-ol-content b,
-	.-ol-b,
-	.-ol-content strong,
-	.-ol-strong
-		font-weight: bold
-		letter-spacing: inherit
-
-	.-ol-content i,
-	.-ol-i,
-	.-ol-content em,
-	.-ol-em
-		font-style: italic
-		letter-spacing: inherit
+.-ol-content h6,
+.-ol-h6
+	margin-bottom: $mb-h6
 	
-	.-ol-content sub,
-	.-ol-sub,
-	.-ol-content sup,
-	.-ol-sup
-		font-size: .6em
+	font-size: $font-size-h6
 
-	.-ol-content sub,
-	.-ol-sub
-		vertical-align: bottom
+.-ol-h-none
+	margin-bottom: 0
 
-	.-ol-content sup,
-	.-ol-sup
-		vertical-align: top
+	color: $c-text-base
+
+	// use font styles separately because if U'll use rem
+	// That's broken on ie <= 10
+	font-family: $font-family-base
+	font-size: $font-size-base
+	line-height: $line-height-base
+	letter-spacing: $lts
+	font-weight: $headings-font-weight
+
+	word-spacing: 0
+
+	text-transform: none
+
+.-ol-content a,
+.-ol-link
+
+	+link-variant
+
+.-ol-content b,
+.-ol-b,
+.-ol-content strong,
+.-ol-strong
+	font-weight: bold
+	letter-spacing: inherit
+
+.-ol-content i,
+.-ol-i,
+.-ol-content em,
+.-ol-em
+	font-style: italic
+	letter-spacing: inherit
+
+.-ol-content sub,
+.-ol-sub,
+.-ol-content sup,
+.-ol-sup
+	font-size: .6em
+
+.-ol-content sub,
+.-ol-sub
+	vertical-align: bottom
+
+.-ol-content sup,
+.-ol-sup
+	vertical-align: top

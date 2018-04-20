@@ -1,102 +1,185 @@
-@if $_use_forms == true
+.-ol-input,
+.-ol-textarea
+	display: block
 
-	.-ol-input,
-	.-ol-textarea
-		display: block
+	width: 100%
+
+	padding: $p_vert-input $p_horiz-input
+	border: $brd_w-input solid $brd_c-input
+	border-radius: $brd_rd-input
+
+	background: $bg-input
+
+	color: $c-input
+	font-size: $f_sz-input
+	line-height: $h-input - $brd_w-input * 2 - $p_vert-input * 2
+
+	text-overflow: ellipsis
+
+	+placeholder-style
+
+	&[readonly],
+	&[disabled]
+		color: $grey-light
+		cursor: default
+
+.-ol-input
+	height: $h-input
+	text-overflow: ellipsis
+
+.-ol-textarea
+	height: $h-textarea
+	resize: vertical
+	overflow: auto
+
+.-ol-input-file
+	position: relative
+	overflow: hidden
+	width: 100%
+
+	input
+		$h-input-file: 100%
 
 		width: 100%
+		height: $h-input-file
 
-		padding: $p_vert-input $p_horiz-input
-		border: $brd_w-input solid $brd_c-input
-		border-radius: $brd_rd-input
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 3
 
-		background: $bg-input
+		opacity: 0
 
-		color: $c-input
-		font-size: $f_sz-input
-		line-height: $h-input - $brd_w-input * 2 - $p_vert-input * 2
+		cursor: pointer
 
-		text-overflow: ellipsis
+.-ol-checkbox
+	position: relative
 
-		+placeholder-style
+	width: $w-checkbox
+	height: $h-checkbox
 
-		&[readonly],
+	&__input
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+
+		opacity: 0
+		overflow: hidden
+
+		width: 100%
+		height: 100%
+
+	&__trigger
+		position: absolute
+		top: 0
+		left: 0
+
+		width: 100%
+		height: 100%
+
+		border: $brd_w-checkbox solid $brd_c-checkbox
+		border-radius: $brd_rd-checkbox
+
+		background-color: $bg-checkbox
+
+		cursor: pointer
+
+	&__input:checked ~ &__trigger
+		border: $brd_w-checkbox_checked solid $brd_c-checkbox_checked
+		background-color: $bg-checkbox_checked
+
+	&[disabled]
+		opacity: 0.55
+		cursor: default
+
+.-ol-radio
+	position: relative
+
+	width: $w-radio
+	height: $h-radio
+
+	&__input
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+
+		opacity: 0
+		overflow: hidden
+
+		width: 100%
+		height: 100%
+
 		&[disabled]
-			color: $grey-light
 			cursor: default
 
-	.-ol-input
-		height: $h-input
-		text-overflow: ellipsis
+	&__trigger
+		position: absolute
+		top: 0
+		left: 0
 
-	.-ol-textarea
-		height: $h-textarea
-		resize: vertical
-		overflow: auto
-
-	.-ol-input-file
-		position: relative
-		overflow: hidden
 		width: 100%
+		height: 100%
 
-		input
-			$h-input-file: 100%
+		border: $brd_w-radio solid $brd_c-radio
+		border-radius: $brd_rd-radio
 
-			width: 100%
-			height: $h-input-file
+		background-color: $bg-radio
 
-			position: absolute
-			top: 0
-			left: 0
-			z-index: 3
+		cursor: pointer
 
-			opacity: 0
+	&__input:checked ~ &__trigger
+		border: $brd_w-radio_checked solid $brd_c-radio_checked
+		background-color: $bg-radio_checked
 
-			cursor: pointer
+	&__input[disabled] ~ &__trigger
+		border-color: $grey-lighter
+		background-color: $grey-lighter
 
-	.-ol-label-wrapper
-		display: block
+.-ol-label-wrapper
+	display: block
 
-	.-ol-label
-		display: block
-		margin-bottom: $m_b-label
+.-ol-label
+	display: block
+	margin-bottom: $m_b-label
 
-		&_last
-			margin-bottom: 0
+	&_last
+		margin-bottom: 0
 
-	.-ol-label-text
-		color: $c-label
-		font-size: $f_sz-label
-		font-weight: $f_w-label
+.-ol-label-text
+	color: $c-label
+	font-size: $f_sz-label
+	font-weight: $f_w-label
 
-	.-ol-input-wrap
-		position: relative
+.-ol-input-wrap
+	position: relative
 
-		&_disabled
-			opacity: .6
+	&_disabled
+		opacity: .6
 
-			.-ol-input,
-			.-ol-textarea
-				color: $c-placeholder
+		.-ol-input,
+		.-ol-textarea
+			color: $c-placeholder
 
-			label
-				cursor: auto
+		label
+			cursor: auto
 
-		&_error
+	&_error
 
-			.-ol-input,
-			.-ol-textarea
-				border-color: $brd_c-form-error
-				color: $c-form-error
+		.-ol-input,
+		.-ol-textarea
+			border-color: $brd_c-form-error
+			color: $c-form-error
 
-	.-ol-row-input
-		margin-bottom: $m-row-input
+.-ol-row-input
+	margin-bottom: $m-row-input
 
-		&_last
-			margin-bottom: 0
+	&_last
+		margin-bottom: 0
 
-	.-ol-form-body
-		margin-bottom: $m-form-body
+.-ol-form-body
+	margin-bottom: $m-form-body
 
-		&_last
-			margin-bottom: 0
+	&_last
+		margin-bottom: 0
