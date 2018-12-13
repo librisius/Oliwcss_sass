@@ -1,22 +1,18 @@
-(function($) {
+$(document).ready(function() {
 
-	$(document).ready(function() {
+	(function() {
 
-		(function() {
+		if ( $('.c-block').length ) {
 
-			if ( $('.c-block').length ) {
+		}
+	})();
+});
 
-			}
-		})();
-	});
+$(window).on( 'load', function() {
 
-	$(window).load(function() {
+	(function() {
 
-		(function() {
-
-			if ( $('.c-block').length ) {
-			}
-		})();
-	});
-
-})(jQuery);
+		if ( $('.c-block').length ) {
+		}
+	})();
+});

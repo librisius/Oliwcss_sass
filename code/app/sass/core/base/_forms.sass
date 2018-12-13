@@ -15,6 +15,7 @@
 		color: $c-input
 		font-size: $f_sz-input
 		line-height: $h-input - $brd_w-input * 2 - $p_vert-input * 2
+		letter-spacing: $l_s-input
 
 		text-overflow: ellipsis
 
@@ -54,17 +55,16 @@
 
 			cursor: pointer
 
-	.-ol-label-wrapper
-		display: block
-
-	.-ol-label
+	.-ol-label // tag label
 		display: block
 		margin-bottom: $m_b-label
 
 		&_last
 			margin-bottom: 0
 
-	.-ol-label-text
+	.-ol-label-text // tag span
+		display: block
+
 		color: $c-label
 		font-size: $f_sz-label
 		font-weight: $f_w-label

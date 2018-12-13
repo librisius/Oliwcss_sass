@@ -1,7 +1,7 @@
 =btn-variant( $c-btn, $bg_c-btn, $per-hover: $per-btn_hover, $per-active: $per-btn_active, $brd_c-btn: $bg_c-btn )
 
 	border-color: $brd_c-btn
-	background-color: $bg_c-btn
+	background: $bg_c-btn // to set gradient
 	color: $c-btn
 
 	transition: all .2s
@@ -34,6 +34,7 @@
 =btn-size( $h-btn, $brd_rd-btn, $p_vert-btn, $p_horiz-btn, $f_sz-btn, $lh-btn, $brd_w-btn )
 
 	height: $h-btn
+	min-height: $h-btn // for empty buttons (without text)
 
 	border-radius: $brd_rd-btn
 	border-width: $brd_w-btn

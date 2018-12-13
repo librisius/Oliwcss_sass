@@ -13,7 +13,7 @@
 // !! $recovery variable is needed if you don't want to have inline style
 // for some children elements
 // !! $display variable is needed if you want to have inline-table
-=inline( $item: '__item', $ind-item: false, $font-size: $font-size-base, $lts: $lts, $valign: top, $recovery: '_recovery', $display: inline-block )
+=inline( $item: '__item', $ind-item: false, $font-size: $font-size-base, $l_s: $l_s, $valign: top, $recovery: '_recovery', $display: inline-block )
 
 	font-size: 0 !important
 	letter-spacing: 0 !important
@@ -26,11 +26,11 @@
 			vertical-align: $valign
 
 			font-size: $font-size
-			letter-spacing: $lts
+			letter-spacing: $l_s
 
 		#{$item}#{$recovery}
 			font-size: $font-size
-			letter-spacing: $lts
+			letter-spacing: $l_s
 	@else
 
 		&#{$item}
@@ -39,18 +39,18 @@
 			vertical-align: $valign
 
 			font-size: $font-size
-			letter-spacing: $lts
+			letter-spacing: $l_s
 
 		&#{$item}#{$recovery}
 			font-size: $font-size
-			letter-spacing: $lts
+			letter-spacing: $l_s
 
 
 
 // !! $recovery variable is needed if you don't want to have inline style
 // for some children elements
 // !! $display variable is needed if you want to have inline-table
-=justify( $item: '__item', $ind-item: false, $font-size: $font-size-base, $lts: $lts, $valign: top, $recovery: '_recovery', $display: inline-block )
+=justify( $item: '__item', $ind-item: false, $font-size: $font-size-base, $l_s: $l_s, $valign: top, $recovery: '_recovery', $display: inline-block )
 
 	font-size: 0 !important
 	letter-spacing: 0 !important
@@ -78,7 +78,7 @@
 			vertical-align: $valign
 
 			font-size: $font-size
-			letter-spacing: $lts
+			letter-spacing: $l_s
 
 			text-align: left
 
@@ -88,7 +88,7 @@
 
 		#{$item}#{$recovery}
 			font-size: $font-size
-			letter-spacing: $lts
+			letter-spacing: $l_s
 			
 			text-align: left
 
@@ -103,7 +103,7 @@
 			vertical-align: $valign
 
 			font-size: $font-size
-			letter-spacing: $lts
+			letter-spacing: $l_s
 
 			text-align: left
 
@@ -113,7 +113,7 @@
 
 		&#{$item}#{$recovery}
 			font-size: $font-size
-			letter-spacing: $lts
+			letter-spacing: $l_s
 			
 			text-align: left
 
@@ -126,10 +126,10 @@
 // !! $recovery variable is needed if you don't want to have inline style
 // for some children elements
 // !! $display variable is needed if you want to have inline-table
-=inline_set( $item: '__item', $recovery: '_recovery', $display: inline-block, $lts: $lts )
+=inline_set( $item: '__item', $recovery: '_recovery', $display: inline-block, $l_s: $l_s )
 
 	font-size: inherit !important
-	letter-spacing: $lts !important
+	letter-spacing: $l_s !important
 
 	text-align: left
 
@@ -144,7 +144,7 @@
 		vertical-align: auto
 
 		font-size: auto
-		letter-spacing: $lts
+		letter-spacing: $l_s
 
 		text-align: left
 
@@ -154,7 +154,7 @@
 
 	&#{$item}#{$recovery}
 		font-size: inherit
-		letter-spacing: $lts
+		letter-spacing: $l_s
 
 		text-align: left
 

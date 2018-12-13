@@ -1,183 +1,186 @@
-doctype html
-html(lang="en")
-	include includes/base/_head.pug
+extends extends/layout
+
+
+
+block content
+
+	a( href="https://github.com/librisius/oliwcss" )
+		img(
+			style="z-index: 999; position: fixed; top: 0; left: 0; border: 0;",
+			src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67",
+			alt="Fork me onv GitHub",
+			data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png",
+			data-pin-nopin="true" )
+
+	.-ol-container
+
+		section
+
+			h2.-ol-h1 Типографика
+			hr
+
+			.b-section
+				h1 Заголовок 1
+				p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько <a href="#" class="-ol-link">абзацев более менее</a> осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
+
+			.b-section
+				h2 Заголовок 2
+				p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
+
+			.b-section
+				h3 Заголовок 3
+				p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
+
+			.b-section
+				h4 Заголовок 4
+				p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке.
+
+			.b-section
+				h5 Заголовок 5
+				p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке.
+
+			.b-section
+				h6 Заголовок 6
+				p Сайт рыбатекст поможет дизайнеру, верстальщику.
+
+		section
+
+			h2.-ol-h1 Формы
+			hr
+
+			form
+
+				.-ol-form-body
+
+					.-ol-row-input
+						input(placeholder="Placeholder input")
+
+					.-ol-row-input
+						textarea(placeholder="Placeholder textarea")
+
+		section
+
+			h2.-ol-h1 Кнопки
+			hr
+
+			button.-ol-btn-primary Кнопка
+			button.-ol-btn-success Кнопка
+			button.-ol-btn-info Кнопка
+			button.-ol-btn-warning Кнопка
+			button.-ol-btn-danger Кнопка
+
+		section
+			h2.-ol-h1 Таблицы
+			hr
+
+			table.-ol-table
+
+				thead
+
+					tr
+
+						th 1
+						th 2
+						th 3
+						th 4
+						th 5
+				tbody
+
+					tr
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+
+					tr
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+
+					tr
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+
+					tr
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+
+					tr
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+
+			hr
+
+			table.-ol-table_odd
+
+				thead.-ol-thead
+
+					tr
+						th 1
+						th 2
+						th 3
+						th 4
+						th 5
+
+				tbody
+
+					tr
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+
+					tr
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+
+					tr
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+
+					tr
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+
+					tr
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+						td Lorem
+
+
+
+block inline-styles
 
 	style
 		include style.css
 
-	body
-
-		a(href="https://github.com/librisius/oliwcss")
-			img(
-				style="z-index: 999; position: fixed; top: 0; left: 0; border: 0;",
-				src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67",
-				alt="Fork me onv GitHub",
-				data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png",
-				data-pin-nopin="true" )
-
-		.-ol-container
-
-			section
-
-				h2.-ol-h1 Типографика
-				hr
-
-				.b-section
-					h1 Заголовок 1
-					p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько <a href="#" class="-ol-link">абзацев более менее</a> осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
-
-				.b-section
-					h2 Заголовок 2
-					p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
-
-				.b-section
-					h3 Заголовок 3
-					p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
-
-				.b-section
-					h4 Заголовок 4
-					p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке.
-
-				.b-section
-					h5 Заголовок 5
-					p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке.
-
-				.b-section
-					h6 Заголовок 6
-					p Сайт рыбатекст поможет дизайнеру, верстальщику.
-
-			section
-
-				h2.-ol-h1 Формы
-				hr
-
-				form
-
-					.-ol-form-body
-
-						.-ol-row-input
-							input(placeholder="Placeholder input")
-
-						.-ol-row-input
-							textarea(placeholder="Placeholder textarea")
-
-			section
-
-				h2.-ol-h1 Кнопки
-				hr
-
-				button.-ol-btn-primary Кнопка
-				button.-ol-btn-success Кнопка
-				button.-ol-btn-info Кнопка
-				button.-ol-btn-warning Кнопка
-				button.-ol-btn-danger Кнопка
-
-			section
-				h2.-ol-h1 Таблицы
-				hr
-
-				table.-ol-table
-
-					thead
-
-						tr
-
-							th 1
-							th 2
-							th 3
-							th 4
-							th 5
-					tbody
-
-						tr
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-
-						tr
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-
-						tr
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-
-						tr
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-
-						tr
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-
-				hr
-
-				table.-ol-table_odd
-
-					thead.-ol-thead
-
-						tr
-							th 1
-							th 2
-							th 3
-							th 4
-							th 5
-
-					tbody
-
-						tr
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-
-						tr
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-
-						tr
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-
-						tr
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-
-						tr
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
-							td Lorem
 
 
+append scripts
 
-		script(
-			src="dist/js/lib/jquery.min.js" )
-
-		script(
-			src="dist/js/specific/app.js" )
+	script(
+		src="dist/js/specific/app.js" )

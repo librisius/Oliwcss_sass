@@ -1,0 +1,33 @@
+//- layout
+
+include ../mixins/index
+
+doctype html
+html( lang="en" )
+
+	head
+		include ../includes/base/head-content
+
+		block inline-styles
+
+		block scripts
+
+			script(
+				src="dist/js/libs/jquery.min.js" )
+
+			//- script(
+			//- 	src="dist/js/plugins/select2.full.js" )
+
+			//- script(
+			//- 	src="dist/js/plugins/perfect-scrollbar.jquery.js" )
+
+			//- script(
+			//- 	src="dist/js/plugins/modal.js" )
+
+	- var bodyClass = ''
+
+	block vars
+
+	body( class=bodyClass )
+
+		block content
