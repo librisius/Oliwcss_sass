@@ -106,9 +106,27 @@ input
 	&[type="radio"]
 		cursor: pointer
 
+	&[type="color"]
+		border: none
+		outline: none
+		-webkit-appearance: none
+
+		&::-webkit-color-swatch-wrapper
+			padding: 0
+
+		&::-moz-color-swatch-wrapper
+			padding: 0
+
+		&::-webkit-color-swatch
+			border: none
+
+		&::-moz-color-swatch
+			border: none
+
 input,
 textarea,
 select
+	display: block
 	-moz-appearance: none // to reset initial browser style
 	-webkit-appearance: none // to reset initial browser style
 

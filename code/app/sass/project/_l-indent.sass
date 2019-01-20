@@ -1,0 +1,17 @@
+.l-indent
+	$p_vert-item:			10px
+	$p_horiz-item:			$p_horiz-col
+
+	$p_vert-item_sm:		5px
+	$p_horiz-item_sm:		10px
+
+	margin: ( -$p_vert-item ) ( -$p_horiz-item )
+
+	&_sm
+		margin: ( -$p_vert-item_sm ) ( -$p_horiz-item_sm )
+
+	&__item
+		padding: $p_vert-item $p_horiz-item
+
+	&_sm &__item
+		padding: $p_vert-item_sm $p_horiz-item_sm
