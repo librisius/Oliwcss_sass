@@ -6,6 +6,11 @@
 
 	// padding-top: $h-b-header
 
+	transition: $anim_dur-b-modal filter
+
+	._modal_active &
+		filter: blur( 3px )
+
 	&__item
 
 		&_major

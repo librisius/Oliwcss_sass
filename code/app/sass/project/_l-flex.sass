@@ -19,11 +19,8 @@
 		+md-mobile
 			align-items: flex-start
 
-	&_valign_top
-		align-items: flex-start
-
-	&_valign_bottom
-		align-items: flex-end
+	&_right
+		justify-content: flex-end
 
 	&_center
 		justify-content: center
@@ -36,9 +33,8 @@
 
 	&_col
 		flex-direction: column
-		flex-wrap: nowrap
 
-	& > &__item
+	> &__item
 
 		&_stretch
 			flex-grow: 1
@@ -46,11 +42,22 @@
 		&_major
 			flex-shrink: 0
 
-		&_equal
-			flex: 1 1 0
-			width: 0 // don't remove to stay equal if there are elements with white-space: nowrap; inside
-
 		&_equal_none_tb
 
 			+md-tablet
-				flex: 0 1
+				flex: 0 1 auto
+
+	&_equal
+		flex-wrap: nowrap
+
+		> &__item
+			flex: 1 1 100%
+			overflow: hidden
+
+	&_equal_with_width > &__item
+		// WARNING! It stops being equal if adding padding to the element
+		// WARNING! Doesn't work correct with width: 0; in IE, please set it to an actual
+		// WARNING! flex-shrink: 1; doesn't work correct
+		flex-grow: 1
+		flex-basis: 0
+		width: 0 // don't remove to stay equal if there are elements with white-space: nowrap; inside
