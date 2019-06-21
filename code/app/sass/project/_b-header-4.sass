@@ -1,0 +1,48 @@
+.b-header-4
+	position: absolute
+	top: 0
+	left: 0
+
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	width: 100%
+
+	padding: 27px 75px
+
+	&__item
+
+	&__logo
+
+		@extend .i-logo
+
+		&::after
+			display: block
+			color: #000
+			font-size: 15px
+
+	&__nav
+		display: flex
+		align-items: center
+		margin: -12px -25px
+
+	&__nav-item
+		padding: 12px 25px 
+
+	&__nav-link // tag a
+		position: relative // for &::before
+
+		display: block
+
+		margin: -7px 0 -8px
+
+		color: #fff
+		font-family: 'Montserrat'
+		font-size: 12px
+		line-height: 24px
+		font-weight: 500
+		letter-spacing: 0
+
+		&:hover
+			color: #ff9a38

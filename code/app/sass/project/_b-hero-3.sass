@@ -1,0 +1,180 @@
+.b-hero-3
+	display: flex
+
+	overflow: hidden
+
+	height: calc( 100vh - 65px )
+
+	background-color: #e6d6d6
+
+	&__item
+		width: 50%
+
+		&_content
+			position: relative
+			z-index: 1 // to be over &_img
+
+			display: flex
+			align-items: center
+			justify-content: center
+
+			padding: 60px
+
+			&::before
+				content: ''
+
+				position: absolute
+				top: -200px
+				right: 0
+
+				width: 980px
+				height: 980px
+
+				opacity: .4
+
+				border-radius: 50%
+
+				background-image: radial-gradient( #fff 0%, #fff0 70% )
+
+		&_img // tag a
+			display: block
+			background: url( '#{$img}/b-hero-3/bg.png' ) left center / cover no-repeat
+
+	&__content
+		position: relative // to be over &__item_content::before
+		max-width: 510px
+		padding-bottom: 40px
+
+	&__heading
+		max-width: 458px
+		margin-bottom: 55px
+
+		&_last
+			margin-bottom: 0
+
+	&__list
+		margin-bottom: 70px
+
+		&_last
+			margin-bottom: 0
+
+	&__list-item
+		position: relative // for &::before
+
+		display: flex // to collapse margins inside
+		flex-direction: column
+
+		margin-bottom: 45px
+		padding-left: 75px
+
+		&_last
+			margin-bottom: 0
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: -2px
+			left: 0
+
+			width: 50px
+			height: 50px
+
+			background: url( '#{$img}/b-hero-3/tick.png' ) center bottom / cover no-repeat
+
+			+md-retina
+				background-image: url( '#{$img}/b-hero-3/tick@2x.png' )
+
+	&__list-text
+		margin: -8px 0 -9px
+
+		color: #665c5c
+		font-size: 13px
+		line-height: 26px
+		font-weight: 300
+		letter-spacing: .06em
+
+	&__options
+		display: flex
+		align-items: center
+		margin: -17px
+
+	&__options-item
+		padding: 17px
+
+	&__btn // tag a
+		display: block
+		position: relative // for &::before
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: -8px
+			left: 8px
+
+			width: calc( 100% - 16px )
+			height: calc( 100% + 16px )
+
+			border: 1px solid rgba( #000, .7 )
+
+			transition: all .2s
+
+		&:active::before
+			top: 0
+			height: 100%
+
+	&__btn-inner
+		position: relative
+		z-index: 1 // to be over &__btn::before
+
+		display: block
+
+		width: 235px
+
+		padding: 14px 25px
+
+		background-image: linear-gradient( to right, #541a1a, #a11b1b )
+		box-shadow: 0px 20px 60px 0 rgba( 10, 26, 51, .15 )
+
+		color: #fff
+		font-size: 13px
+		line-height: 26px
+		letter-spacing: .16em
+
+		text-align: center
+		text-transform: uppercase
+
+		&:hover
+			background-image: linear-gradient( to right, #471616, #941919 )
+
+	&__scroll // tag a
+		position: relative // for &::after
+
+		display: flex // to collapse margins inside
+		flex-direction: column
+
+		padding-left: 39px
+
+		@extend .i-mouse
+
+		&::after
+			position: absolute
+			top: -19px
+			left: 0
+
+			color: rgba( #000, .7 )
+			font-size: 44px
+
+	&__scroll-text // tag span
+		display: block
+
+		margin: -1px 0 -2px
+
+		color: #bda8a8
+		font-size: 10px
+		line-height: 1
+		font-weight: 600
+		letter-spacing: .12em
+
+		text-transform: uppercase

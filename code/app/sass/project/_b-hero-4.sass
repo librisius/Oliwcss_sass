@@ -1,0 +1,165 @@
+.b-hero-4
+	display: flex
+	overflow: hidden
+	height: 100vh
+
+	&__item
+
+		&_content
+			position: relative
+			z-index: 1 // to be over &_img
+
+			display: flex
+			align-items: center
+			justify-content: center
+
+			width: 45%
+
+			padding: 100px 60px
+
+		&_img // tag a
+			display: block
+			width: 55%
+			background: url( '#{$img}/b-hero-4/bg.jpg' ) center / cover no-repeat
+
+	&__content
+		position: relative // to be over &__item_content::before
+		max-width: 510px
+
+	&__heading
+		max-width: 560px
+
+		margin: -11px 0 49px
+
+		color: #121212
+		font-family: 'Montserrat'
+		font-size: 40px
+		line-height: 50px
+		font-weight: 900
+		letter-spacing: 0
+
+		text-transform: uppercase
+
+		&_last
+			margin-bottom: -11px
+
+	&__list
+		margin-bottom: 50px
+		max-width: 470px
+
+		&_last
+			margin-bottom: 0
+
+	&__list-item
+		position: relative // for &::before
+
+		display: flex // to collapse margins inside
+		flex-direction: column
+
+		margin-bottom: 45px
+		padding-left: 35px
+
+		&_last
+			margin-bottom: 0
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: -3px
+			left: 0
+
+			width: 17px
+			height: 17px
+
+			background: url( '#{$img}/b-hero-4/check.svg' ) center / contain no-repeat
+
+	&__list-text
+		margin: -7px 0 -8px
+
+		color: #000
+		font-family: 'Montserrat'
+		font-size: 14px
+		line-height: 26px
+		font-weight: 600
+		letter-spacing: .025em
+
+	&__btn // tag a
+		position: relative // for &::after
+
+		display: block
+
+		width: 250px
+
+		border-radius: 4px
+		padding: 16px 75px 14px 25px
+
+		background-image: linear-gradient( 80deg, #ee46a8, #ffbb51 )
+		box-shadow: 0 12px 14px 0 rgba( 0, 0, 0, .12 )
+
+		text-align: center
+		text-transform: uppercase
+
+		color: #fff
+		font-family: 'Montserrat'
+		font-size: 16px
+		line-height: 28px
+		font-weight: 700
+		letter-spacing: 0em
+
+		text-align: center
+
+		@extend .i-arrow-4
+
+		&:hover
+			background-image: linear-gradient( 80deg, #d43d95, #e5aa49 )
+
+		&::after
+			position: absolute
+			top: 22px
+			right: 27px
+
+			color: #fff
+			font-size: 13px
+
+			transition: all .2s
+
+		&:hover::after
+			right: 23px
+
+	&__scroll // tag a
+		position: absolute
+		bottom: 40px
+		left: 50%
+
+		display: block
+
+		padding-right: 23px
+
+		transform: translateX( -50% )
+
+		@extend .i-arrow-2
+
+		&::after
+			position: absolute
+			top: 7px
+			right: 0
+
+			color: #8ca1ac
+			font-size: 7px
+
+			transition: all .2s
+
+		&:hover::after
+			top: 9px
+
+	&__scroll-text // tag span
+		color: #8ca1ac
+		font-family: 'Montserrat'
+		font-size: 14px
+		line-height: 1
+		font-weight: 600
+		letter-spacing: 0
+		white-space: nowrap
+
+		text-transform: uppercase

@@ -1,0 +1,332 @@
+.b-hero
+	display: flex
+	overflow: hidden
+	height: 100vh
+
+	&__item
+
+		&_content
+			position: relative
+			z-index: 1 // to be over &_img
+
+			display: flex
+			align-items: center
+
+			width: 50%
+			min-width: 690px
+
+			padding: 100px 40px 100px 5.625vw
+
+			box-shadow: 0px 10px 60px 0 rgba( 10, 26, 51, .2 )
+
+		&_img
+			width: 55%
+			position: relative // for &__img
+			overflow: hidden // for &__img
+
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+
+		width: 100%
+		height: 100%
+
+		background: url( '#{$img}/b-hero/bg.png' ) center / cover no-repeat
+
+		transform: scale(1)
+
+		transition: transform .2s
+
+		&:hover
+			transform: scale(1.05)
+
+	&__content
+		position: relative // for &__btn
+		max-width: 560px
+
+	&__heading
+		position: relative
+
+		display: flex // to collapse margins inside
+		flex-direction: column
+
+		padding-bottom: 71px
+
+		&::before
+			content: ''
+
+			position: absolute
+			bottom: 35px
+			left: 0
+
+			width: 505px
+			height: 1px
+
+			background-color: #f58571
+
+
+	&__heading-text
+		margin: -12px 0 -14px
+
+		color: #000
+		font-size: 48px
+		line-height: 60px
+		font-weight: 700
+		letter-spacing: .04em
+
+		&_highlighted
+			color: #d4472f
+
+	&__list
+		counter-reset: list
+
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
+
+		margin: -15px
+
+	&__list-item
+		position: relative // for &::before
+
+		display: flex
+		align-items: center
+
+		max-width: 235px
+		min-height: 175px
+
+		margin: 15px
+		padding: 35px
+
+		background-color: #f5f5f5
+
+		&::before
+			content: counter( list ) '.'
+			counter-increment: list
+
+			position: absolute
+			top: 12px
+			left: -7px
+
+			color: #d4472f
+			font-size: 24px
+			line-height: 1
+			font-weight: 900
+			letter-spacing: .08em
+
+		&:nth-child( even )
+			margin-top: 120px
+			margin-bottom: -120px
+
+	&__list-text
+		margin: -8px 0 -9px
+
+		color: #000
+		font-size: 13px
+		line-height: 26px
+		font-weight: 600
+		letter-spacing: .06em
+
+	&__btn // tag a
+		position: absolute
+		bottom: 0
+		left: 265px
+
+		display: block
+
+		&::before
+			content: ''
+
+			position: absolute
+			bottom: 0
+			right: -17px
+
+			width: 100%
+			height: calc( 100% + 17px )
+
+			background: rgba( #f58571, .2 )
+
+			transition: all .2s
+
+		&:hover::before
+			bottom: 5px
+			right: -22px
+
+		&:active::before
+			bottom: 0
+			right: 0
+			height: 100%
+
+		&::after
+			content: ''
+
+			position: absolute
+			top: calc( 100% + 10px )
+			right: 0
+
+			width: calc( 100% - 17px )
+			height: 1px
+
+			background-image: linear-gradient( to right, #f58571, #d65e48 100% )
+
+			transition: all .2s
+
+		&:hover::after
+			width: 120px
+
+		&:active::after
+			width: 20px
+
+	&__btn-inner // tag span
+		position: relative
+		display: block
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: -11px
+			left: -11px
+
+			width: 20px
+			height: 1px
+
+			background-image: linear-gradient( to right, #f58571, #bf503d )
+
+			transition: all .2s
+
+		&::after
+			content: ''
+
+			position: absolute
+			top: -11px
+			left: -11px
+
+			width: 1px
+			height: 20px
+
+			background-image: linear-gradient( to right, #f58571, #bf503d )
+
+			transition: all .2s
+
+	&__btn:hover &__btn-inner::before
+		left: -21px
+
+	&__btn:active &__btn-inner::before
+		left: -25px
+
+	&__btn:hover &__btn-inner::after
+		top: -21px
+
+	&__btn:active &__btn-inner::after
+		top: -25px
+
+	&__btn-inner-2 // tag span
+		position: relative
+		z-index: 1 // to be over &__btn::before, &__btn::after and &__btn-inner::before, &__btn::before
+		display: flex
+		justify-content: center
+
+		width: 235px
+
+		padding: 19px 25px
+
+		background-image: linear-gradient( to right, #eb644c, #a6300b )
+		box-shadow: 0px 20px 60px 0 rgba( 166, 52, 31, .3 )
+
+		transition: all .2s
+
+	&__btn:hover &__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( 166, 52, 31, .5 )
+
+	&__btn:active &__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( 166, 52, 31, 0 )
+
+	&__btn-text // tag span
+		position: relative // for &:: after
+		left: 0
+
+		display: block
+
+		padding-right: 55px
+
+		color: #fff
+		font-size: 14px
+		line-height: 24px
+		font-weight: 700
+		letter-spacing: .06em
+
+		text-align: center
+		text-transform: uppercase
+
+		transition: all .2s
+
+		@extend .i-arrow-3
+
+		&::after
+			position: absolute
+			top: 6px
+			right: 0
+
+			color: #fff
+			font-size: 13px
+
+	&__btn:hover &__btn-text
+		left: 4px
+
+	&__btn:active &__btn-text
+		left: 8px
+
+	&__scroll
+		position: absolute
+		bottom: 0
+		left: 50%
+
+		padding: 18px 60px 18px 0
+
+		transform: translateX( -50% )
+
+		@extend .i-arrow-2
+
+		&::before
+			content: ''
+
+			position: absolute
+			bottom: 0
+			right: 0
+
+			width: 47px
+			height: 45px
+
+			background-color: #f0f0f0
+
+			transition: all .2s
+
+		&:hover::before
+			background-color: #d4472f
+
+		&::after
+			position: absolute
+			top: 20px
+			right: 18px
+
+			color: #000
+			font-size: 6px
+
+			transition: all .2s
+
+		&:hover::after
+			top: 22px
+			color: #fff
+
+	&__scroll-text // tag span
+		display: block
+
+		margin: -2px 0
+
+		color: #000
+		font-size: 13px
+		line-height: 1
+		font-weight: 700
+		letter-spacing: .06em

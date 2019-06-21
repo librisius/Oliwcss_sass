@@ -1,0 +1,87 @@
+.b-header
+	position: absolute
+	top: 0
+	left: 0
+
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	width: 100%
+
+	padding: 20px 20px 20px 40px
+
+	&__item
+
+	&__logo
+
+		@extend .i-logo
+
+		&::after
+			color: #000
+			font-size: 15px
+
+	&__nav
+		display: flex
+		align-items: center
+		margin: -10px -20px
+
+	&__nav-item
+		padding: 10px 20px 
+
+	&__nav-link // tag a
+		position: relative // for &::before
+
+		display: block
+
+		margin: -4px 0 -5px
+		padding-left: 28px
+
+		color: #000
+		font-size: 11px
+		line-height: 17px
+		font-weight: 700
+		letter-spacing: .06em
+
+		&:hover
+			color: #d4472f
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: 7px
+			left: 0
+
+			width: 20px
+			height: 1px
+
+			background-color: #000
+
+			transition: all .2s
+
+		&:hover::before
+			left: 8px
+			width: 12px
+
+	&__nav-btn // tag a
+		display: block
+
+		min-width: 90px
+
+		padding: 9px 15px
+
+		background-color: #000
+
+		color: #fff
+		font-size: 10px
+		line-height: 17px
+		font-weight: 700
+		letter-spacing: .06em
+
+		text-align: center
+
+		transition: all .2s
+
+		&:hover
+			background-color: #d4472f

@@ -1,0 +1,196 @@
+.b-hero-2
+	display: flex
+	align-items: center
+
+	overflow: hidden
+
+	height: 100vh
+
+	padding: 60px 37.5% 60px 8.75%
+
+	background: #e6c522 url( '#{$img}/b-hero-2/bg.png' ) calc( 8.75% - 280px ) 0 /  280px 1px
+		
+	@media only screen and ( max-width: 1560px )
+		background-size: 17.9487179% 1px
+
+	&__content
+
+	&__heading
+		max-width: 560px
+
+		margin: -12px 0 31px
+
+		color: #121212
+		font-size: 48px
+		line-height: 60px
+		font-weight: 700
+		letter-spacing: .04em
+
+		&_last
+			margin-bottom: -14px
+
+	&__list
+		display: flex
+		margin-bottom: 95px
+
+		&_last
+			margin-bottom: 0
+
+	&__list-item
+		position: relative // for &::before and &::after
+
+		max-width: 220px
+
+		margin-right: 60px
+		padding-top: 55px
+
+		@media only screen and ( max-width: 1560px )
+			margin-right: 45px
+
+		@extend .i-tick
+
+		&_last
+			margin-bottom: 0
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: 0
+			left: 0
+
+			width: 35px
+			height: 35px
+
+			opacity: .5
+
+			border-radius: 50%
+
+			background-color: #fff
+
+		&::after
+			position: absolute
+			top: 14px
+			left: 12px
+
+			color: #121212
+			font-size: 9px
+
+	&__list-text
+		margin: -8px 0 -9px
+
+		color: #121212
+		font-size: 13px
+		line-height: 26px
+		font-weight: 600
+		letter-spacing: .06em
+
+		@media only screen and ( max-width: 1560px )
+			margin: -7px 0 -8px
+			font-size: 12px
+			line-height: 24px
+
+	&__options
+		display: flex
+		align-items: center
+		margin: -25px
+
+	&__options-item
+		padding: 25px
+
+	&__btn // tag a
+		display: block
+
+		width: 235px
+
+		border-radius: 31px
+		padding: 19px 20px
+
+		background-color: #121212
+		box-shadow: 0px 40px 60px 0 rgba( 102, 88, 15, .6 )
+
+		text-align: center
+
+		transition: all .2s
+
+		&:hover
+			background-color: #fff
+
+	&__btn-text
+		position: relative // for &::after
+
+		padding-right: 27px
+
+		color: #fff
+		font-size: 14px
+		line-height: 24px
+		font-weight: 700
+		letter-spacing: .04em
+
+		transition: all .2s
+
+		@extend .i-arrow
+
+		&::after
+			position: absolute
+			top: 5px
+			right: 0
+
+			color: #fff
+			font-size: 10px
+
+			transition: all .2s
+
+	&__btn:hover &__btn-text
+		color: #121212
+
+	&__btn:hover &__btn-text::after
+		right: -4px
+		color: #121212
+
+	&__img-link // tag a
+		position: absolute
+
+		display: flex
+		align-items: center
+		justify-content: center
+
+		top: calc( 50% + 74px/2 )
+		right: 18.75%
+
+		width: 38.1875%
+		height: calc( 100% - 114px )
+
+		transform: translate( 50%, -50% )
+
+	&__img
+		max-width: 100%
+		max-height: 100%
+		box-shadow: 0 10px 70px 0 rgba( 109, 76, 22, .4 )
+
+	&__scroll // tag a
+		position: relative // for &::after
+		display: block
+		padding-right: 23px
+
+		@extend .i-arrow-2
+
+		&::after
+			position: absolute
+			top: 8px
+			right: 0
+
+			color: #121212
+			font-size: 6px
+
+			transition: all .2s
+
+		&:hover::after
+			top: 11px
+
+	&__scroll-text // tag span
+		font-size: 13px
+		line-height: 1
+		font-weight: 700
+		letter-spacing: .06em
+		color: #121212
