@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){$(".c-block").length}),$(window).on("load",function(){$(".c-block").length});
