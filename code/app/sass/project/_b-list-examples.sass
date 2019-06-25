@@ -1,0 +1,141 @@
+.b-list-examples
+	position: relative
+
+	&__inner
+		display: flex !important // to set js and collapse margins inside
+		flex-direction: column
+		height: calc( 100vh - 236px )
+
+	&_style_2 &__inner
+		height: calc( 100vh - 251px )
+
+	&__item // tag a
+		position: relative // for &__btn, &__title and &::before
+
+		display: flex
+		flex-direction: column
+		align-items: center
+
+		padding: 0 20px
+
+	&_style_2 &__item
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: -12px
+			left: -12px + 20px
+
+			opacity: 0
+
+			width: calc( 100% + 24px - 40px )
+			height: calc( 100% + 24px )
+
+			border: 1px solid $black
+
+			transform: scale( 1.0526316 )
+
+			transition: all $anim_dur-b-list-examples
+
+	&_style_2 &__item.slick-center::before
+		opacity: 1
+
+	&__btn
+		position: absolute
+		left: calc( 50% - 120px )
+		bottom: 15px
+		z-index: 1
+
+		opacity: 0
+
+		width: 240px
+
+		pointer-events: none
+
+		transition: all $anim_dur-b-list-examples
+
+	&_style_2 &__btn
+		bottom: -27px
+		left: calc( 50% - 130px )
+
+		width: 260px
+
+		padding-left: 42px
+
+		@extend .i-pencil
+
+		&::after
+			position: absolute
+			top: 18px
+			left: 19px
+
+			font-size: 16px
+
+	&__item.slick-center &__btn
+		bottom: calc( -2.65% + 15px )
+		opacity: 1
+		pointer-events: auto
+
+	&_style_2 &__item.slick-center &__btn
+		bottom: calc( -2.65% - 27px )
+
+	&_style_3 &__item.slick-center &__btn
+		bottom: calc( -21.5% + 15px )
+
+	&__img
+		height: 100%
+		max-width: none
+
+		border: 1px solid rgba( $brand-primary, 0 )
+
+		box-shadow: 0px 30px 120px 0 rgba( #171f26, .15 )
+
+		transition: all $anim_dur-b-list-examples
+
+	&_style_2 &__img,
+	&_style_3 &__img
+		border: none
+
+	&__item.slick-center &__img
+		border-color: $brand-primary
+
+	&__title
+		position: absolute
+		top: calc( 100% + 23px )
+		left: 50%
+
+		margin: -5px 0 -6px
+
+		color: rgba( $black, .4 )
+		font-size: 10px
+		line-height: 18px
+		font-weight: 700
+		letter-spacing: .06em
+
+		text-transform: uppercase
+
+		transform: translateX( -50% )
+
+		transition: all $anim_dur-b-list-examples
+
+	&__item.slick-center &__title
+		top: calc( 102.65% + 23px )
+		color: $black
+
+	&_style_2 &__title
+		top: auto !important
+		bottom: calc( 100% + 15px )
+		color: $black
+
+	&_style_2 &__item.slick-center &__title
+		bottom: calc( 102.65% + 35px )
+
+		margin: -7px 0
+
+		color: $brand-primary
+		font-size: 13px
+		line-height: 23px
+
+	&_style_3 &__item.slick-center &__title
+		top: calc( 121.5% + 23px )

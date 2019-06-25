@@ -1,0 +1,43 @@
+.b-section-steps
+	display: flex
+	flex-direction: column
+
+	min-height: 100vh
+
+	padding: 45px 0 75px
+
+	background-color: $grey-lighter
+
+	&_style_2
+		padding: 45px 0 55px
+
+	&::before
+		content: ''
+
+		position: absolute
+		top: 17px
+		left: -117px
+
+		width: 277px
+		height: 330px
+
+		background: url( '#{$img}/b-section-steps/bg.png' ) 0 / contain no-repeat
+
+		+md-retina
+			background-image: url( '#{$img}/b-section-steps/bg@2x.png' )
+
+	&__inner
+		position: relative
+		z-index: 1 // to be above &&::before
+
+		display: flex
+		flex-direction: column
+		flex-grow: 1
+
+		width: 100%
+
+	&__heading
+		padding: 0 30px
+
+	&__list
+		flex-grow: 1

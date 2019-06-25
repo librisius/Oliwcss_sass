@@ -2,6 +2,7 @@
 	position: absolute
 	top: 0
 	left: 0
+	z-index: $z_i-b-header
 
 	display: flex
 	justify-content: space-between
@@ -11,15 +12,25 @@
 
 	padding: 20px 20px 20px 40px
 
+	&_style_2
+		padding: 30px 40px
+
 	&__item
 
 	&__logo
 
-		@extend .i-logo
-
 		&::after
-			color: #000
-			font-size: 15px
+			content: 'Resumedone'
+
+			display: block
+
+			margin: -3px 0
+
+			color: $black
+			font-size: 21px
+			line-height: 1
+			font-weight: 700
+			letter-spacing: -.04em
 
 	&__nav
 		display: flex
@@ -37,14 +48,14 @@
 		margin: -4px 0 -5px
 		padding-left: 28px
 
-		color: #000
+		color: $black
 		font-size: 11px
 		line-height: 17px
 		font-weight: 700
 		letter-spacing: .06em
 
 		&:hover
-			color: #d4472f
+			color: $brand-primary
 
 		&::before
 			content: ''
@@ -56,7 +67,7 @@
 			width: 20px
 			height: 1px
 
-			background-color: #000
+			background-color: $black
 
 			transition: all .2s
 
@@ -71,9 +82,9 @@
 
 		padding: 9px 15px
 
-		background-color: #000
+		background-color: $black
 
-		color: #fff
+		color: $white
 		font-size: 10px
 		line-height: 17px
 		font-weight: 700
@@ -84,4 +95,4 @@
 		transition: all .2s
 
 		&:hover
-			background-color: #d4472f
+			background-color: $brand-primary

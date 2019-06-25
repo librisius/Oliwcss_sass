@@ -115,6 +115,13 @@ $w-container_full_w:				100%
 
 $anim_dur-b-modal:					.2s
 
+$anim_dur-b-list-examples:			.5s
+
+
+
+$z_i-b-header:						99
+$z_i-b-state:						$z_i-b-header + 1
+
 /*----------- common (end) -----------*/
 
 
@@ -155,7 +162,7 @@ $h-input:							34px
 $h-textarea:						74px
 
 $brd_w-input:						1px
-$brd_rd-input:						2px
+$brd_rd-input:						0
 
 $p_vert-input:						6px
 $p_horiz-input:						12px - $brd_w-input
@@ -210,7 +217,7 @@ $w-btn_xs:							auto
 
 
 $h-btn:								auto
-$h-btn_wanted:						40px
+$h-btn_wanted:						54px
 $h-btn_lg:							auto
 $h-btn_lg_wanted:					50px
 $h-btn_sm:							auto
@@ -227,14 +234,14 @@ $brd_w-btn_xs:						1px
 
 
 
-$brd_rd-btn:						4px
-$brd_rd-btn_lg:						6px
-$brd_rd-btn_sm:						3px
-$brd_rd-btn_xs:						3px
+$brd_rd-btn:						0
+$brd_rd-btn_lg:						0
+$brd_rd-btn_sm:						0
+$brd_rd-btn_xs:						0
 
 
 
-$f_sz-btn:							$font-size-base
+$f_sz-btn:							13px
 $f_sz-btn_lg:						$font-size-lg
 $f_sz-btn_sm:						$font-size-sm
 $f_sz-btn_xs:						$font-size-sm
@@ -242,11 +249,11 @@ $f_sz-btn_xs:						$font-size-sm
 
 
 $f_w-btn:							700
-$l_s-btn:							$l_s
+$l_s-btn:							.06em
 
 
 
-$lh-btn:							round( $f_sz-btn/1rem * 10 * 1.5 ) * 1px // $f_sz-btn in rem
+$lh-btn:							round( $f_sz-btn * 1.5 )
 $lh-btn_lg:							round( $f_sz-btn_lg/1rem * 10 * 1.5 ) * 1px // $f_sz-btn in rem
 $lh-btn_sm:							round( $f_sz-btn_sm/1rem * 10 * 1.5 ) * 1px // $f_sz-btn in rem
 $lh-btn_xs:							round( $f_sz-btn_xs/1rem * 10 * 1.5 ) * 1px // $f_sz-btn in rem
@@ -254,7 +261,7 @@ $lh-btn_xs:							round( $f_sz-btn_xs/1rem * 10 * 1.5 ) * 1px // $f_sz-btn in re
 
 
 $p_vert-btn:						( $h-btn_wanted - $lh-btn - $brd_w-btn * 2 )/2
-$p_horiz-btn:						25px
+$p_horiz-btn:						15px
 
 $p_vert-btn_lg:						( $h-btn_lg_wanted - $lh-btn_lg - $brd_w-btn_lg * 2 )/2
 $p_horiz-btn_lg:					30px
@@ -267,7 +274,7 @@ $p_horiz-btn_xs:					15px
 
 
 
-$per-btn_hover:						5%
-$per-btn_active:					5%
+$per-btn_hover:						10%
+$per-btn_active:					-10%
 
 /*----------- button (end) -----------*/

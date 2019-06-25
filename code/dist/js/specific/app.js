@@ -1,1 +1,1 @@
-"use strict";$(document).ready(function(){$(".c-block").length}),$(window).on("load",function(){$(".c-block").length});
+"use strict";$(document).ready(function(){$(".c-slick-examples").length&&$(".c-slick-examples").slick({centerMode:!0,speed:300,variableWidth:!0,slidesToShow:4,focusOnSelect:!0})});

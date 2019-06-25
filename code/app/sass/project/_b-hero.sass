@@ -11,27 +11,29 @@
 
 			display: flex
 			align-items: center
+			justify-content: center
 
 			width: 50%
-			min-width: 690px
+			min-width: 710px
 
-			padding: 100px 40px 100px 5.625vw
+			padding: 100px 40px
 
 			box-shadow: 0px 10px 60px 0 rgba( 10, 26, 51, .2 )
 
 			@media only screen and ( max-width: 1640px )
-				padding-left: 3vw
+				padding: 100px 30px
 
-			@media only screen and ( max-width: 1440px )
+			@media only screen and ( max-width: 1500px )
 				min-width: 600px
 
 		&_img
-			width: 55%
 			position: relative // for &__img
+
 			overflow: hidden // for &__img
 
-			&_style_2
-				background: #e2e2e2 url( '#{$img}/b-hero/bg_decoration.png' ) -55px -50px / 277px 336px no-repeat
+			width: 55%
+
+			background: #e2e2e2 url( '#{$img}/b-hero/bg_decoration.png' ) -55px -50px / 277px 336px no-repeat
 
 	&__img
 		position: absolute
@@ -41,7 +43,7 @@
 		width: 100%
 		height: 100%
 
-		background: url( '#{$img}/b-hero/bg.png' ) center / cover no-repeat
+		background: url( '#{$img}/b-hero/bg_2.jpg' ) center / cover no-repeat
 
 		transform: scale( 1 )
 
@@ -50,18 +52,9 @@
 		&:hover
 			transform: scale( 1.05 )
 
-		&_style_2
-			background-image: url( '#{$img}/b-hero/bg_2.jpg' )
-
 	&__content
 		position: relative // for &__btn
-		max-width: 560px
-
-	&__content_style_2
-		max-width: 600px
-
-		@media only screen and ( max-width: 1440px )
-			max-width: 520px
+		max-width: 620px
 
 	&__heading
 		position: relative
@@ -69,28 +62,12 @@
 		display: flex // to collapse margins inside
 		flex-direction: column
 
-		margin-bottom: 35px
-		padding-bottom: 36px
+		margin-bottom: 60px
+		border-bottom: 1px solid $black
+		padding-bottom: 35px
 
-		&_style_2
-			margin-bottom: 60px
-			border-bottom: 1px solid #000
-			padding-bottom: 35px
-
-		&::before
-			content: ''
-
-			position: absolute
-			bottom: 0
-			left: 0
-
-			width: 505px
-			height: 1px
-
-			background-color: #f58571
-
-		&_style_2::before,
-		&_style_2::after
+		&::before,
+		&::after
 			content: ''
 
 			position: absolute
@@ -99,43 +76,41 @@
 			width: 9px
 			height: 9px
 
-			background-color: #000
+			background-color: $black
 
-		&_style_2::before
+		&::before
 			left: 0
 
-		&_style_2::after
+		&::after
 			right: 0
 
 	&__heading-text
-		margin: -12px 0 -14px
+		margin: -11px 0 20px
 
-		color: #000
-		font-size: 48px
+		color: $black
+		font-size: 50px
 		line-height: 60px
 		font-weight: 700
 		letter-spacing: .04em
 
-		@media only screen and ( max-width: 1440px )
-			margin: -12px 0 -14px
+		@media only screen and ( max-width: 1500px )
+			margin: -12px 0 16px
 			font-size: 42px
 			line-height: 56px
 
 		&_highlighted
-			color: #d4472f
+			color: $brand-primary
 
-	&__heading_style_2 &__heading-text
-		margin-bottom: 21px
-
-		@media only screen and ( max-width: 1440px )
-			margin-bottom: 16px
+		&_last
+			margin-bottom: -13px
 
 	&__subheading-text
-		margin: -9px 0
+		margin: -10px 0 -11px
 
-		color: #000
-		font-size: 14px
+		color: $black
+		font-size: 16px
 		line-height: 2
+		font-weight: 600
 		font-style: italic
 		letter-spacing: .04em
 
@@ -155,7 +130,7 @@
 		align-items: center
 
 		max-width: 235px
-		min-height: 170px
+		min-height: 150px
 
 		margin: 15px
 		padding: 35px
@@ -170,7 +145,7 @@
 			top: 12px
 			left: -7px
 
-			color: #d4472f
+			color: $brand-primary
 			font-size: 24px
 			line-height: 1
 			font-weight: 900
@@ -183,7 +158,7 @@
 	&__list-text
 		margin: -8px 0 -9px
 
-		color: #000
+		color: $black
 		font-size: 13px
 		line-height: 26px
 		font-weight: 600
@@ -312,7 +287,7 @@
 
 		padding-right: 55px
 
-		color: #fff
+		color: $white
 		font-size: 14px
 		line-height: 24px
 		font-weight: 700
@@ -330,7 +305,7 @@
 			top: 6px
 			right: 0
 
-			color: #fff
+			color: $white
 			font-size: 13px
 
 	&__btn:hover &__btn-text
@@ -365,28 +340,28 @@
 			transition: all .2s
 
 		&:hover::before
-			background-color: #d4472f
+			background-color: $brand-primary
 
 		&::after
 			position: absolute
 			top: 20px
 			right: 18px
 
-			color: #000
+			color: $black
 			font-size: 6px
 
 			transition: all .2s
 
 		&:hover::after
 			top: 22px
-			color: #fff
+			color: $white
 
 	&__scroll-text // tag span
 		display: block
 
 		margin: -2px 0
 
-		color: #000
+		color: $black
 		font-size: 13px
 		line-height: 1
 		font-weight: 700
@@ -394,17 +369,19 @@
 
 		.i-arrow-5
 
-	&__slider
+	&__demo
 		display: flex
 		align-items: center
-		height: 100%
 		justify-content: center
 
-	&__slider-item
+		height: 100%
+		margin-left: -140px
+
+	&__demo-item
 		position: relative
 		padding: 20px
 
-	&__slider-img
+	&__demo-img
 		width: 31.75vw
 		max-width: 508px
 
@@ -421,48 +398,5 @@
 
 			background-image: url( '#{$img}/b-hero/cv_2.png' )
 
-	&__slider-img-inner
+	&__demo-img-inner
 		padding-top: 144.0944882%
-
-	&__slider-nav
-
-	&__slider-nav-btn
-		position: absolute
-		top: 50%
-
-		width: 50px
-		height: 50px
-
-		background-color: #000
-
-		transform: translateY( -50% )
-
-		@extend .i-arrow-5
-
-		&:first-child
-			left: 0
-
-		&:last-child
-			right: 0
-
-		&::after
-			position: absolute
-			top: 18px
-
-			color: #fff
-			font-size: 14px
-
-			transition: all .2s
-
-		&:first-child::after
-			left: 20px
-			transform: rotateY(180deg)
-
-		&:first-child:hover::after
-			left: 17px
-
-		&:last-child::after
-			right: 20px
-
-		&:last-child:hover::after
-			right: 17px

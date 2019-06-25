@@ -1,0 +1,89 @@
+.c-slick-examples
+
+	@extend .c-slick
+
+	.slick-list
+		height: calc( 100% + 180px )
+		margin: -90px 0
+
+	.slick-track
+		display: flex
+		align-items: center
+
+		height: 100%
+
+		padding: 90px 0
+
+	.slick-slide
+		position: relative
+		height: 95%
+
+		&.slick-center
+			z-index: 1
+
+
+	&_style_2 .slick-slide
+		opacity: .5
+		height: 70%
+
+		&.slick-center
+			z-index: 1
+			opacity: 1
+
+	.slick-slide img
+		transform: scale( 1 )
+		transition: all $anim_dur-b-list-examples
+
+	.slick-slide.slick-center img
+		transform: scale( 1.0526316 )
+
+	&_style_2 .slick-slide.slick-center img
+		transform: scale(1.42857)
+
+	.slick-arrow
+		position: absolute
+		top: 50%
+		z-index: 9
+
+		width: 50px
+		height: 50px
+
+		background-color: $black
+
+		transform: translateY( -50% )
+
+		@extend .i-arrow-5
+
+		&::after
+			position: absolute
+			top: 18px
+
+			color: $white
+			font-size: 14px
+
+			transition: all .2s
+
+	.slick-prev
+		left: 0
+
+		&::after
+			left: 20px
+			transform: rotateY( 180deg )
+
+		&:hover::after
+			left: 17px
+
+	&_style_2 .slick-prev
+		left: calc( 50% - 39vh )
+
+	.slick-next
+		right: 0
+
+		&::after
+			right: 20px
+
+		&:hover::after
+			right: 17px
+
+	&_style_2 .slick-next
+		right: calc( 50% - 39vh )
