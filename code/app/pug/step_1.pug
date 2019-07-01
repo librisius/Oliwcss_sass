@@ -4,7 +4,39 @@ extends extends/layout
 
 block content
 
-	header.b-header.b-header_style_2
+	.b-preloader.c-manipulate-class-timing( data-c-manipulate-class-timing-class="b-preloader_running" data-c-manipulate-class-timing-duration="5000" )
+		.b-preloader__logo
+		.b-preloader__list
+			.b-preloader__list-inner
+				.b-preloader__list-item.b-preloader__list-item_1
+					.b-preloader__box
+						.b-preloader__icon
+						p.b-preloader__text Loading 20 Professional Resume Designs
+				.b-preloader__list-item.b-preloader__list-item_2
+					.b-preloader__box
+						.b-preloader__icon
+						p.b-preloader__text Loading 282 Pre-written Samples
+				.b-preloader__list-item.b-preloader__list-item_3
+					.b-preloader__box
+						.b-preloader__icon
+						p.b-preloader__text Loading 152 Writing Tips
+				.b-preloader__list-item.b-preloader__list-item_4
+					.b-preloader__box
+						.b-preloader__icon
+						p.b-preloader__text Loading Customer Service Help
+				.b-preloader__list-item.b-preloader__list-item_5
+					.b-preloader__box
+						.b-preloader__icon
+						p.b-preloader__text Loading Fonts and Design Tools
+				.b-preloader__list-item.b-preloader__list-item_6
+					.b-preloader__box
+						.b-preloader__icon
+						p.b-preloader__text Loading Fonts and Finished
+
+		.b-preloader__state
+			.b-preloader__state-bar
+
+	header.b-header
 		.b-header__item
 			.b-header__logo
 
@@ -32,26 +64,41 @@ block content
 
 			.b-section-steps__list.b-list-examples
 				.b-list-examples__inner.c-slick-examples
-					a.b-list-examples__item( href="#!" )
-						img.b-list-examples__img( src="media/img/b-list-examples/1.jpg" alt="CV Template" )
-						button.b-list-examples__btn.-ol-btn Start with this template
-						.b-list-examples__title Gaborone
-					a.b-list-examples__item( href="#!" )
-						img.b-list-examples__img( src="media/img/b-list-examples/2.jpg" alt="CV Template" )
-						button.b-list-examples__btn.-ol-btn Start with this template
-						.b-list-examples__title Gaborone
-					a.b-list-examples__item( href="#!" )
-						img.b-list-examples__img( src="media/img/b-list-examples/3.jpg" alt="CV Template" )
-						button.b-list-examples__btn.-ol-btn Start with this template
-						.b-list-examples__title Abuja
-					a.b-list-examples__item( href="#!" )
-						img.b-list-examples__img( src="media/img/b-list-examples/4.jpg" alt="CV Template" )
-						button.b-list-examples__btn.-ol-btn Start with this template
-						.b-list-examples__title Nice
-					a.b-list-examples__item( href="#!" )
-						img.b-list-examples__img( src="media/img/b-list-examples/5.jpg" alt="CV Template" )
-						button.b-list-examples__btn.-ol-btn Start with this template
-						.b-list-examples__title Nice
+					.b-list-examples__item
+						a.b-list-examples__item-inner( href="#!" )
+							.b-list-examples__img
+								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
+								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/1.jpg )" )
+							button.b-list-examples__btn.-ol-btn Start with this template
+							h2.b-list-examples__title Gaborone
+					.b-list-examples__item
+						a.b-list-examples__item-inner( href="#!" )
+							.b-list-examples__img
+								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
+								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/2.jpg )" )
+							button.b-list-examples__btn.-ol-btn Start with this template
+							h2.b-list-examples__title Gaborone
+					.b-list-examples__item
+						a.b-list-examples__item-inner( href="#!" )
+							.b-list-examples__img
+								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
+								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/3.jpg )" )
+							button.b-list-examples__btn.-ol-btn Start with this template
+							h2.b-list-examples__title Abuja
+					.b-list-examples__item
+						a.b-list-examples__item-inner( href="#!" )
+							.b-list-examples__img
+								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
+								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/4.jpg )" )
+							button.b-list-examples__btn.-ol-btn Start with this template
+							h2.b-list-examples__title Nice
+					.b-list-examples__item
+						a.b-list-examples__item-inner( href="#!" )
+							.b-list-examples__img
+								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
+								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/5.jpg )" )
+							button.b-list-examples__btn.-ol-btn Start with this template
+							h2.b-list-examples__title Nice
 
 
 

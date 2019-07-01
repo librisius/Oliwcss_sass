@@ -1,0 +1,251 @@
+.b-preloader-5
+	$anim_dur:	7s
+
+	position: fixed
+	top: 0
+	left: 0
+	z-index: $z_i-b-preloader
+
+	display: flex
+	align-items: center
+	justify-content: center
+
+	width: 100%
+	height: 100%
+
+	padding: 20px
+
+	background-color: $white
+
+	&__logo
+		position: absolute
+		top: 30px
+		left: 40px
+
+		&::after
+			content: 'Resumedone'
+
+			display: block
+
+			margin: -3px 0
+
+			color: $black
+			font-size: 21px
+			line-height: 1
+			font-weight: 700
+			letter-spacing: -.04em
+
+	&__list
+
+	&__list-item
+		position: absolute
+		top: 50%
+		left: -16.6666666%
+
+		transform: translate( -50%, -50% )
+
+		animation: preloader5Item $anim_dur linear forwards
+
+		&_1
+			animation-delay: -($anim_dur/6 + $anim_dur/100*4*2)*2
+
+		&_2
+			animation-delay: -($anim_dur/6 + $anim_dur/100*4*2)*1
+
+		&_3
+			animation-delay: 0s
+
+		&_4
+			animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*1
+
+		&_5
+			animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*2
+
+		&_6
+			animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*3
+
+	&__text
+		margin: -7px 0 -8px
+
+		color: rgba( $grey, 0 )
+		font-size: 18px
+		line-height: 28px
+		font-weight: 700
+		letter-spacing: .04em
+		white-space: nowrap
+
+		animation: preloader5Text $anim_dur forwards
+
+	&__list-item_1 .b-preloader-5__text
+		animation-delay: -($anim_dur/6 + $anim_dur/100*4*2)*2
+
+	&__list-item_2 .b-preloader-5__text
+		animation-delay: -($anim_dur/6 + $anim_dur/100*4*2)*1
+
+	&__list-item_3 .b-preloader-5__text
+		animation-delay: 0s
+
+	&__list-item_4 .b-preloader-5__text
+		animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*1
+
+	&__list-item_5 .b-preloader-5__text
+		animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*2
+
+	&__list-item_6 .b-preloader-5__text
+		animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*3
+
+	&__icon
+		position: absolute
+		top: calc( 50% - 69px )
+		left: 50%
+
+		width: 28px
+		height: 28px
+
+		border-radius: 50%
+
+		box-shadow: 0 0 0 12px rgba( $brand-primary, .1 )
+
+		transform: translate( -50%, -50% )
+
+		animation: preloader5Icon 1s infinite
+
+	&__status
+		position: absolute
+		top: calc( 50% + 44px )
+		left: 50%
+
+		display: flex // to collapse margins inside
+		flex-direction: column
+
+		transform: translate( -50%, -50% )
+
+		animation: preloader5Status 1s infinite
+
+	&__status-text
+		margin: -7px 0 -8px
+
+		color: rgba( $grey, .4 )
+		font-size: 17px
+		line-height: 27px
+		font-weight: 500
+		letter-spacing: .06em
+
+	@keyframes preloader5Item
+
+		from
+			left: -16.6666666%
+
+		21%
+			left: -16.6666666%
+
+		25%
+			left: 16.6666666%
+
+		46%
+			left: 16.6666666%
+
+		50%
+			left: 50%
+
+		71%
+			left: 50%
+
+		75%
+			left: 83.3333333%
+
+		96%
+			left: 83.3333333%
+
+		to
+			left: 116.6666666%
+
+	@keyframes preloader5Text
+
+		from
+			margin: -7px 0 -8px
+
+			color: rgba( $grey, 0 )
+			font-size: 18px
+			line-height: 28px
+
+		21%
+			margin: -7px 0 -8px
+
+			color: rgba( $grey, 0 )
+			font-size: 18px
+			line-height: 28px
+
+		25%
+			margin: -7px 0 -8px
+
+			color: rgba( $grey, .2 )
+			font-size: 18px
+			line-height: 28px
+
+		46%
+			margin: -7px 0 -8px
+
+			color: rgba( $grey, .2 )
+			font-size: 18px
+			line-height: 28px
+
+		50%
+			margin: -9px 0 -11px
+
+			color: $black
+			font-size: 22px
+			line-height: 36px
+
+		71%
+			margin: -9px 0 -11px
+
+			color: $black
+			font-size: 22px
+			line-height: 36px
+
+		75%
+			margin: -7px 0 -8px
+
+			color: rgba( $grey, .2 )
+			font-size: 18px
+			line-height: 28px
+
+		96%
+			margin: -7px 0 -8px
+
+			color: rgba( $grey, .2 )
+			font-size: 18px
+			line-height: 28px
+
+		to
+			margin: -7px 0 -8px
+
+			color: rgba( $grey, 0 )
+			font-size: 18px
+			line-height: 28px
+
+
+	@keyframes preloader5Status
+
+		from
+			opacity: 0
+
+		50%
+			opacity: 1
+
+		to
+			opacity: 0
+
+
+	@keyframes preloader5Icon
+
+		from
+			box-shadow: 0 0 0 24px rgba( $brand-primary, 0 )
+
+		50%
+			box-shadow: 0 0 0 12px rgba( $brand-primary, .1 )
+
+		to
+			box-shadow: 0 0 0 24px rgba( $brand-primary, 0 )
+

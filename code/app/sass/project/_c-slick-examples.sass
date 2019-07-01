@@ -21,25 +21,6 @@
 		&.slick-center
 			z-index: 1
 
-
-	&_style_2 .slick-slide
-		opacity: .5
-		height: 70%
-
-		&.slick-center
-			z-index: 1
-			opacity: 1
-
-	.slick-slide img
-		transform: scale( 1 )
-		transition: all $anim_dur-b-list-examples
-
-	.slick-slide.slick-center img
-		transform: scale( 1.0526316 )
-
-	&_style_2 .slick-slide.slick-center img
-		transform: scale(1.42857)
-
 	.slick-arrow
 		position: absolute
 		top: 50%
@@ -73,9 +54,6 @@
 		&:hover::after
 			left: 17px
 
-	&_style_2 .slick-prev
-		left: calc( 50% - 39vh )
-
 	.slick-next
 		right: 0
 
@@ -84,6 +62,3 @@
 
 		&:hover::after
 			right: 17px
-
-	&_style_2 .slick-next
-		right: calc( 50% - 39vh )

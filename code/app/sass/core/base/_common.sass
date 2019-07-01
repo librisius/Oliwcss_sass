@@ -1,33 +1,19 @@
 @if $_use_common == true
 
-	*::selection
-		background: $brand-primary
-		color: $white
+	._container
 
-	*
-		box-sizing: border-box
+		*::selection
+			background: $brand-primary
+			color: $white
 
-	*::before,
-	*::after
-		box-sizing: border-box
+		*
+			box-sizing: border-box
 
-	html
-		font-family: sans-serif
-		// font-variant-ligatures: no-common-ligatures; to keep spacing
-		// between some letters such as "fi"
-		font-variant-ligatures: no-common-ligatures !important // features at risk
-		font-size: $font-size-main
-		text-size-adjust: 100%
-		line-height: 1.2
+		*::before,
+		*::after
+			box-sizing: border-box
 
-		-ms-overflow-style: scrollbar
-		-webkit-tap-highlight-color: rgba(0,0,0,0)
-
-		word-wrap: break-word
-		word-break: normal
-		word-break: break-word
-
-	body
+	body._container
 		position: relative // for iOS to work overflow: hidden
 
 		min-width: $w-min

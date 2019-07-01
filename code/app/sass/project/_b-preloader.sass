@@ -1,0 +1,181 @@
+.b-preloader
+	$anim_dur:	7s
+
+	position: fixed
+	top: 0
+	left: 0
+	z-index: $z_i-b-preloader
+
+	display: flex
+	align-items: center
+	justify-content: center
+
+	width: 100%
+	height: 100%
+
+	padding: 20px
+
+	background-color: $white
+
+	&__logo
+		position: absolute
+		top: 30px
+		left: 40px
+
+		&::after
+			content: 'Resumedone'
+
+			display: block
+
+			margin: -3px 0
+
+			color: $black
+			font-size: 21px
+			line-height: 1
+			font-weight: 700
+			letter-spacing: -.04em
+
+	&__list
+		position: relative // for &::before and &::after
+		display: flex // to collapse margins inside
+		flex-direction: column
+
+		height: 250px
+		overflow: hidden
+
+		&::before,
+		&::after
+			content: ''
+
+			position: absolute
+			left: 0
+			z-index: 1
+
+			width: 100%
+			height: 90px
+
+			pointer-events: none
+
+		&::before
+			top: 0
+			background-image: linear-gradient( to bottom, rgba( $white, 1 ), rgba( $white, 0 ) )
+
+		&::after
+			bottom: 0
+			background-image: linear-gradient( to top, rgba( $white, 1 ), rgba( $white, 0 ) )
+
+	&__list-inner
+		position: relative
+		top: 90px
+		margin: -10px
+
+	&__list-item
+		padding: 10px
+
+	&__box
+		position: relative // for &__icon
+
+		width: 100%
+
+		border: 1px solid $brd_c
+		padding: 29px 20px 29px 73px
+
+	&__list-item_1 .b-preloader__box
+		border-color: $brand-primary
+
+	&__icon
+		position: absolute
+		top: 15px
+		left: 15px
+
+		width: 38px
+		height: 38px
+
+		border-radius: 50%
+		border: 1px solid $brd_c
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: calc( 50% - 2px )
+			left: calc( 50% - 2px )
+
+			width: 4px
+			height: 4px
+
+			border-radius: 50%
+
+			background-color: $black
+
+	&__list-item_done .b-preloader__icon,
+	&__list-item_1 .b-preloader__icon
+		border: none
+		background-color: rgba( $brand-primary, .15 )
+
+	&__list-item_1 .b-preloader__icon::before
+		top: calc( 50% - 3px )
+		left: calc( 50% - 3px )
+
+		width: 6px
+		height: 6px
+
+		background-color: $brand-primary
+		box-shadow: -9px 0px 0px -1px $brand-primary, 9px 0px 0px -1px $brand-primary
+
+	&__list-item_done .b-preloader__icon::before
+		opacity: 0
+
+	&__list-item_done .b-preloader__icon
+
+		@extend .i-tick-2
+
+		&::after
+			position: absolute
+			top: 14px
+			left: 12px
+
+			color: $brand-primary
+			font-size: 10px
+
+	&__text
+		margin: -7px 0
+
+		color: rgba( $grey, .6 )
+		font-size: 14px
+		line-height: 24px
+		font-weight: 500
+		letter-spacing: .06em
+
+		white-space: nowrap
+
+	&__list-item_1 .b-preloader__text
+		color: $black
+
+	&__state
+		position: absolute
+		bottom: 0
+		left: 0
+
+		width: 100%
+		height: 10px
+
+	&__state-bar
+		position: absolute
+		top: 0
+		left: 0
+
+		width: 0
+		height: 100%
+
+		background-color: $brand-primary
+
+		animation: preloaderState $anim_dur ease-in-out forwards
+
+	@keyframes preloaderState
+
+		from
+			width: 0%
+
+		to
+			width: 100%

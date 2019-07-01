@@ -1,0 +1,291 @@
+.b-preloader-3
+	$anim_dur:	7s
+
+	position: fixed
+	top: 0
+	left: 0
+	z-index: $z_i-b-preloader
+
+	overflow: hidden // for &__logo
+
+	display: flex
+	align-items: center
+	justify-content: center
+
+	width: 100%
+	height: 100%
+
+	padding: 20px
+
+	background-color: $white
+
+	&__inner
+
+	&__list
+		position: relative // for &::before and &::after
+		display: flex // to collapse margins inside
+		flex-direction: column
+
+		width: 390px
+		height: 154px
+
+		overflow: hidden
+
+		&::before,
+		&::after
+			content: ''
+
+			position: absolute
+			left: 0
+			z-index: 1
+
+			width: 100%
+			height: 48px
+
+			pointer-events: none
+
+		&::before
+			top: 0
+			background-image: linear-gradient( to bottom, rgba( $white, 1 ), rgba( $white, 0 ) )
+
+		&::after
+			bottom: 0
+			background-image: linear-gradient( to top, rgba( $white, 1 ), rgba( $white, 0 ) )
+
+	&__list-inner
+		position: relative // for animation
+		margin: -10px
+		animation: preloader3ListInner $anim_dur linear forwards paused
+
+	&_running .b-preloader-3__list-inner
+		animation-play-state: running
+
+	&__list-item
+		padding: 10px
+
+	&__box
+		position: relative // for &::before and &::after
+		padding: 14px 0 14px 68px
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: 0
+			left: 0
+
+			width: 38px
+			height: 38px
+
+			border-radius: 50%
+			border: 2px solid $brand-primary
+			background-color: rgba( $brand-primary, 0 )
+
+			animation: preloader3BoxBefore $anim_dur linear forwards paused
+
+		.s-tick
+			position: absolute
+			top: 13px
+			left: 11px
+
+			opacity: 1
+
+			height: 12px
+
+			path
+				fill: $brand-primary
+				animation: preloader3BoxAfter $anim_dur linear forwards paused
+
+	&_running .b-preloader-3__box::before,
+	&_running .b-preloader-3__box .s-tick path
+		animation-play-state: running
+
+	&__list-item_1 .b-preloader-3__box::before,
+	&__list-item_1 .b-preloader-3__box .s-tick path
+		animation-delay: -$anim_dur/5*1
+
+	&__list-item_2 .b-preloader-3__box::before,
+	&__list-item_2 .b-preloader-3__box .s-tick path
+		animation-delay: 0s
+
+	&__list-item_3 .b-preloader-3__box::before,
+	&__list-item_3 .b-preloader-3__box .s-tick path
+		animation-delay: $anim_dur/5*1
+
+	&__list-item_4 .b-preloader-3__box::before,
+	&__list-item_4 .b-preloader-3__box .s-tick path
+		animation-delay: $anim_dur/5*2
+
+	&__list-item_5 .b-preloader-3__box::before,
+	&__list-item_5 .b-preloader-3__box .s-tick path
+		animation-delay: $anim_dur/5*3
+
+	&__list-item_6 .b-preloader-3__box::before
+		animation: preloader3BoxBeforeLast $anim_dur linear forwards paused
+
+	&_running .b-preloader-3__list-item_6 .b-preloader-3__box::before
+		animation-play-state: running
+
+	&__list-item_6 .b-preloader-3__box .s-tick path
+		animation: preloader3BoxAfterLast $anim_dur linear forwards paused
+
+	&_running .b-preloader-3__list-item_6 .b-preloader-3__box .s-tick path
+		animation-play-state: running
+
+	&__list-item_6 .b-preloader-3__box::before,
+	&__list-item_6 .b-preloader-3__box .s-tick path
+		animation-delay: $anim_dur/5*4
+
+	&__text
+		margin: -7px 0
+
+		color: $black
+		font-size: 14px
+		line-height: 24px
+		font-weight: 500
+		letter-spacing: .06em
+
+	&__logo
+		display: flex // to collapse margins inside
+		flex-direction: column
+		margin-bottom: 45px
+
+		&_last
+			margin-bottom: 0
+
+		&::after
+			content: 'Resumedone'
+
+			position: absolute
+			bottom: 0
+			left: 50%
+
+			display: block
+
+			margin: -37px 0 ( -39px - 15px )
+
+			color: #f0f0f2
+			font-size: 16.25vw
+			line-height: 1
+			font-weight: 700
+			letter-spacing: -.04em
+
+			transform: translateX( -50% )
+
+	@keyframes preloader3BoxBefore
+
+		from
+			background-color: rgba( $brand-primary, 0 )
+
+		16%
+			background-color: rgba( $brand-primary, 0 )
+
+		20%
+			background-color: rgba( $brand-primary, .6 )
+
+		36%
+			background-color: rgba( $brand-primary, .6 )
+
+		40%
+			background-color: rgba( $brand-primary, .4 )
+
+		56%
+			background-color: rgba( $brand-primary, .4 )
+
+		to
+			background-color: rgba( $brand-primary, .4 )
+
+	@keyframes preloader3BoxBeforeLast
+
+		from
+			background-color: rgba( $brand-primary, 0 )
+
+		16%
+			background-color: rgba( $brand-primary, 0 )
+
+		20%
+			background-color: rgba( $brand-primary, .6 )
+
+		36%
+			background-color: rgba( $brand-primary, .6 )
+
+		to
+			background-color: rgba( $brand-primary, .6 )
+
+	@keyframes preloader3BoxAfter
+
+		from
+			opacity: 1
+
+		16%
+			opacity: 1
+
+		20%
+			fill: $white
+
+		36%
+			opacity: 1
+			fill: $white
+
+		40%
+			opacity: 0
+
+		56%
+			opacity: 0
+
+		to
+			opacity: 0
+
+	@keyframes preloader3BoxAfterLast
+
+		from
+			opacity: 1
+
+		16%
+			opacity: 1
+
+		20%
+			fill: $white
+
+		36%
+			opacity: 1
+			fill: $white
+
+		to
+			opacity: 1
+			fill: $white
+
+	@keyframes preloader3ListInner
+
+		from
+			top: 58px
+
+		16%
+			top: 58px
+
+		20%
+			top: -10px
+
+		36%
+			top: -10px
+
+		40%
+			top: -68px
+
+		56%
+			top: -68px
+
+		60%
+			top: -126px
+
+		76%
+			top: -126px
+
+		80%
+			top: -184px
+
+		96%
+			top: -184px
+
+		to
+			top: -242px

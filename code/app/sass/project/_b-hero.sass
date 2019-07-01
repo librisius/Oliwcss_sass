@@ -4,6 +4,7 @@
 	height: 100vh
 
 	&__item
+		width: 50%
 
 		&_content
 			position: relative
@@ -13,7 +14,6 @@
 			align-items: center
 			justify-content: center
 
-			width: 50%
 			min-width: 710px
 
 			padding: 100px 40px
@@ -27,13 +27,36 @@
 				min-width: 600px
 
 		&_img
-			position: relative // for &__img
-
+			position: relative // for &::before and &__img
 			overflow: hidden // for &__img
 
-			width: 55%
+			background:
+				image: url( '#{$img}/b-hero/bg_decoration.png' )
+				position: -64px -15px
+				size: 291px 341px
+				repeat: no-repeat
 
-			background: #e2e2e2 url( '#{$img}/b-hero/bg_decoration.png' ) -55px -50px / 277px 336px no-repeat
+			+md-retina
+				background-image: url( '#{$img}/b-hero/bg_decoration@2x.png' )
+
+			&::before
+				content: ''
+
+				position: absolute
+				bottom: 4vh
+				left: calc( 3.6vw - 1.1111111vh )
+
+				width: 3.6666667vh
+				height: 50.5555556vh
+
+				background:
+					image: url( '#{$img}/b-hero/bg_decoration_2.png' )
+					position: center
+					size: cover
+					repeat: no-repeat
+
+				+md-retina
+					background-image: url( '#{$img}/b-hero/bg_decoration_2@2x.png' )
 
 	&__img
 		position: absolute
@@ -54,7 +77,7 @@
 
 	&__content
 		position: relative // for &__btn
-		max-width: 620px
+		max-width: 600px
 
 	&__heading
 		position: relative
@@ -85,13 +108,13 @@
 			right: 0
 
 	&__heading-text
-		margin: -11px 0 20px
+		margin: -13px 0 22px
 
 		color: $black
 		font-size: 50px
 		line-height: 60px
 		font-weight: 700
-		letter-spacing: .04em
+		letter-spacing: .018em
 
 		@media only screen and ( max-width: 1500px )
 			margin: -12px 0 16px
@@ -104,8 +127,26 @@
 		&_last
 			margin-bottom: -13px
 
+	&_theme_2 .b-hero__heading-text_highlighted
+		color: $brand-primary-2
+
+	&_theme_3 .b-hero__heading-text_highlighted
+		color: $brand-primary-3
+
+	&_theme_4 .b-hero__heading-text_highlighted
+		color: $brand-primary-4
+
+	&_theme_5 .b-hero__heading-text_highlighted
+		color: $brand-primary-5
+
+	&_theme_6 .b-hero__heading-text_highlighted
+		color: $brand-primary-6
+
+	&_theme_7 .b-hero__heading-text_highlighted
+		color: $brand-primary-7
+
 	&__subheading-text
-		margin: -10px 0 -11px
+		margin: -9px 0 -11px
 
 		color: $black
 		font-size: 16px
@@ -129,8 +170,9 @@
 		display: flex
 		align-items: center
 
-		max-width: 235px
-		min-height: 150px
+		width: calc( 50% - 30px )
+		max-width: none
+		min-height: 170px
 
 		margin: 15px
 		padding: 35px
@@ -142,8 +184,8 @@
 			counter-increment: list
 
 			position: absolute
-			top: 12px
-			left: -7px
+			top: 10px
+			right: calc( 100% - 10px )
 
 			color: $brand-primary
 			font-size: 24px
@@ -155,19 +197,42 @@
 			margin-top: 100px
 			margin-bottom: -120px
 
+	&_theme_2 .b-hero__list-item::before
+		color: $brand-primary-2
+
+	&_theme_3 .b-hero__list-item::before
+		color: $brand-primary-3
+
+	&_theme_4 .b-hero__list-item::before
+		color: $brand-primary-4
+
+	&_theme_5 .b-hero__list-item::before
+		color: $brand-primary-5
+
+	&_theme_6 .b-hero__list-item::before
+		color: $brand-primary-6
+
+	&_theme_7 .b-hero__list-item::before
+		color: $brand-primary-7
+
 	&__list-text
-		margin: -8px 0 -9px
+		margin: -9px 0 -10px
 
 		color: $black
-		font-size: 13px
-		line-height: 26px
-		font-weight: 600
+		font-size: 15px
+		line-height: 30px
+		font-weight: 500
 		letter-spacing: .06em
+
+		&_highlighted
+			font-weight: 800
 
 	&__btn // tag a
 		position: absolute
 		bottom: 0
-		left: 265px
+		left: calc( 50% + 15px )
+
+		width: calc( 50% - 15px )
 
 		display: block
 
@@ -178,10 +243,12 @@
 			bottom: 0
 			right: -17px
 
+			opacity: .2
+
 			width: 100%
 			height: calc( 100% + 17px )
 
-			background: rgba( #f58571, .2 )
+			background: $brand-primary
 
 			transition: all .2s
 
@@ -199,12 +266,12 @@
 
 			position: absolute
 			top: calc( 100% + 10px )
-			right: 0
+			left: 17px
 
-			width: calc( 100% - 17px )
+			width: calc( 100% - ( 17px + 50px ) )
 			height: 1px
 
-			background-image: linear-gradient( to right, #f58571, #d65e48 100% )
+			background: $brand-primary
 
 			transition: all .2s
 
@@ -213,6 +280,30 @@
 
 		&:active::after
 			width: 20px
+
+	&_theme_2 .b-hero__btn::before,
+	&_theme_2 .b-hero__btn::after
+		background: #F37101
+
+	&_theme_3 .b-hero__btn::before,
+	&_theme_3 .b-hero__btn::after
+		background: $brand-primary-3
+
+	&_theme_4 .b-hero__btn::before,
+	&_theme_4 .b-hero__btn::after
+		background: #f37101
+
+	&_theme_5 .b-hero__btn::before,
+	&_theme_5 .b-hero__btn::after
+		background: $brand-primary-5
+
+	&_theme_6 .b-hero__btn::before,
+	&_theme_6 .b-hero__btn::after
+		background: #77b300
+
+	&_theme_7 .b-hero__btn::before,
+	&_theme_7 .b-hero__btn::after
+		background: #3ca0f2
 
 	&__btn-inner // tag span
 		position: relative
@@ -228,7 +319,7 @@
 			width: 20px
 			height: 1px
 
-			background-image: linear-gradient( to right, #f58571, #bf503d )
+			background: $brand-primary
 
 			transition: all .2s
 
@@ -242,42 +333,126 @@
 			width: 1px
 			height: 20px
 
-			background-image: linear-gradient( to right, #f58571, #bf503d )
+			background: $brand-primary
 
 			transition: all .2s
 
-	&__btn:hover &__btn-inner::before
+	&_theme_2 .b-hero__btn-inner::before,
+	&_theme_2 .b-hero__btn-inner::after
+		background: #F37101
+
+	&_theme_3 .b-hero__btn-inner::before,
+	&_theme_3 .b-hero__btn-inner::after
+		background: $brand-primary-3
+
+	&_theme_4 .b-hero__btn-inner::before,
+	&_theme_4 .b-hero__btn-inner::after
+		background: #f37101
+
+	&_theme_5 .b-hero__btn-inner::before,
+	&_theme_5 .b-hero__btn-inner::after
+		background: $brand-primary-5
+
+	&_theme_6 .b-hero__btn-inner::before,
+	&_theme_6 .b-hero__btn-inner::after
+		background: #77b300
+
+	&_theme_7 .b-hero__btn-inner::before,
+	&_theme_7 .b-hero__btn-inner::after
+		background: #3ca0f2
+
+	&__btn:hover .b-hero__btn-inner::before
 		left: -21px
 
-	&__btn:active &__btn-inner::before
+	&__btn:active .b-hero__btn-inner::before
 		left: -25px
 
-	&__btn:hover &__btn-inner::after
+	&__btn:hover .b-hero__btn-inner::after
 		top: -21px
 
-	&__btn:active &__btn-inner::after
+	&__btn:active .b-hero__btn-inner::after
 		top: -25px
 
 	&__btn-inner-2 // tag span
 		position: relative
-		z-index: 1 // to be over &__btn::before, &__btn::after and &__btn-inner::before, &__btn::before
+		z-index: 1 // to be over .b-hero__btn::before, .b-hero__btn::after and .b-hero__btn-inner::before, .b-hero__btn::before
 		display: flex
 		justify-content: center
 
-		width: 235px
+		width: 100%
 
 		padding: 19px 25px
 
-		background-image: linear-gradient( to right, #eb644c, #a6300b )
-		box-shadow: 0px 20px 60px 0 rgba( 166, 52, 31, .3 )
+		background: $brand-primary
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary, .3 )
 
 		transition: all .2s
 
-	&__btn:hover &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( 166, 52, 31, .5 )
+	&_theme_2 .b-hero__btn-inner-2
+		background: #F37101
+		box-shadow: 0px 20px 60px 0 rgba( #F37101, .3 )
 
-	&__btn:active &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( 166, 52, 31, 0 )
+	&_theme_3 .b-hero__btn-inner-2
+		background: $brand-primary-3
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-3, .3 )
+
+	&_theme_4 .b-hero__btn-inner-2
+		background: #f37101
+		box-shadow: 0px 20px 60px 0 rgba( #f37101, .3 )
+
+	&_theme_5 .b-hero__btn-inner-2
+		background: $brand-primary-5
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-5, .3 )
+
+	&_theme_6 .b-hero__btn-inner-2
+		background: #77b300
+		box-shadow: 0px 20px 60px 0 rgba( #77b300, .3 )
+
+	&_theme_7 .b-hero__btn-inner-2
+		background: #3ca0f2
+		box-shadow: 0px 20px 60px 0 rgba( #3ca0f2, .3 )
+
+	&__btn:hover .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary, .5 )
+
+	&_theme_2 .b-hero__btn:hover .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( #F37101, .5 )
+
+	&_theme_3 .b-hero__btn:hover .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-3, .5 )
+
+	&_theme_4 .b-hero__btn:hover .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( #f37101, .5 )
+
+	&_theme_5 .b-hero__btn:hover .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-5, .5 )
+
+	&_theme_6 .b-hero__btn:hover .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( #77b300, .5 )
+
+	&_theme_7 .b-hero__btn:hover .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( #3ca0f2, .5 )
+
+	&__btn:active .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary, 0 )
+
+	&_theme_2 .b-hero__btn:active .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( #F37101, 0 )
+
+	&_theme_3 .b-hero__btn:active .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-3, 0 )
+
+	&_theme_4 .b-hero__btn:active .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( #f37101, 0 )
+
+	&_theme_5 .b-hero__btn:active .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-5, 0 )
+
+	&_theme_6 .b-hero__btn:active .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( #77b300, 0 )
+
+	&_theme_7 .b-hero__btn:active .b-hero__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( #3ca0f2, 0 )
 
 	&__btn-text // tag span
 		position: relative // for &:: after
@@ -308,66 +483,11 @@
 			color: $white
 			font-size: 13px
 
-	&__btn:hover &__btn-text
+	&__btn:hover .b-hero__btn-text
 		left: 4px
 
-	&__btn:active &__btn-text
+	&__btn:active .b-hero__btn-text
 		left: 8px
-
-	&__scroll
-		position: absolute
-		bottom: 0
-		left: 50%
-
-		padding: 18px 60px 18px 0
-
-		transform: translateX( -50% )
-
-		@extend .i-arrow-2
-
-		&::before
-			content: ''
-
-			position: absolute
-			bottom: 0
-			right: 0
-
-			width: 47px
-			height: 45px
-
-			background-color: #f0f0f0
-
-			transition: all .2s
-
-		&:hover::before
-			background-color: $brand-primary
-
-		&::after
-			position: absolute
-			top: 20px
-			right: 18px
-
-			color: $black
-			font-size: 6px
-
-			transition: all .2s
-
-		&:hover::after
-			top: 22px
-			color: $white
-
-	&__scroll-text // tag span
-		display: block
-
-		margin: -2px 0
-
-		color: $black
-		font-size: 13px
-		line-height: 1
-		font-weight: 700
-		letter-spacing: .06em
-
-		.i-arrow-5
 
 	&__demo
 		display: flex
@@ -375,28 +495,38 @@
 		justify-content: center
 
 		height: 100%
-		margin-left: -140px
+		margin-left: 0
 
 	&__demo-item
 		position: relative
 		padding: 20px
 
 	&__demo-img
-		width: 31.75vw
-		max-width: 508px
+		width: 32.3125vw
+		max-width: 517px
 
 		background: center / cover no-repeat
-		box-shadow: 0px 0px 120px 0 rgba( #333, .3 )
+		box-shadow: 0px 20px 100px 0 rgba( #171f26, .2 )
 
-		&_1
-			background-image: url( '#{$img}/b-hero/cv.png' )
+		&:first-child
+			transform: scale( 1 )
+			transition: transform .2s
 
-		&_2
+		&:last-child
 			position: absolute
 			top: 20px
 			left: calc( 100% + 20px )
 
-			background-image: url( '#{$img}/b-hero/cv_2.png' )
+		&_1
+			background-image: url( '#{$img}/b-hero/1.jpg' )
+
+		&_2
+			background-image: url( '#{$img}/b-hero/2.jpg' )
+
+	&__item_img:hover .b-hero__demo-img
+
+		&:first-child
+			transform: scale( 1.05 )
 
 	&__demo-img-inner
-		padding-top: 144.0944882%
+		padding-top: 141.1992263%

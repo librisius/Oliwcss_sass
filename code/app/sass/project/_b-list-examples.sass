@@ -6,10 +6,7 @@
 		flex-direction: column
 		height: calc( 100vh - 236px )
 
-	&_style_2 &__inner
-		height: calc( 100vh - 251px )
-
-	&__item // tag a
+	&__item
 		position: relative // for &__btn, &__title and &::before
 
 		display: flex
@@ -18,28 +15,17 @@
 
 		padding: 0 20px
 
-	&_style_2 &__item
+		cursor: pointer
 
-		&::before
-			content: ''
+	&__item-inner // tag a
+		display: flex
+		flex-direction: column
+		pointer-events: none
 
-			position: absolute
-			top: -12px
-			left: -12px + 20px
-
-			opacity: 0
-
-			width: calc( 100% + 24px - 40px )
-			height: calc( 100% + 24px )
-
-			border: 1px solid $black
-
-			transform: scale( 1.0526316 )
-
-			transition: all $anim_dur-b-list-examples
-
-	&_style_2 &__item.slick-center::before
-		opacity: 1
+		height: 100%
+ 
+	&__item.slick-center .b-list-examples__item-inner
+		pointer-events: auto
 
 	&__btn
 		position: absolute
@@ -55,35 +41,14 @@
 
 		transition: all $anim_dur-b-list-examples
 
-	&_style_2 &__btn
-		bottom: -27px
-		left: calc( 50% - 130px )
-
-		width: 260px
-
-		padding-left: 42px
-
-		@extend .i-pencil
-
-		&::after
-			position: absolute
-			top: 18px
-			left: 19px
-
-			font-size: 16px
-
-	&__item.slick-center &__btn
+	&__item.slick-center .b-list-examples__btn
 		bottom: calc( -2.65% + 15px )
 		opacity: 1
 		pointer-events: auto
 
-	&_style_2 &__item.slick-center &__btn
-		bottom: calc( -2.65% - 27px )
-
-	&_style_3 &__item.slick-center &__btn
-		bottom: calc( -21.5% + 15px )
-
 	&__img
+		position: relative // for &__img-inner
+
 		height: 100%
 		max-width: none
 
@@ -93,12 +58,26 @@
 
 		transition: all $anim_dur-b-list-examples
 
-	&_style_2 &__img,
-	&_style_3 &__img
-		border: none
+		transform: scale( 1 )
 
-	&__item.slick-center &__img
+	&__item.slick-center .b-list-examples__img
+		transform: scale( 1.0526316 )
+
+	&__item.slick-center .b-list-examples__img
 		border-color: $brand-primary
+
+	&__img-plug
+		height: 100%
+
+	&__img-inner
+		position: absolute
+		top: 0
+		left: 0
+
+		width: 100%
+		height: 100%
+
+		background: center / cover no-repeat
 
 	&__title
 		position: absolute
@@ -119,23 +98,6 @@
 
 		transition: all $anim_dur-b-list-examples
 
-	&__item.slick-center &__title
+	&__item.slick-center .b-list-examples__title
 		top: calc( 102.65% + 23px )
 		color: $black
-
-	&_style_2 &__title
-		top: auto !important
-		bottom: calc( 100% + 15px )
-		color: $black
-
-	&_style_2 &__item.slick-center &__title
-		bottom: calc( 102.65% + 35px )
-
-		margin: -7px 0
-
-		color: $brand-primary
-		font-size: 13px
-		line-height: 23px
-
-	&_style_3 &__item.slick-center &__title
-		top: calc( 121.5% + 23px )
