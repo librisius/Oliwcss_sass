@@ -39,42 +39,68 @@
 
 	&__list-item
 		position: absolute
-		top: 50%
+		top: 100% + 25.5555555%
 		left: 50%
 		z-index: 1 // to be over &__progress
 
 		transform: translate( -50%, -50% )
 
-		&_next
-			top: 50% - 25.5555555%
+		animation: preloader4Item $anim_dur linear forwards paused
 
-		&_prev
-			top: 50% + 25.5555555%
+		&_1
+			animation-delay: -($anim_dur/6 + $anim_dur/100*4.2*2)*2
+
+		&_2
+			animation-delay: -($anim_dur/6 + $anim_dur/100*4.2*2)*1
+
+		&_3
+			animation-delay: 0s
+
+		&_4
+			animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*1
+
+		&_5
+			animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*2
+
+		&_6
+			animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*3
+
+	&_running .b-preloader-4__list-item
+		animation-play-state: running
 
 	&__text
-		margin: -11px 0
-
-		color: $black
-		font-size: 17px
-		line-height: 2
-		font-weight: 700
-		letter-spacing: .06em
-
-		white-space: nowrap
-
-	&__list-item_next .b-preloader-4__text
-		margin: -9px 0
-
-		color: rgba( $grey, .4 )
-		font-size: 13px
-		font-weight: 600
-
-	&__list-item_prev .b-preloader-4__text
 		margin: -17px 0 -19px
 
 		color: rgba( $grey, .2 )
 		font-size: 28px
+		line-height: 2
 		font-weight: 600
+		letter-spacing: .04em
+
+		white-space: nowrap
+
+		animation: preloader4Text $anim_dur linear forwards paused
+
+	&__list-item_1 .b-preloader-4__text
+		animation-delay: -($anim_dur/6 + $anim_dur/100*4.2*2)*2
+
+	&__list-item_2 .b-preloader-4__text
+		animation-delay: -($anim_dur/6 + $anim_dur/100*4.2*2)*1
+
+	&__list-item_3 .b-preloader-4__text
+		animation-delay: 0s
+
+	&__list-item_4 .b-preloader-4__text
+		animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*1
+
+	&__list-item_5 .b-preloader-4__text
+		animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*2
+
+	&__list-item_6 .b-preloader-4__text
+		animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*3
+
+	&_running .b-preloader-4__text
+		animation-play-state: running
 
 	&__progress
 		position: relative
@@ -85,9 +111,9 @@
 		border-radius: 50%
 		border: $brd_w solid $brd_c
 
-		box-shadow: 0 0 0 74px $white, 0 0 0 75px rgba( $brd_c, .6 ), 0 0 0 179px $white, 0 0 0 180px rgba( $brd_c, .4 )
-
 		line-height: 200px
+
+		animation: preloader4Progress 1s ease-in-out infinite
 
 	&__progress-inner
 		position: absolute
@@ -99,10 +125,11 @@
 
 		border-radius: 50%
 
-		clip: rect( 0, 200px, 200px, 100px )
-
-	&__progress[ data-css-over-50="true" ] .b-preloader-4__progress-inner
 		clip: rect( auto, auto, auto, auto )
+		animation: preloader4ProgressInner $anim_dur + ($anim_dur/6 + $anim_dur/100*4.2*2)*2 step-end forwards paused
+
+	&_running .b-preloader-4__progress-inner
+		animation-play-state: running
 
 	&__progress-value-1,
 	&__progress-value-2
@@ -117,16 +144,131 @@
 		border-radius: 50%
 
 	&__progress-value-1
+		opacity: 1
 		clip: rect( 0, 200px, 200px, 100px )
+		animation: preloader4ProgressValue1 $anim_dur + ($anim_dur/6 + $anim_dur/100*4.2*2)*2 step-end forwards paused
 
-	&__progress:not( [ data-css-over-50="true" ] ) .b-preloader-4__progress-value-1
-		display: none
+	&_running .b-preloader-4__progress-value-1
+		animation-play-state: running
 
 	&__progress-value-2
 		clip: rect( 0, 100px, 200px, 0 )
-
-	&__progress[ data-css-progress="0" ] .b-preloader-4__progress-value-2
 		transform: rotate( 0 )
+		animation: preloader4ProgressValue2 $anim_dur + ($anim_dur/6 + $anim_dur/100*4.2*2)*2 linear forwards paused
 
-	&__progress[ data-css-progress="100" ] .b-preloader-4__progress-value-2
-		transform: rotate( 360deg )
+	&_running .b-preloader-4__progress-value-2
+		animation-play-state: running
+
+	@keyframes preloader4Progress
+
+		from
+			box-shadow: 0 0 0 0px $white, 0 0 0 1px rgba( $brd_c, 0 ), 0 0 0 0px $white, 0 0 0 1px rgba( $brd_c, 0 ), 0 0 0 74px $white, 0 0 0 75px rgba( $brd_c, .6 ), 0 0 0 179px $white, 0 0 0 180px rgba( $brd_c, .4 )
+
+		25%
+			box-shadow: 0 0 0 0px $white, 0 0 0 1px rgba( $brd_c, 0 ), 0 0 0 74px $white, 0 0 0 75px rgba( $brd_c, .6 ), 0 0 0 179px $white, 0 0 0 180px rgba( $brd_c, .4 ), 0 0 0 284px $white, 0 0 0 205px rgba( $brd_c, 0 )
+
+		50%
+			box-shadow: 0 0 0 74px $white, 0 0 0 75px rgba( $brd_c, .6 ), 0 0 0 179px $white, 0 0 0 180px rgba( $brd_c, .4 ), 0 0 0 284px $white, 0 0 0 205px rgba( $brd_c, .4 ), 0 0 0 284px $white, 0 0 0 205px rgba( $brd_c, .4 )
+
+		75%
+			box-shadow: 0 0 0 179px $white, 0 0 0 180px rgba( $brd_c, .4 ), 0 0 0 284px $white, 0 0 0 205px rgba( $brd_c, .4 ), 0 0 0 284px $white, 0 0 0 205px rgba( $brd_c, .4 ), 0 0 0 284px $white, 0 0 0 205px rgba( $brd_c, .4 )
+
+		to
+			box-shadow: 0 0 0 284px $white, 0 0 0 205px rgba( $brd_c, .4 ), 0 0 0 284px $white, 0 0 0 205px rgba( $brd_c, .4 ), 0 0 0 284px $white, 0 0 0 205px rgba( $brd_c, .4 ), 0 0 0 284px $white, 0 0 0 205px rgba( $brd_c, .4 )
+
+	@keyframes preloader4ProgressInner
+
+		from
+			clip: rect( 0, 200px, 200px, 100px )
+
+		50%
+			clip: rect( auto, auto, auto, auto )
+
+	@keyframes preloader4ProgressValue1
+
+		from
+			opacity: 0
+
+		50%
+			opacity: 1
+
+	@keyframes preloader4ProgressValue2
+
+		from
+			transform: rotate( 0 )
+
+		to
+			transform: rotate( 360deg )
+
+	@keyframes preloader4Item
+
+		from
+			top: 100% + 25.5555555%
+
+		21%
+			top: 100% + 25.5555555%
+
+		25%
+			top: 50% + 25.5555555%
+
+		46%
+			top: 50% + 25.5555555%
+
+		50%
+			top: 50%
+
+		71%
+			top: 50%
+
+		75%
+			top: 50% - 25.5555555%
+
+		96%
+			top: 50% - 25.5555555%
+
+		to
+			top: -25.5555555%
+
+	@keyframes preloader4Text
+
+		from
+			margin: -17px 0 -19px
+
+			color: rgba( $grey, .2 )
+			font-size: 28px
+			font-weight: 600
+
+		46%
+			margin: -17px 0 -19px
+
+			color: rgba( $grey, .2 )
+			font-size: 28px
+			font-weight: 600
+
+		50%
+			margin: -11px 0
+
+			color: $black
+			font-size: 17px
+			font-weight: 700
+
+		71%
+			margin: -11px 0
+
+			color: $black
+			font-size: 17px
+			font-weight: 700
+
+		75%
+			margin: -9px 0
+
+			color: rgba( $grey, .4 )
+			font-size: 13px
+			font-weight: 600
+
+		to
+			margin: -9px 0
+
+			color: rgba( $grey, .4 )
+			font-size: 13px
+			font-weight: 600

@@ -72,7 +72,10 @@
 	&__list-inner
 		position: relative // for animation
 		margin: -10px
-		animation: preloader3ListInner $anim_dur linear forwards
+		animation: preloader2ListInner $anim_dur linear forwards paused
+
+	&_running .b-preloader-2__list-inner
+		animation-play-state: running
 
 	&__list-item
 		padding: 10px
@@ -80,8 +83,6 @@
 	&__box
 		position: relative // for &::before and &::after
 		padding: 14px 0 14px 68px
-
-		@extend .i-tick-3
 
 		&::before
 			content: ''
@@ -97,49 +98,50 @@
 			border: 2px solid $brand-primary
 			background-color: rgba( $brand-primary, 0 )
 
-			animation: preloader3BoxBefore $anim_dur linear forwards
+			animation: preloader2BoxBefore $anim_dur linear forwards paused
 
-		&::after
+		.s-tick
 			position: absolute
 			top: 13px
 			left: 11px
 
 			opacity: 1
 
-			color: $brand-primary
-			font-size: 12px
+			height: 12px
 
-			animation: preloader3BoxAfter $anim_dur linear forwards
+			path
+				fill: $brand-primary
+				animation: preloader2BoxAfter $anim_dur linear forwards paused
 
 	&__list-item_1 .b-preloader-2__box::before,
-	&__list-item_1 .b-preloader-2__box::after
+	&__list-item_1 .b-preloader-2__box .s-tick path
 		animation-delay: -$anim_dur/5*1
 
 	&__list-item_2 .b-preloader-2__box::before,
-	&__list-item_2 .b-preloader-2__box::after
+	&__list-item_2 .b-preloader-2__box .s-tick path
 		animation-delay: 0s
 
 	&__list-item_3 .b-preloader-2__box::before,
-	&__list-item_3 .b-preloader-2__box::after
+	&__list-item_3 .b-preloader-2__box .s-tick path
 		animation-delay: $anim_dur/5*1
 
 	&__list-item_4 .b-preloader-2__box::before,
-	&__list-item_4 .b-preloader-2__box::after
+	&__list-item_4 .b-preloader-2__box .s-tick path
 		animation-delay: $anim_dur/5*2
 
 	&__list-item_5 .b-preloader-2__box::before,
-	&__list-item_5 .b-preloader-2__box::after
+	&__list-item_5 .b-preloader-2__box .s-tick path
 		animation-delay: $anim_dur/5*3
 
 	&__list-item_6 .b-preloader-2__box::before
-		animation: preloader3BoxBeforeLast $anim_dur linear forwards
+		animation: preloader2BoxBeforeLast $anim_dur linear $anim_dur/5*4 forwards paused
 
-	&__list-item_6 .b-preloader-2__box::after
-		animation: preloader3BoxAfterLast $anim_dur linear forwards
+	&__list-item_6 .b-preloader-2__box .s-tick path
+		animation: preloader2BoxAfterLast $anim_dur linear $anim_dur/5*4 forwards paused
 
-	&__list-item_6 .b-preloader-2__box::before,
-	&__list-item_6 .b-preloader-2__box::after
-		animation-delay: $anim_dur/5*4
+	&_running .b-preloader-2__box::before,
+	&_running .b-preloader-2__box .s-tick path
+		animation-play-state: running
 
 	&__text
 		margin: -7px 0
@@ -150,7 +152,7 @@
 		font-weight: 500
 		letter-spacing: .06em
 
-	@keyframes preloader3BoxBefore
+	@keyframes preloader2BoxBefore
 
 		from
 			background-color: rgba( $brand-primary, 0 )
@@ -167,13 +169,10 @@
 		40%
 			background-color: rgba( $brand-primary, .4 )
 
-		56%
-			background-color: rgba( $brand-primary, .4 )
-
 		to
 			background-color: rgba( $brand-primary, .4 )
 
-	@keyframes preloader3BoxBeforeLast
+	@keyframes preloader2BoxBeforeLast
 
 		from
 			background-color: rgba( $brand-primary, 0 )
@@ -184,56 +183,48 @@
 		20%
 			background-color: rgba( $brand-primary, .6 )
 
-		36%
-			background-color: rgba( $brand-primary, .6 )
-
 		to
 			background-color: rgba( $brand-primary, .6 )
 
-	@keyframes preloader3BoxAfter
+	@keyframes preloader2BoxAfter
 
 		from
 			opacity: 1
+			fill: $brand-primary
 
 		16%
-			opacity: 1
+			fill: $brand-primary
 
 		20%
-			color: $white
+			fill: $white
 
 		36%
 			opacity: 1
-			color: $white
+			fill: $white
 
 		40%
 			opacity: 0
 
-		56%
-			opacity: 0
-
 		to
 			opacity: 0
 
-	@keyframes preloader3BoxAfterLast
+	@keyframes preloader2BoxAfterLast
 
 		from
 			opacity: 1
+			fill: $brand-primary
 
 		16%
-			opacity: 1
+			fill: $brand-primary
 
 		20%
-			color: $white
-
-		36%
-			opacity: 1
-			color: $white
+			fill: $white
 
 		to
 			opacity: 1
-			color: $white
+			fill: $white
 
-	@keyframes preloader3ListInner
+	@keyframes preloader2ListInner
 
 		from
 			top: 58px
@@ -242,28 +233,28 @@
 			top: 58px
 
 		20%
-			top: -10px
+			top: 0
 
 		36%
-			top: -10px
+			top: 0
 
 		40%
-			top: -68px
+			top: -58px
 
 		56%
-			top: -68px
+			top: -58px
 
 		60%
-			top: -126px
+			top: -116px
 
 		76%
-			top: -126px
+			top: -116px
 
 		80%
-			top: -184px
+			top: -174px
 
 		96%
-			top: -184px
+			top: -174px
 
 		to
-			top: -242px
+			top: -232px

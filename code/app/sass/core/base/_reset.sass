@@ -3,8 +3,21 @@
 //  NOTE: THIS IS A BETA VERSION (see previous line)
 //  USE WITH CAUTION AND TEST WITH ABANDON
 
-body._container
-	line-height: 1
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+hr,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+button,
+fieldset, form, label, legend, textarea, input, select,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
 	vertical-align: baseline
 
 	margin: 0
@@ -16,154 +29,129 @@ body._container
 
 	font-smoothing: antialiased
 
-._container
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section
+	display: block
 
-	div, span, applet, object, iframe,
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-	hr,
-	a, abbr, acronym, address, big, cite, code,
-	del, dfn, em, img, ins, kbd, q, s, samp,
-	small, strike, strong, sub, sup, tt, var,
-	b, u, i, center,
-	dl, dt, dd, ol, ul, li,
-	button,
-	fieldset, form, label, legend, textarea, input, select,
-	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, embed, 
-	figure, figcaption, footer, header, hgroup, 
-	menu, nav, output, ruby, section, summary,
-	time, mark, audio, video
-		vertical-align: baseline
+iframe, svg
+	display: block
 
-		margin: 0
-		padding: 0
-		border: 0
+body
+	line-height: 1
 
-		font-size: 100%
-		font: inherit
+ol, ul
+	list-style: none
 
-		font-smoothing: antialiased
+blockquote, q
+	quotes: none
 
-	/* HTML5 display-role reset for older browsers */
-	article, aside, details, figcaption, figure, 
-	footer, header, hgroup, menu, nav, section
-		display: block
+blockquote::before, blockquote::after,
+q::before, q::after
+	content: ''
+	content: none
 
-	iframe, svg
-		display: block
+img
+	display: block
+	max-width: 100%
 
-	ol, ul
-		list-style: none
+table
+	border-collapse: collapse
+	border-spacing: 0
 
-	blockquote, q
-		quotes: none
+th
+	text-align: left
 
-	blockquote::before, blockquote::after,
-	q::before, q::after
-		content: ''
-		content: none
+/* remember to define focus styles! */
+*:focus
+	outline: 0
 
-	img
-		display: block
-		max-width: 100%
+/* remember to highlight inserts somehow! */
+ins
+	text-decoration: none
 
-	table
-		border-collapse: collapse
-		border-spacing: 0
+/* remove indent in Firefox */
+button,
+input,
+textarea,
+select,
+a
+	background-color: transparent
 
-	th
-		text-align: left
+	font-family: inherit
+	font-size: inherit
+	line-height: inherit
 
-	/* remember to define focus styles! */
-	*:focus
-		outline: 0
+button,
+a
+	letter-spacing: inherit
+	word-spacing: inherit
+	cursor: pointer
 
-	/* remember to highlight inserts somehow! */
-	ins
-		text-decoration: none
+button
+	display: block
+	overflow: visible // for reset ie style
+	color: inherit // default color in Chrome #000
 
-	/* remove indent in Firefox */
-	button,
-	input,
-	textarea,
-	select,
-	a
-		background-color: transparent
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='file']
+	text-align: left
 
-		font-family: inherit
-		font-size: inherit
-		line-height: inherit
+input
+	word-break: normal // set browser common styles
 
-	button,
-	a
-		letter-spacing: inherit
-		word-spacing: inherit
+	&[type="checkbox"],
+	&[type="radio"]
 		cursor: pointer
 
-	button
-		display: block
-		overflow: visible // for reset ie style
-		color: inherit // default color in Chrome #000
+	&[type="color"]
+		border: none
+		outline: none
+		-webkit-appearance: none
 
-	button,
-	input[type='submit'],
-	input[type='reset'],
-	input[type='file']
-		text-align: left
-
-	input
-		word-break: normal // set browser common styles
-
-		&[type="checkbox"],
-		&[type="radio"]
-			cursor: pointer
-
-		&[type="color"]
-			border: none
-			outline: none
-			-webkit-appearance: none
-
-			&::-webkit-color-swatch-wrapper
-				padding: 0
-
-			&::-moz-color-swatch-wrapper
-				padding: 0
-
-			&::-webkit-color-swatch
-				border: none
-
-			&::-moz-color-swatch
-				border: none
-
-	input,
-	textarea,
-	select
-		display: block
-		-moz-appearance: none // to reset initial browser style
-		-webkit-appearance: none // to reset initial browser style
-
-	label
-		cursor: pointer
-
-	a
-		color: inherit
-		text-decoration: inherit
-
-	mark
-		background-color: transparent
-		color: inherit
-
-	pre
-		white-space: pre-wrap
-
-	/* remove indent in Firefox */
-	@-moz-document url-prefix()
-
-		button::-moz-focus-inner,
-		input[type="reset"]::-moz-focus-inner,
-		input[type="button"]::-moz-focus-inner,
-		input[type="submit"]::-moz-focus-inner,
-		input[type="file"] > input[type="button"]::-moz-focus-inner
-			margin: 0
-			border: 0
+		&::-webkit-color-swatch-wrapper
 			padding: 0
+
+		&::-moz-color-swatch-wrapper
+			padding: 0
+
+		&::-webkit-color-swatch
+			border: none
+
+		&::-moz-color-swatch
+			border: none
+
+input,
+textarea,
+select
+	display: block
+	-moz-appearance: none // to reset initial browser style
+	-webkit-appearance: none // to reset initial browser style
+
+label
+	cursor: pointer
+
+a
+	color: inherit
+	text-decoration: inherit
+
+mark
+	background-color: transparent
+	color: inherit
+
+pre
+	white-space: pre-wrap
+
+/* remove indent in Firefox */
+@-moz-document url-prefix()
+
+	button::-moz-focus-inner,
+	input[type="reset"]::-moz-focus-inner,
+	input[type="button"]::-moz-focus-inner,
+	input[type="submit"]::-moz-focus-inner,
+	input[type="file"] > input[type="button"]::-moz-focus-inner
+		margin: 0
+		border: 0
+		padding: 0

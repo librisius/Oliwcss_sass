@@ -44,25 +44,28 @@
 
 		transform: translate( -50%, -50% )
 
-		animation: preloader5Item $anim_dur linear forwards
+		animation: preloader5Item $anim_dur linear forwards paused
 
 		&_1
-			animation-delay: -($anim_dur/6 + $anim_dur/100*4*2)*2
+			animation-delay: -($anim_dur/6 + $anim_dur/100*4.2*2)*2
 
 		&_2
-			animation-delay: -($anim_dur/6 + $anim_dur/100*4*2)*1
+			animation-delay: -($anim_dur/6 + $anim_dur/100*4.2*2)*1
 
 		&_3
 			animation-delay: 0s
 
 		&_4
-			animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*1
+			animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*1
 
 		&_5
-			animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*2
+			animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*2
 
 		&_6
-			animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*3
+			animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*3
+
+	&_running .b-preloader-5__list-item
+		animation-play-state: running
 
 	&__text
 		margin: -7px 0 -8px
@@ -74,25 +77,28 @@
 		letter-spacing: .04em
 		white-space: nowrap
 
-		animation: preloader5Text $anim_dur forwards
+		animation: preloader5Text $anim_dur forwards paused
 
 	&__list-item_1 .b-preloader-5__text
-		animation-delay: -($anim_dur/6 + $anim_dur/100*4*2)*2
+		animation-delay: -($anim_dur/6 + $anim_dur/100*4.2*2)*2
 
 	&__list-item_2 .b-preloader-5__text
-		animation-delay: -($anim_dur/6 + $anim_dur/100*4*2)*1
+		animation-delay: -($anim_dur/6 + $anim_dur/100*4.2*2)*1
 
 	&__list-item_3 .b-preloader-5__text
 		animation-delay: 0s
 
 	&__list-item_4 .b-preloader-5__text
-		animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*1
+		animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*1
 
 	&__list-item_5 .b-preloader-5__text
-		animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*2
+		animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*2
 
 	&__list-item_6 .b-preloader-5__text
-		animation-delay: ($anim_dur/6 + $anim_dur/100*4*2)*3
+		animation-delay: ($anim_dur/6 + $anim_dur/100*4.2*2)*3
+
+	&_running .b-preloader-5__text
+		animation-play-state: running
 
 	&__icon
 		position: absolute
@@ -170,18 +176,10 @@
 			line-height: 28px
 
 		21%
-			margin: -7px 0 -8px
-
 			color: rgba( $grey, 0 )
-			font-size: 18px
-			line-height: 28px
 
 		25%
-			margin: -7px 0 -8px
-
 			color: rgba( $grey, .2 )
-			font-size: 18px
-			line-height: 28px
 
 		46%
 			margin: -7px 0 -8px
@@ -212,11 +210,7 @@
 			line-height: 28px
 
 		96%
-			margin: -7px 0 -8px
-
 			color: rgba( $grey, .2 )
-			font-size: 18px
-			line-height: 28px
 
 		to
 			margin: -7px 0 -8px
@@ -248,4 +242,3 @@
 
 		to
 			box-shadow: 0 0 0 24px rgba( $brand-primary, 0 )
-

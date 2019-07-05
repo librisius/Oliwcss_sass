@@ -1,19 +1,17 @@
 @if $_use_common == true
 
-	._container
+	*::selection
+		background: $brand-primary
+		color: $white
 
-		*::selection
-			background: $brand-primary
-			color: $white
+	*
+		box-sizing: border-box
 
-		*
-			box-sizing: border-box
+	*::before,
+	*::after
+		box-sizing: border-box
 
-		*::before,
-		*::after
-			box-sizing: border-box
-
-	body._container
+	body
 		position: relative // for iOS to work overflow: hidden
 
 		min-width: $w-min

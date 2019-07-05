@@ -1,11 +1,13 @@
 .-ol-input,
 .-ol-textarea
+	$align_vert:	2px
+
 	display: block
 
 	width: 100%
 
-	padding: $p_vert-input $p_horiz-input
-	border: $brd_w-input solid $brd_c-input
+	padding: ( $p_vert-input + $align_vert ) $p_horiz-input ( $p_vert-input - $align_vert )
+	border-bottom: $brd_w-input solid $brd_c-input
 	border-radius: $brd_rd-input
 
 	background: $bg-input
@@ -19,6 +21,31 @@
 
 	+placeholder-style
 
+	&_style_2
+		border: $brd_w-input solid $brd_c-input
+		padding: 11px 24px 9px
+
+		line-height: 36px
+
+		transition: border-color .2s
+
+		&:focus
+			border-color: #2096f3
+
+	&_style_3
+		border: $brd_w-input solid rgba( #2096f3, 0 )
+		padding: 11px 24px 9px
+
+		line-height: 36px
+
+		background-color: #f2f6fa
+
+		transition: border-color .2s, background-color .2s
+
+		&:focus
+			border-color: #2096f3
+			background-color: $white
+
 	&[readonly],
 	&[disabled]
 		color: $grey-light
@@ -26,6 +53,10 @@
 
 .-ol-input
 	height: $h-input
+
+	&_style_2,
+	&_style_3
+		height: 56px
 
 .-ol-textarea
 	height: $h-textarea
@@ -142,18 +173,42 @@
 	flex-direction: column
 	margin-bottom: $m_b-label
 
+	&_m_b_xl
+		margin-bottom: 10px
+
+	&_m_b_xxl
+		margin-bottom: 12px
+
+	&_style_2
+		position: absolute
+		top: 23px
+		right: calc( 100% + 20px )
+
+		margin-bottom: 0
+
 	&_last
 		margin-bottom: 0
 
 .-ol-label-text // tag span
 	display: block
 
+	margin: -6px 0 -7px
+
 	color: $c-label
 	font-size: $f_sz-label
+	line-height: 23px
 	font-weight: $f_w-label
+	letter-spacing: .06em
+
+	transition: color .2s
+
+.-ol-label_style_2 .-ol-label-text
+	white-space: nowrap
 
 .-ol-input-wrap
 	position: relative
+	display: flex
+	flex-direction: column
 
 	&_disabled
 		opacity: .6
@@ -172,8 +227,34 @@
 			border-color: $brd_c-form-error
 			color: $c-form-error
 
+	&:focus-within .-ol-label-text
+		color: #2096f3
+
+	&::before
+		content: ''
+
+		position: absolute
+		bottom: 0
+		left: 0
+
+		width: 0
+		height: $brd_w-input
+
+		background-color: #2096f3
+
+		transition: width .2s
+
+	&_style_2::before
+		display: none
+
+	&:focus-within::before
+		width: 100%
+
 .-ol-row-input
 	margin-bottom: $m-row-input
+
+	&_m_b_sm
+		margin-bottom: 25px
 
 	&_last
 		margin-bottom: 0
@@ -183,8 +264,16 @@
 	+md-mobile
 		margin-bottom: $m-row-input-mb
 
+	&_m_b_sm
+
+		+md-mobile
+			margin-bottom: 25px
+
 .-ol-form-body
 	margin-bottom: $m-form-body
+
+	&_m_b_sm
+		margin-bottom: 30px
 
 	&_last
 		margin-bottom: 0

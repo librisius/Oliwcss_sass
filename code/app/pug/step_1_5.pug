@@ -4,95 +4,62 @@ extends extends/layout
 
 block content
 
-	.b-preloader-5.c-manipulate-class-timing( data-c-manipulate-class-timing-class="b-preloader-5_running" data-c-manipulate-class-timing-duration="5000" )
-		.b-preloader-5__logo
-		.b-preloader-5__list
-			.b-preloader-5__list-item.b-preloader-5__list-item_1
-				p.b-preloader-5__text Loading 20 Professional Resume Designs
-			.b-preloader-5__list-item.b-preloader-5__list-item_2
-				p.b-preloader-5__text 282 Pre-written Samples
-			.b-preloader-5__list-item.b-preloader-5__list-item_3
-				p.b-preloader-5__text 152 Writing Tips
-			.b-preloader-5__list-item.b-preloader-5__list-item_4
-				p.b-preloader-5__text Customer Service Help
-			.b-preloader-5__list-item.b-preloader-5__list-item_5
-				p.b-preloader-5__text Fonts and Design Tools
-			.b-preloader-5__list-item.b-preloader-5__list-item_6
-				p.b-preloader-5__text Finished
-		.b-preloader-5__icon
-		.b-preloader-5__status
-			h2.b-preloader-5__status-text Loading...
+	.b-template-customization
+		.b-template-customization__item.b-template-customization__item_content
+			.b-steps.b-steps_style_2
+				.b-steps__list
+					.b-steps__item.b-steps__item_active
+						p.b-steps__text Heading
+					.b-steps__item
+						p.b-steps__text Experience
+					.b-steps__item
+						p.b-steps__text Education
+					.b-steps__item
+						p.b-steps__text Skills
+					.b-steps__item
+						p.b-steps__text Summary
+					.b-steps__item
+						p.b-steps__text Finalize
 
-	header.b-header
-		.b-header__item
-			.b-header__logo
+			.b-template-customization__content
+				.b-template-customization__content-inner.b-template-customization__content-inner_style_2
+					.b-template-customization__heading.b-template-customization__heading_style_2
+						h1.b-template-customization__heading-text.b-template-customization__heading-text_style_2 What's the #[span.b-template-customization__heading-text_highlighted best way] for Employers to contact you?
+						p.b-template-customization__heading-subtext.b-template-customization__heading-subtext_style_2 We suggest including your best email
 
-	.b-state
-		.b-state__header
-			.b-state__header-item
-				.b-state__heading Step 1 of 4
-			.b-state__header-item
-				.b-state__nav
-					.b-state__nav-inner
-						.b-state__nav-item
-							button.b-state__nav-btn( disabled )
-						.b-state__nav-item
-							button.b-state__nav-btn
-		.b-state__slider
-			.b-state__slider-bar( style="width: 25%;" )
+					.b-template-customization__form
+						.-ol-form-body
+							.-ol-row-input.-ol-row-input_m_b_sm
+								.-ol-input-wrap.-ol-input-wrap_style_2
+									label.-ol-label.-ol-label_m_b_xl
+										span.-ol-label-text Full Name
+									input.-ol-input.-ol-input_style_3( type="text" placeholder="Nick Johnson" )
 
-	.b-section-steps
-		.b-section-steps__inner
+							.-ol-row-input.-ol-row-input_m_b_sm
+								.-ol-input-wrap.-ol-input-wrap_style_2
+									label.-ol-label.-ol-label_m_b_xl
+										span.-ol-label-text City
+									input.-ol-input.-ol-input_style_3( type="text" placeholder="San Francisco" )
 
-			.b-section-steps__heading
-				.b-heading
-					h1.b-heading__title Choose Your CV Template
-					p.b-heading__subtitle Select a template below. You can change this later.
+							.-ol-row-input.-ol-row-input_m_b_sm.-ol-row-input_last
+								.-ol-input-wrap.-ol-input-wrap_style_2
+									label.-ol-label.-ol-label_m_b_xl
+										span.-ol-label-text Email
+									input.-ol-input.-ol-input_style_3( type="text" placeholder="mail@example.com" )
 
-			.b-section-steps__list.b-list-examples
-				.b-list-examples__inner.c-slick-examples
-					.b-list-examples__item
-						a.b-list-examples__item-inner( href="#!" )
-							.b-list-examples__img
-								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
-								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/1.jpg )" )
-							button.b-list-examples__btn.-ol-btn Start with this template
-							h2.b-list-examples__title Gaborone
-					.b-list-examples__item
-						a.b-list-examples__item-inner( href="#!" )
-							.b-list-examples__img
-								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
-								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/2.jpg )" )
-							button.b-list-examples__btn.-ol-btn Start with this template
-							h2.b-list-examples__title Gaborone
-					.b-list-examples__item
-						a.b-list-examples__item-inner( href="#!" )
-							.b-list-examples__img
-								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
-								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/3.jpg )" )
-							button.b-list-examples__btn.-ol-btn Start with this template
-							h2.b-list-examples__title Abuja
-					.b-list-examples__item
-						a.b-list-examples__item-inner( href="#!" )
-							.b-list-examples__img
-								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
-								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/4.jpg )" )
-							button.b-list-examples__btn.-ol-btn Start with this template
-							h2.b-list-examples__title Nice
-					.b-list-examples__item
-						a.b-list-examples__item-inner( href="#!" )
-							.b-list-examples__img
-								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
-								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/5.jpg )" )
-							button.b-list-examples__btn.-ol-btn Start with this template
-							h2.b-list-examples__title Nice
+						button.b-template-customization__btn-next.b-template-customization__btn-next_style_2
+							span.b-template-customization__btn-next-text Next to Experience
+
+
+
+		.b-template-customization__item.b-template-customization__item_img.b-template-customization__item_img_style_1
+			.b-template-customization__demo
+				.b-template-customization__demo-img
+					.b-template-customization__demo-img-inner
 
 
 
 append scripts
-
-	script(
-		src="dist/js/plugins/slick.js" )
 
 	script(
 		src="dist/js/specific/app.js" )

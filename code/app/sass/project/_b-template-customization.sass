@@ -1,0 +1,276 @@
+.b-template-customization
+	$brand-primary:	#2096f3 // blue
+
+	display: flex
+	overflow: hidden
+	height: 100vh
+
+	&__item
+		width: 50%
+
+		&_content
+			position: relative
+			z-index: 1 // to be over &_img
+
+			display: flex
+			flex-direction: column
+
+			min-width: 710px
+
+			box-shadow: 0px 10px 60px 0 rgba( $b_sh_c, .2 )
+
+			@media only screen and ( max-width: 1500px )
+				min-width: 600px
+
+		&_img_style_1
+			background:
+				color: #e3e5e7
+				image: url( '#{$img}/b-template-customization/1/bg_decoration.png' ), url( '#{$img}/b-template-customization/1/bg_decoration_2.png' )
+				position: -64px -15px, calc( 3.6vw - 1.1111111vh ) calc( 100% - 4vh )
+				size: 291px 341px, 3.6666667vh 50.5555556vh
+				repeat: no-repeat
+
+			+md-retina
+				background-image: url( '#{$img}/b-template-customization/1/bg_decoration@2x.png' ), url( '#{$img}/b-template-customization/1/bg_decoration_2@2x.png' )
+
+		&_img_style_2
+			background:
+				color: #e4e7ea
+				image: url( '#{$img}/b-template-customization/2/plant.png' ), url( '#{$img}/b-template-customization/2/mug.png' ), url( '#{$img}/b-template-customization/2/pen.png' ), url( '#{$img}/b-template-customization/2/puzzle.png' )
+				position: calc( 100% + 396px ) -387px, calc( 100% + 152px ) calc( 100% + 72px ), calc( 3.5vw - 65px ) calc( 50% + 17px ), -20px calc( 100% + 96px )
+				size: 893px 911px, 285px 406px, 122px 563px, 222px 203px
+				repeat: no-repeat
+
+			+md-retina
+				background-image: url( '#{$img}/b-template-customization/2/plant@2x.png' ), url( '#{$img}/b-template-customization/2/mug@2x.png' ), url( '#{$img}/b-template-customization/2/pen@2x.png' ), url( '#{$img}/b-template-customization/2/puzzle@2x.png' )
+
+		&_img_style_3
+			background:
+				color: #dfe3e8
+				image: url( '#{$img}/b-template-customization/3/cactus.png' ), url( '#{$img}/b-template-customization/3/mug.png' ), url( '#{$img}/b-template-customization/3/clip.png' ), url( '#{$img}/b-template-customization/3/pen.png' ), url( '#{$img}/b-template-customization/3/sequins.png' ), url( '#{$img}/b-template-customization/3/sequins-2.png' )
+				position: calc( 100% + 195px ) -173px, -208px -240px, calc( 100% + 49px ) calc( 50% - 69px ), calc( 3.5vw - 65px ) calc( 50% - 34px ), calc( 100% + 7px ) calc( 100% - 69px ), 2px calc( 100% + 83px )
+				size: 468px 439px, 548px 470px, 150px 154px, 122px 563px, 276px 288px, 267px 265px
+				repeat: no-repeat
+
+			+md-retina
+				background-image: url( '#{$img}/b-template-customization/3/cactus@2x.png' ), url( '#{$img}/b-template-customization/3/mug@2x.png' ), url( '#{$img}/b-template-customization/3/clip@2x.png' ), url( '#{$img}/b-template-customization/3/pen@2x.png' ), url( '#{$img}/b-template-customization/3/sequins@2x.png' ), url( '#{$img}/b-template-customization/3/sequins-2@2x.png' )
+
+
+		&_img_style_4
+			background:
+				color: #e9e9e9
+				image: url( '#{$img}/b-template-customization/4/jar.png' ), url( '#{$img}/b-template-customization/4/pencil.png' ), url( '#{$img}/b-template-customization/4/paperclip.png' ), url( '#{$img}/b-template-customization/4/paperclip-2.png' ), url( '#{$img}/b-template-customization/4/pin-2.png' ), url( '#{$img}/b-template-customization/4/sharpenings.png' ), url( '#{$img}/b-template-customization/4/sharpenings.png' ), url( '#{$img}/b-template-customization/4/sharpenings-2.png' )
+				position: calc( 100% + 62px ) calc( 100% - 16px ), calc( 3.5vw - 48px ) calc( 50% + 40px ), calc( 100% - 66px ) calc( 50% + 110px ), calc( 100% - 22px ) calc( 50% - 71px ), 6px 22px, calc( 100% + 48px ) -16px, -110px calc( 100% + 45px ), calc( 50% - 32px ) 16px
+				size: 203px 251px, 81px 517px, 61px 89px, 66px 100px, 87px 83px, 182px 119px, 182px 119px, 156px 157px
+				repeat: no-repeat
+
+			+md-retina
+				background-image: url( '#{$img}/b-template-customization/4/jar@2x.png' ), url( '#{$img}/b-template-customization/4/pencil@2x.png' ), url( '#{$img}/b-template-customization/4/paperclip@2x.png' ), url( '#{$img}/b-template-customization/4/paperclip-2@2x.png' ), url( '#{$img}/b-template-customization/4/pin-2@2x.png' ), url( '#{$img}/b-template-customization/4/sharpenings@2x.png' ), url( '#{$img}/b-template-customization/4/sharpenings@2x.png' ), url( '#{$img}/b-template-customization/4/sharpenings-2@2x.png' )
+
+	&__content
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-grow: 1
+
+		padding: 60px 40px
+
+	&__content-inner
+		width: 600px
+		max-width: 100%
+
+		&_style_2
+			max-width: 400px
+
+	&__heading
+		display: flex // to collapse margins inside
+		flex-direction: column
+
+		max-width: 540px
+
+		margin: 0 auto 50px
+
+		text-align: center
+
+		&_style_2
+			text-align: left
+
+		&_last
+			margin-bottom: 0
+
+	&__heading-text
+		margin: -11px 0 22px
+
+		color: $black
+		font-size: 36px
+		line-height: 50px
+		font-weight: 700
+		letter-spacing: .04em
+
+		&_style_2
+			margin: -11px 0 17px
+
+			font-size: 28px
+			line-height: 44px
+			letter-spacing: .02em
+
+		&_highlighted
+			color: $brand-primary
+
+		&_last
+			margin-bottom: -13px
+
+		&_style_2#{&}_last
+			margin-bottom: -13px
+
+	&__heading-subtext
+		margin: -7px 0
+
+		color: $grey
+		font-size: 14px
+		line-height: 24px
+		letter-spacing: .08em
+
+		&_style_2
+			letter-spacing: .06em
+
+	&__form
+
+		&_style_2
+			max-width: 400px
+			margin: 0 auto
+
+	&__btn-next
+		display: flex
+		justify-content: center
+
+		width: 285px
+
+		margin: 0 auto
+		padding: 19px 25px
+
+		background-color: $brand-primary
+
+		&_style_2
+			position: relative // for &::before
+			width: 100%
+
+			&::before
+				content: ''
+
+				position: absolute
+				top: 0
+				left: 100%
+
+				border: 0 solid transparent
+				border-left-color: $brand-primary
+				border-width: 31px 0 31px 20px
+
+	&__btn-next-text // tag span
+		position: relative // for &:: after
+		left: 0
+
+		display: block
+
+		padding-right: 60px
+
+		color: $white
+		font-size: 14px
+		line-height: 24px
+		font-weight: 700
+		letter-spacing: .06em
+
+		text-align: center
+		text-transform: uppercase
+
+		transition: all .2s
+
+		@extend .i-arrow-3
+
+		&::after
+			position: absolute
+			top: 6px
+			right: 0
+
+			color: $white
+			font-size: 13px
+
+	&__btn-next:hover &__btn-next-text
+		left: 4px
+
+	&__btn-next:active &__btn-next-text
+		left: 8px
+
+	&__demo
+		position: relative // for &__demo-img
+
+		display: flex
+		align-items: flex-end
+		justify-content: center
+
+		height: 100%
+
+		margin-left: 0
+
+	&__demo-img
+		width: 36.0625vw
+		max-width: 577px
+
+		background: $white
+		box-shadow: 0px 20px 100px 0 rgba( #171f26, .2 )
+
+		@media screen and ( max-height: 900px )
+			width: 64.1111111vh
+
+	&__item_img_style_1 &__demo-img
+		position: relative
+		left: 30px
+
+	&__demo-img-inner
+		padding-top: 141.1992263%
+
+	&__item_img_style_2 &__demo-img
+		position: relative // for &::before
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: -91px
+			left: -81px
+			z-index: 1 // to be over &__demo-img
+
+			width: 143px
+			height: 179px
+
+			background:
+				image: url( '#{$img}/b-template-customization/2/clip.png' )
+				position: 0 0
+				size: contain
+				repeat: no-repeat
+
+			+md-retina
+				background-image: url( '#{$img}/b-template-customization/2/clip@2x.png' )
+
+	&__item_img_style_4 &__demo-img
+		position: relative // for &::before
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: 23px
+			left: calc( 100% - 27px )
+			z-index: 1 // to be over &__demo-img
+
+			width: 80px
+			height: 91px
+
+			background:
+				image: url( '#{$img}/b-template-customization/4/pin.png' )
+				position: 0 0
+				size: contain
+				repeat: no-repeat
+
+			+md-retina
+				background-image: url( '#{$img}/b-template-customization/4/pin@2x.png' )

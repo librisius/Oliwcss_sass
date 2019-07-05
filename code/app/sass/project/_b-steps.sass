@@ -1,0 +1,122 @@
+.b-steps
+	$brand-primary:	#2096f3 // blue
+
+	&_style_2
+		position: relative // for &::before
+
+		&::before
+			content: ''
+
+			position: absolute
+			bottom: 0
+			left: 0
+
+			width: 100%
+			height: $brd_w
+
+			background-color: $brd_c
+
+	&__list
+		display: flex
+		flex-wrap: nowrap
+
+	&__item
+		display: flex
+		align-items: center
+		justify-content: center
+
+		flex: 1 1 100% // for equalization
+		// overflow: hidden // for equalization
+
+		padding: 25px 20px
+
+		text-align: center
+
+	&_style_2 &__item
+		position: relative // for &::before and &::after
+		padding: 26px 20px 27px 34px
+
+		&_active
+			background-color: $brand-primary
+
+		&:not( :last-child )::before
+			content: ''
+
+			position: absolute
+			top: 0
+			left: 100%
+
+			border: 0 solid transparent
+			border-left-color: $brd_c
+			border-width: 30px 0 30px 20px
+
+		&_active:not( :last-child )::before
+			border-left-color: $brand-primary
+
+		&:not( :last-child )::after
+			content: ''
+
+			position: absolute
+			top: 2px
+			left: 100%
+
+			border: 0 solid transparent
+			border-left-color: $white
+			border-width: 28px 0 28px 19px
+
+		&_active:not( :last-child )::after
+			display: none
+
+	&__text
+		margin: -4px 0 -5px
+
+		color: rgba( $grey, .6 )
+		font-size: 10px
+		line-height: 16px
+		font-weight: 700
+		letter-spacing: .06em
+
+		transition: all .2s
+
+	&:not( &_style_2 ) &__item_active &__text
+		color: $black
+		font-size: 12px
+		line-height: 18px
+
+	&_style_2 &__item_active &__text
+		color: $white
+
+	&__slider
+		height: 2px
+		background-color: $brd_c
+
+	&__slider-bar
+		position: relative // for &::before and &::after
+		height: 100%
+		background-color: $brand-primary
+
+		&::before,
+		&::after
+			content: ''
+
+			position: absolute
+
+			border-radius: 50%
+
+		&::before
+			top: -4px
+			right: -5px
+
+			width: 10px
+			height: 10px
+
+			background-color: $brand-primary
+
+		&::after
+			top: -1px
+			right: -2px
+
+			width: 4px
+			height: 4px
+
+			background-color: $white

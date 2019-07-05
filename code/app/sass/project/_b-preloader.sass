@@ -68,6 +68,10 @@
 		position: relative
 		top: 90px
 		margin: -10px
+		animation: preloaderListInner $anim_dur linear forwards paused
+
+	&_running .b-preloader__list-inner
+		animation-play-state: running
 
 	&__list-item
 		padding: 10px
@@ -80,8 +84,28 @@
 		border: 1px solid $brd_c
 		padding: 29px 20px 29px 73px
 
+		animation: preloaderBox $anim_dur linear forwards paused
+
 	&__list-item_1 .b-preloader__box
-		border-color: $brand-primary
+		animation-delay: -$anim_dur/5*1
+
+	&__list-item_2 .b-preloader__box
+		animation-delay: 0s
+
+	&__list-item_3 .b-preloader__box
+		animation-delay: $anim_dur/5*1
+
+	&__list-item_4 .b-preloader__box
+		animation-delay: $anim_dur/5*2
+
+	&__list-item_5 .b-preloader__box
+		animation-delay: $anim_dur/5*3
+
+	&__list-item_6 .b-preloader__box
+		animation: preloaderBoxLast $anim_dur linear $anim_dur/5*4 forwards paused
+
+	&_running .b-preloader__box
+		animation-play-state: running
 
 	&__icon
 		position: absolute
@@ -93,6 +117,10 @@
 
 		border-radius: 50%
 		border: 1px solid $brd_c
+
+		background-color: rgba( $brand-primary, 0 )
+
+		animation: preloaderBoxIcon $anim_dur linear forwards paused
 
 		&::before
 			content: ''
@@ -108,35 +136,60 @@
 
 			background-color: $black
 
-	&__list-item_done .b-preloader__icon,
-	&__list-item_1 .b-preloader__icon
-		border: none
-		background-color: rgba( $brand-primary, .15 )
+			animation: preloaderBoxIconBefore $anim_dur linear forwards paused
 
-	&__list-item_1 .b-preloader__icon::before
-		top: calc( 50% - 3px )
-		left: calc( 50% - 3px )
-
-		width: 6px
-		height: 6px
-
-		background-color: $brand-primary
-		box-shadow: -9px 0px 0px -1px $brand-primary, 9px 0px 0px -1px $brand-primary
-
-	&__list-item_done .b-preloader__icon::before
-		opacity: 0
-
-	&__list-item_done .b-preloader__icon
-
-		@extend .i-tick-2
-
-		&::after
+		.s-tick
 			position: absolute
 			top: 14px
 			left: 12px
 
-			color: $brand-primary
-			font-size: 10px
+			opacity: 0
+
+			height: 10px
+
+			animation: preloaderBoxTick $anim_dur linear forwards paused
+
+			path
+				fill: $brand-primary
+
+	&__list-item_1 .b-preloader__icon,
+	&__list-item_1 .b-preloader__icon::before,
+	&__list-item_1 .b-preloader__icon .s-tick
+		animation-delay: -$anim_dur/5*1
+
+	&__list-item_2 .b-preloader__icon,
+	&__list-item_2 .b-preloader__icon::before,
+	&__list-item_2 .b-preloader__icon .s-tick
+		animation-delay: 0s
+
+	&__list-item_3 .b-preloader__icon,
+	&__list-item_3 .b-preloader__icon::before,
+	&__list-item_3 .b-preloader__icon .s-tick
+		animation-delay: $anim_dur/5*1
+
+	&__list-item_4 .b-preloader__icon,
+	&__list-item_4 .b-preloader__icon::before,
+	&__list-item_4 .b-preloader__icon .s-tick
+		animation-delay: $anim_dur/5*2
+
+	&__list-item_5 .b-preloader__icon,
+	&__list-item_5 .b-preloader__icon::before,
+	&__list-item_5 .b-preloader__icon .s-tick
+		animation-delay: $anim_dur/5*3
+
+	&__list-item_6 .b-preloader__icon
+		animation: preloaderBoxIconLast $anim_dur linear $anim_dur/5*4 forwards paused
+
+	&__list-item_6 .b-preloader__icon::before
+		animation: preloaderBoxIconBeforeLast $anim_dur linear $anim_dur/5*4 forwards paused
+
+	&__list-item_6 .b-preloader__icon .s-tick
+		animation: preloaderBoxTickLast $anim_dur linear $anim_dur/5*4 forwards paused
+
+	&_running .b-preloader__icon,
+	&_running .b-preloader__icon::before,
+	&_running .b-preloader__icon .s-tick
+		animation-play-state: running
 
 	&__text
 		margin: -7px 0
@@ -149,8 +202,28 @@
 
 		white-space: nowrap
 
+		animation: preloaderBoxText $anim_dur linear forwards paused
+
 	&__list-item_1 .b-preloader__text
-		color: $black
+		animation-delay: -$anim_dur/5*1
+
+	&__list-item_2 .b-preloader__text
+		animation-delay: 0s
+
+	&__list-item_3 .b-preloader__text
+		animation-delay: $anim_dur/5*1
+
+	&__list-item_4 .b-preloader__text
+		animation-delay: $anim_dur/5*2
+
+	&__list-item_5 .b-preloader__text
+		animation-delay: $anim_dur/5*3
+
+	&__list-item_6 .b-preloader__text
+		animation: preloaderBoxTexLast $anim_dur linear $anim_dur/5*4 forwards paused
+
+	&_running .b-preloader__text
+		animation-play-state: running
 
 	&__state
 		position: absolute
@@ -170,7 +243,303 @@
 
 		background-color: $brand-primary
 
-		animation: preloaderState $anim_dur ease-in-out forwards
+		animation: preloaderState $anim_dur ease-in-out forwards paused
+
+	&_running .b-preloader__state-bar
+		animation-play-state: running
+
+	@keyframes preloaderBox
+
+		from
+			border-color: $brd_c
+
+		16%
+			border-color: $brd_c
+
+		20%
+			border-color: $brand-primary
+
+		36%
+			border-color: $brand-primary
+
+		40%
+			border-color: $brd_c
+
+		56%
+			border-color: $brd_c
+
+		to
+			border-color: $brd_c
+
+	@keyframes preloaderBoxLast
+
+		from
+			border-color: $brd_c
+
+		16%
+			border-color: $brd_c
+
+		20%
+			border-color: $brand-primary
+
+		36%
+			border-color: $brand-primary
+
+		to
+			border-color: $brand-primary
+
+	@keyframes preloaderBoxIcon
+
+		from
+			border-color: $brd_c
+			background-color: rgba( $brand-primary, 0 )
+
+		16%
+			border-color: $brd_c
+			background-color: rgba( $brand-primary, 0 )
+
+		20%
+			border-color: rgba( $brd_c, 0 )
+			background-color: rgba( $brand-primary, .15 )
+
+		36%
+			border-color: rgba( $brd_c, 0 )
+			background-color: rgba( $brand-primary, .15 )
+
+		40%
+			border-color: rgba( $brd_c, 0 )
+			background-color: rgba( $brand-primary, .15 )
+
+		56%
+			border-color: rgba( $brd_c, 0 )
+			background-color: rgba( $brand-primary, .15 )
+
+		to
+			border-color: rgba( $brd_c, 0 )
+			background-color: rgba( $brand-primary, .15 )
+
+	@keyframes preloaderBoxIconLast
+
+		from
+			border-color: $brd_c
+			background-color: rgba( $brand-primary, 0 )
+
+		16%
+			border-color: $brd_c
+			background-color: rgba( $brand-primary, 0 )
+
+		20%
+			border-color: rgba( $brd_c, 0 )
+			background-color: rgba( $brand-primary, .15 )
+
+		36%
+			border-color: rgba( $brd_c, 0 )
+			background-color: rgba( $brand-primary, .15 )
+
+		to
+			border-color: rgba( $brd_c, 0 )
+			background-color: rgba( $brand-primary, .15 )
+
+	@keyframes preloaderBoxIconBefore
+
+		from
+			top: calc( 50% - 2px )
+			left: calc( 50% - 2px )
+
+			opacity: 1
+
+			width: 4px
+			height: 4px
+
+			border-radius: 50%
+
+			background-color: $black
+			box-shadow: -9px 0px 0px -1px rgba( $brand-primary, 0 ), 9px 0px 0px -1px rgba( $brand-primary, 0 )
+
+		18%
+			top: calc( 50% - 2px )
+			left: calc( 50% - 2px )
+
+			opacity: 1
+
+			width: 4px
+			height: 4px
+
+			border-radius: 50%
+
+			background-color: $black
+			box-shadow: -9px 0px 0px -1px rgba( $brand-primary, 0 ), 9px 0px 0px -1px rgba( $brand-primary, 0 )
+
+		20%
+			top: calc( 50% - 3px )
+			left: calc( 50% - 3px )
+
+			opacity: 1
+
+			width: 6px
+			height: 6px
+
+			background-color: $brand-primary
+			box-shadow: -9px 0px 0px -1px $brand-primary, 9px 0px 0px -1px $brand-primary
+
+		36%
+			top: calc( 50% - 3px )
+			left: calc( 50% - 3px )
+
+			opacity: 1
+
+			width: 6px
+			height: 6px
+
+			background-color: $brand-primary
+			box-shadow: -9px 0px 0px -1px $brand-primary, 9px 0px 0px -1px $brand-primary
+
+		38%
+			opacity: 0
+
+		56%
+			opacity: 0
+
+		to
+			opacity: 0
+
+	@keyframes preloaderBoxIconBeforeLast
+
+		from
+			top: calc( 50% - 2px )
+			left: calc( 50% - 2px )
+
+			width: 4px
+			height: 4px
+
+			border-radius: 50%
+
+			background-color: $black
+			box-shadow: -9px 0px 0px -1px rgba( $brand-primary, 0 ), 9px 0px 0px -1px rgba( $brand-primary, 0 )
+
+		18%
+			top: calc( 50% - 2px )
+			left: calc( 50% - 2px )
+
+			width: 4px
+			height: 4px
+
+			border-radius: 50%
+
+			background-color: $black
+			box-shadow: -9px 0px 0px -1px rgba( $brand-primary, 0 ), 9px 0px 0px -1px rgba( $brand-primary, 0 )
+
+		20%
+			top: calc( 50% - 3px )
+			left: calc( 50% - 3px )
+
+			width: 6px
+			height: 6px
+
+			background-color: $brand-primary
+			box-shadow: -9px 0px 0px -1px $brand-primary, 9px 0px 0px -1px $brand-primary
+
+		to
+			top: calc( 50% - 3px )
+			left: calc( 50% - 3px )
+
+			width: 6px
+			height: 6px
+
+			background-color: $brand-primary
+			box-shadow: -9px 0px 0px -1px $brand-primary, 9px 0px 0px -1px $brand-primary
+
+
+	@keyframes preloaderBoxTick
+
+		from
+			opacity: 0
+
+		38%
+			opacity: 0
+
+		40%
+			opacity: 1
+
+		to
+			opacity: 1
+
+	@keyframes preloaderBoxTickLast
+
+		from
+			opacity: 0
+
+		to
+			opacity: 0
+
+	@keyframes preloader2BoxText
+
+		from
+			color: rgba( $grey, .6 )
+
+		16%
+			color: rgba( $grey, .6 )
+
+		20%
+			color: $black
+
+		36%
+			color: $black
+
+		40%
+			color: rgba( $grey, .6 )
+
+		to
+			color: rgba( $grey, .6 )
+
+	@keyframes preloader2BoxTextLast
+
+		from
+			color: rgba( $grey, .6 )
+
+		16%
+			color: rgba( $grey, .6 )
+
+		20%
+			color: $black
+
+		to
+			color: $black
+
+	@keyframes preloaderListInner
+
+		from
+			top: 90px
+
+		16%
+			top: 90px
+
+		20%
+			top: 0px
+
+		36%
+			top: 0px
+
+		40%
+			top: -90px
+
+		56%
+			top: -90px
+
+		60%
+			top: -180px
+
+		76%
+			top: -180px
+
+		80%
+			top: -270px
+
+		96%
+			top: -270px
+
+		to
+			top: -360px
 
 	@keyframes preloaderState
 
