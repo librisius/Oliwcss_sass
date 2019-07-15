@@ -26,6 +26,10 @@
 			@media only screen and ( max-width: 1500px )
 				min-width: 600px
 
+			@media only screen and ( max-height: 500px )
+				overflow: auto
+				min-height: 500px
+
 		&_img
 			position: relative // for &::before
 
@@ -58,9 +62,45 @@
 				+md-retina
 					background-image: url( '#{$img}/b-hero/bg_decoration_2@2x.png' )
 
+	&_style_8 &__item_content,
+	&_style_9 &__item_content
+		padding: 100px 40px 60px
+
+		+md-tablet_h
+			padding: 50px 30px 50px
+
+	&_style_10 &__item_content
+		padding: 100px 40px 60px
+
+		+md-tablet_h
+			padding: 100px 30px 50px
+
 	&__content
 		position: relative // for &__btn
 		max-width: 600px
+
+	&_style_5 &__content,
+	&_style_7 &__content
+		position: static
+
+	&_style_5 &__content
+		max-width: 430px
+
+		+md-desk_sm
+			max-width: 410px
+
+	&_style_6 &__content
+		max-width: 460px
+
+	&_style_7 &__content
+
+		+md-desk_sm
+			max-width: 480px
+
+	&_style_8 &__content,
+	&_style_9 &__content,
+	&_style_10 &__content
+		max-width: none
 
 	&__heading
 		position: relative
@@ -71,6 +111,10 @@
 		margin-bottom: 60px
 		border-bottom: 1px solid $black
 		padding-bottom: 35px
+
+		+md-tablet_h
+			margin-bottom: 45px
+			padding-bottom: 30px
 
 		&::before,
 		&::after
@@ -90,43 +134,134 @@
 		&::after
 			right: 0
 
+	&_style_2 &__heading,
+	&_style_3 &__heading,
+	&_style_4 &__heading,
+	&_style_5 &__heading,
+	&_style_7 &__heading
+		margin-bottom: 55px
+
+		+md-tablet_h
+			margin-bottom: 45px
+			padding-bottom: 30px
+
+	&_style_4 &__heading,
+	&_style_5 &__heading,
+	&_style_6 &__heading,
+	&_style_7 &__heading,
+	&_style_8 &__heading,
+	&_style_9 &__heading,
+	&_style_10 &__heading
+		border-bottom: none
+		padding-bottom: 0
+
+		&::before,
+		&::after
+			display: none
+
+	&_style_6 &__heading
+		margin-bottom: 45px
+
+		+md-tablet_h_sm
+			margin-bottom: 40px
+
+	&_style_8 &__heading,
+	&_style_9 &__heading
+		text-align: center
+
+		+md-tablet_h
+			margin-bottom: 40px
+
+	&_style_10 &__heading
+		margin-bottom: 55px
+		text-align: center
+
+		+md-tablet_h
+			margin-bottom: 50px
+
 	&__heading-text
-		margin: -13px 0 22px
+		margin: -12px 0 21px
 
 		color: $black
-		font-size: 50px
+		font-size: 48px
 		line-height: 60px
 		font-weight: 700
-		letter-spacing: .018em
+		letter-spacing: .04em
 
 		@media only screen and ( max-width: 1500px )
 			margin: -12px 0 16px
 			font-size: 42px
 			line-height: 56px
 
+		+md-tablet_h
+			margin: -10px 0 14px
+			font-size: 38px
+			line-height: 48px
+
 		&_highlighted
 			color: $brand-primary
 
+		&_lg
+			font-size: 70px
+			letter-spacing: .04em
+
+			+md-tablet_h_sm
+				font-size: 58px
+
 		&_last
-			margin-bottom: -13px
+			margin-bottom: -14px
 
-	&_theme_2 &__heading-text_highlighted
-		color: $brand-primary-2
+			+md-tablet_h
+				margin-bottom: -11px
 
-	&_theme_3 &__heading-text_highlighted
-		color: $brand-primary-3
+	&_style_5 &__heading-text,
+	&_style_6 &__heading-text,
+	&_style_9 &__heading-text,
+	&_style_10 &__heading-text
+		margin: -16px 0 23px
+		line-height: 67px
+		font-weight: 800
 
-	&_theme_4 &__heading-text_highlighted
-		color: $brand-primary-4
+		+md-tablet_h_sm
+			font-size: 30px
+			line-height: 52px
 
-	&_theme_5 &__heading-text_highlighted
-		color: $brand-primary-5
+		&_last
+			margin-bottom: -17px
 
-	&_theme_6 &__heading-text_highlighted
-		color: $brand-primary-6
+	&_style_5 &__heading-text,
+	&_style_10 &__heading-text
 
-	&_theme_7 &__heading-text_highlighted
-		color: $brand-primary-7
+		+md-tablet_h_sm
+			margin: -15px 0 14px
+
+	&_style_6 &__heading-text,
+	&_style_9 &__heading-text
+
+		+md-tablet_h_sm
+			margin: -15px 0 9px
+
+	&_style_5 &__heading-text,
+	&_style_6 &__heading-text,
+	&_style_9 &__heading-text,
+	&_style_10 &__heading-text
+
+		&_last
+
+			+md-tablet_h_sm
+				margin-bottom: -16px
+
+	&_style_8 &__heading-text
+		margin-bottom: 31px
+
+		+md-tablet_h
+			margin-bottom: 14px
+
+		&_last
+			margin-bottom: -14px
+
+			+md-tablet_h
+				margin-bottom: -11px
 
 	&__subheading-text
 		margin: -9px 0 -11px
@@ -138,6 +273,43 @@
 		font-style: italic
 		letter-spacing: .04em
 
+		+md-tablet_h
+			margin: -9px 0 -10px
+			font-size: 15px
+
+	&_style_4 &__subheading-text,
+	&_style_5 &__subheading-text,
+	&_style_6 &__subheading-text,
+	&_style_7 &__subheading-text,
+	&_style_8 &__subheading-text,
+	&_style_9 &__subheading-text,
+	&_style_10 &__subheading-text
+		font-weight: 400
+
+	&_style_5 &__subheading-text
+		margin: -10px 0 -11px
+
+		font-size: 15px
+		line-height: 32px
+		font-style: normal
+
+	&_style_6 &__subheading-text
+		margin: -7px 0 -9px
+
+		font-size: 13px
+		line-height: 26px
+
+	&__img
+		width: 285px
+		height: 230px
+
+		margin: 0 auto
+
+		background: url( '#{$img}/b-hero/item_2.jpg' ) center / contain no-repeat
+
+		+md-tablet_h
+			height: 190px
+
 	&__list
 		counter-reset: list
 
@@ -146,6 +318,35 @@
 		align-items: flex-start
 
 		margin: -15px
+
+	&_style_2 &__list,
+	&_style_3 &__list,
+	&_style_4 &__list,
+	&_style_7 &__list
+		margin: -20px -20px 45px
+
+		+md-tablet_h
+			margin: -17px -17px 38px
+
+	&_style_5 &__list
+		margin: -20px
+
+		+md-tablet_h
+			margin: -17px
+
+	&_style_6 &__list
+		margin: -20px -20px 35px
+
+		+md-tablet_h
+			margin: -17px -17px 38px
+
+		+md-tablet_h_sm
+			margin-bottom: 28px
+
+	&_style_8 &__list,
+	&_style_9 &__list
+		flex-wrap: nowrap
+		margin: -10px
 
 	&__list-item
 		position: relative // for &::before
@@ -161,6 +362,16 @@
 		padding: 35px
 
 		background-color: #f5f5f5
+
+		+md-tablet_h
+			width: calc( 50% - 20px )
+			min-height: 150px
+
+			margin: 10px
+			padding: 25px 35px
+
+		+md-tablet_h_sm
+			min-height: 120px
 
 		&::before
 			content: counter( list ) '.'
@@ -180,23 +391,157 @@
 			margin-top: 100px
 			margin-bottom: -120px
 
-	&_theme_2 &__list-item::before
-		color: $brand-primary-2
+			+md-tablet_h
+				margin-top: 70px
+				margin-bottom: -80px
 
-	&_theme_3 &__list-item::before
-		color: $brand-primary-3
+			+md-tablet_h_sm
+				margin-top: 45px
+				margin-bottom: -60px
 
-	&_theme_4 &__list-item::before
-		color: $brand-primary-4
+	&_style_2 &__list-item,
+	&_style_3 &__list-item,
+	&_style_4 &__list-item,
+	&_style_5 &__list-item,
+	&_style_6 &__list-item,
+	&_style_7 &__list-item,
+		width: calc( 100% + 40px )
+		min-height: 0
 
-	&_theme_5 &__list-item::before
-		color: $brand-primary-5
+		margin: 20px
 
-	&_theme_6 &__list-item::before
-		color: $brand-primary-6
+		background-color: transparent
 
-	&_theme_7 &__list-item::before
-		color: $brand-primary-7
+		+md-tablet_h
+			width: calc( 100% + 34px )
+			margin: 17px
+
+	&_style_2 &__list-item,
+	&_style_3 &__list-item
+		padding: 0 0 0 30px
+
+		&::before
+			position: absolute
+			top: 0
+			left: 0
+			right: auto
+
+			margin: -8px 0 -9px
+
+			color: $black
+			font-size: 15px
+			line-height: 28px
+			font-weight: 700
+			letter-spacing: .06em
+
+	&_style_4 &__list-item,
+	&_style_5 &__list-item,
+	&_style_6 &__list-item
+		padding: 0 0 0 60px
+
+		&::before
+			content: counter( list )
+
+			position: absolute
+			top: 15px
+			left: 19px
+			right: auto
+			z-index: 1 // to be above &::after
+
+			margin: -9px 0 -10px
+
+			color: $brand-primary
+			font-size: 12px
+			line-height: 28px
+			font-weight: 600
+			letter-spacing: .06em
+
+			transform: translate( -50%, -50% )
+
+		&::after
+			content: ''
+
+			position: absolute
+			top: 11px
+			left: 6px
+
+			width: 27px
+			height: 27px
+
+			background-color: rgba( $brand-primary, .15 )
+
+			transform: rotateZ( 45deg ) translate( -50%, -50% )
+
+	&_style_7 &__list-item,
+	&_style_8 &__list-item,
+	&_style_9 &__list-item
+
+		&::before
+			content: counter( list )
+
+			left: 0
+			right: auto
+
+			font-size: 22px
+
+	&_style_7 &__list-item
+		padding: 0 0 0 32px
+
+		&::before
+			top: -7px
+
+	&_style_8 &__list-item,
+	&_style_9 &__list-item
+		width: auto
+		min-height: 0
+
+		margin: 10px
+		padding: 0 0 200px 17px
+
+		background-color: transparent
+
+		&::before
+			top: -6px
+			font-size: 18px
+
+		&::after
+			content: ''
+
+			position: absolute
+			top: 20px
+			left: 50%
+
+			width: 100%
+			max-width: 285px
+			height: 230px
+
+			background: center / contain no-repeat
+
+			transform: translateX( -50% )
+
+		&:nth-child( 1 )::after
+			background-image: url( '#{$img}/b-hero/item_1.jpg' )
+
+		&:nth-child( 2 )::after
+			background-image: url( '#{$img}/b-hero/item_2.jpg' )
+
+		&:nth-child( 3 )::after
+			background-image: url( '#{$img}/b-hero/item_3.jpg' )
+
+	&_style_8 &__list-item,
+	&_style_9 &__list-item
+
+		+md-tablet_h
+			padding-bottom: 120px
+
+		@media only screen and ( max-height: 500px )
+			padding-bottom: 90px
+
+		&::after
+
+			+md-tablet_h
+				top: 40px
+				height: 140px
 
 	&__list-text
 		margin: -9px 0 -10px
@@ -207,8 +552,27 @@
 		font-weight: 500
 		letter-spacing: .06em
 
+		+md-tablet_h
+			margin: -11px 0 -10px
+			font-size: 14px
+
 		&_highlighted
 			font-weight: 800
+
+	&_style_2 &__list-text,
+	&_style_3 &__list-text,
+	&_style_4 &__list-text,
+	&_style_5 &__list-text,
+	&_style_6 &__list-text,
+	&_style_7 &__list-text,
+		margin: -8px 0 -9px
+		line-height: 28px
+
+	&_style_8 &__list-text,
+	&_style_9 &__list-text
+		margin: -6px 0 -7px
+		font-size: 12px
+		line-height: 22px
 
 	&__btn // tag a
 		position: absolute
@@ -226,12 +590,10 @@
 			bottom: 0
 			right: -17px
 
-			opacity: .2
-
 			width: 100%
 			height: calc( 100% + 17px )
 
-			background: $brand-primary
+			background: rgba( $brand-primary-2, .2 )
 
 			transition: all .2s
 
@@ -254,7 +616,7 @@
 			width: calc( 100% - ( 17px + 50px ) )
 			height: 1px
 
-			background: $brand-primary
+			background: $brand-primary-2
 
 			transition: all .2s
 
@@ -264,29 +626,95 @@
 		&:active::after
 			width: 20px
 
-	&_theme_2 &__btn::before,
-	&_theme_2 &__btn::after
-		background: #F37101
+	&_style_2 &__btn,
+	&_style_3 &__btn,
+	&_style_4 &__btn,
+	&_style_6 &__btn,
+	&_style_8 &__btn,
+	&_style_9 &__btn,
+	&_style_10 &__btn
+		position: relative
+		bottom: auto
+		left: auto
 
-	&_theme_3 &__btn::before,
-	&_theme_3 &__btn::after
-		background: $brand-primary-3
+		width: 100%
+		max-width: 285px
 
-	&_theme_4 &__btn::before,
-	&_theme_4 &__btn::after
-		background: #f37101
+	&_style_3 &__btn,
+	&_style_4 &__btn,
+	&_style_5 &__btn,
+	&_style_7 &__btn
 
-	&_theme_5 &__btn::before,
-	&_theme_5 &__btn::after
-		background: $brand-primary-5
+		&::after
+			display: none
 
-	&_theme_6 &__btn::before,
-	&_theme_6 &__btn::after
-		background: #77b300
+	&_style_3 &__btn,
+	&_style_4 &__btn
 
-	&_theme_7 &__btn::before,
-	&_theme_7 &__btn::after
-		background: #2274b0
+		&::before
+			top: -10px
+			bottom: auto
+			left: 10px
+			right: auto
+
+			height: calc( 100% + 20px )
+
+			border: 1px solid rgba( $brand-primary-2, .5 )
+
+			background-color: transparent
+
+	&_style_5 &__btn,
+	&_style_7 &__btn
+		position: absolute
+		top: calc( 50% - 60px )
+		bottom: auto
+		left: calc( 100% - 60px )
+
+		width: auto
+
+		&::before
+			top: -40px
+			bottom: auto
+			left: -40px
+			right: auto
+
+			width: 200px
+			height: 200px
+
+			border-radius: 50%
+
+			background-color: rgba( $brand-primary-2, .2 )
+
+		&:hover::before
+			top: -65px
+			left: -65px
+
+			width: 250px
+			height: 250px
+
+			background-color: rgba( $brand-primary-2, .1 )
+
+		&:active::before
+			top: 0px
+			left: 0px
+
+			width: 120px
+			height: 120px
+
+			background-color: rgba( $brand-primary-2, 0 )
+
+	&_style_8 &__btn,
+	&_style_9 &__btn
+		margin: 0 auto 70px
+
+		+md-tablet_h
+			margin-bottom: 45px
+
+	&_style_10 &__btn
+		margin: 0 auto 60px
+
+		+md-tablet_h
+			margin-bottom: 40px
 
 	&__btn-inner // tag span
 		position: relative
@@ -302,7 +730,7 @@
 			width: 20px
 			height: 1px
 
-			background: $brand-primary
+			background: $brand-primary-2
 
 			transition: all .2s
 
@@ -316,33 +744,18 @@
 			width: 1px
 			height: 20px
 
-			background: $brand-primary
+			background: $brand-primary-2
 
 			transition: all .2s
 
-	&_theme_2 &__btn-inner::before,
-	&_theme_2 &__btn-inner::after
-		background: #F37101
+	&_style_3 &__btn-inner,
+	&_style_4 &__btn-inner,
+	&_style_5 &__btn-inner,
+	&_style_7 &__btn-inner
 
-	&_theme_3 &__btn-inner::before,
-	&_theme_3 &__btn-inner::after
-		background: $brand-primary-3
-
-	&_theme_4 &__btn-inner::before,
-	&_theme_4 &__btn-inner::after
-		background: #f37101
-
-	&_theme_5 &__btn-inner::before,
-	&_theme_5 &__btn-inner::after
-		background: $brand-primary-5
-
-	&_theme_6 &__btn-inner::before,
-	&_theme_6 &__btn-inner::after
-		background: #77b300
-
-	&_theme_7 &__btn-inner::before,
-	&_theme_7 &__btn-inner::after
-		background: #2274b0
+		&::before,
+		&::after
+			display: none
 
 	&__btn:hover &__btn-inner::before
 		left: -21px
@@ -366,76 +779,40 @@
 
 		padding: 19px 25px
 
-		background: $brand-primary
-		box-shadow: 0px 20px 60px 0 rgba( $brand-primary, .3 )
+		background: $brand-primary-2
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-2, .3 )
 
 		transition: all .2s
 
-	&_theme_2 &__btn-inner-2
-		background: #F37101
-		box-shadow: 0px 20px 60px 0 rgba( #F37101, .3 )
+	&_style_3 &__btn-inner-2,
+	&_style_4 &__btn-inner-2
+		box-shadow: none !important // to set :hover and :active
 
-	&_theme_3 &__btn-inner-2
-		background: $brand-primary-3
-		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-3, .3 )
+	&_style_5 &__btn-inner-2,
+	&_style_7 &__btn-inner-2
+		align-items: center
 
-	&_theme_4 &__btn-inner-2
-		background: #f37101
-		box-shadow: 0px 20px 60px 0 rgba( #f37101, .3 )
+		width: 120px
+		height: 120px
 
-	&_theme_5 &__btn-inner-2
-		background: $brand-primary-5
-		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-5, .3 )
+		border-radius: 50%
+		padding: 10px
 
-	&_theme_6 &__btn-inner-2
-		background: #77b300
-		box-shadow: 0px 20px 60px 0 rgba( #77b300, .3 )
-
-	&_theme_7 &__btn-inner-2
-		background: #2274b0
-		box-shadow: 0px 20px 60px 0 rgba( #2274b0, .3 )
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-2, .17 )
 
 	&__btn:hover &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( $brand-primary, .5 )
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-2, .5 )
 
-	&_theme_2 &__btn:hover &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( #F37101, .5 )
-
-	&_theme_3 &__btn:hover &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-3, .5 )
-
-	&_theme_4 &__btn:hover &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( #f37101, .5 )
-
-	&_theme_5 &__btn:hover &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-5, .5 )
-
-	&_theme_6 &__btn:hover &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( #77b300, .5 )
-
-	&_theme_7 &__btn:hover &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( #2274b0, .5 )
+	&_style_7 &__btn:hover &__btn-inner-2,
+	&_style_5 &__btn:hover &__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-2, .5 )
 
 	&__btn:active &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( $brand-primary, 0 )
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-2, 0 )
 
-	&_theme_2 &__btn:active &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( #F37101, 0 )
-
-	&_theme_3 &__btn:active &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-3, 0 )
-
-	&_theme_4 &__btn:active &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( #f37101, 0 )
-
-	&_theme_5 &__btn:active &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-5, 0 )
-
-	&_theme_6 &__btn:active &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( #77b300, 0 )
-
-	&_theme_7 &__btn:active &__btn-inner-2
-		box-shadow: 0px 20px 60px 0 rgba( #2274b0, 0 )
+	&_style_7 &__btn:active &__btn-inner-2,
+	&_style_5 &__btn:active &__btn-inner-2
+		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-2, 0 )
 
 	&__btn-text // tag span
 		position: relative // for &:: after
@@ -471,6 +848,15 @@
 
 	&__btn:active &__btn-text
 		left: 8px
+
+	&_style_5 &__btn-text,
+	&_style_7 &__btn-text
+		left: 0 !important // to set :hover and :active
+		padding-right: 0
+		font-size: 12px
+
+		&::after
+			display: none
 
 	&__demo
 		display: flex

@@ -30,10 +30,10 @@
 		transition: border-color .2s
 
 		&:focus
-			border-color: #2096f3
+			border-color: $brand-primary
 
 	&_style_3
-		border: $brd_w-input solid rgba( #2096f3, 0 )
+		border: $brd_w-input solid rgba( $brand-primary, 0 )
 		padding: 11px 24px 9px
 
 		line-height: 36px
@@ -43,7 +43,7 @@
 		transition: border-color .2s, background-color .2s
 
 		&:focus
-			border-color: #2096f3
+			border-color: $brand-primary
 			background-color: $white
 
 	&[readonly],
@@ -173,11 +173,19 @@
 	flex-direction: column
 	margin-bottom: $m_b-label
 
+	&_max_h_sm
+
+		@media screen and ( max-height: 840px )
+			margin-bottom: 0
+
 	&_m_b_xl
 		margin-bottom: 10px
 
 	&_m_b_xxl
 		margin-bottom: 12px
+
+		@media screen and ( max-height: 840px )
+			margin-bottom: 10px
 
 	&_style_2
 		position: absolute
@@ -228,7 +236,7 @@
 			color: $c-form-error
 
 	&:focus-within .-ol-label-text
-		color: #2096f3
+		color: $brand-primary
 
 	&::before
 		content: ''
@@ -240,7 +248,7 @@
 		width: 0
 		height: $brd_w-input
 
-		background-color: #2096f3
+		background-color: $brand-primary
 
 		transition: width .2s
 
@@ -253,8 +261,18 @@
 .-ol-row-input
 	margin-bottom: $m-row-input
 
+	&_max_h_sm
+
+		@media screen and ( max-height: 840px )
+			margin-bottom: 17px
+
 	&_m_b_sm
 		margin-bottom: 25px
+
+	&_m_b_sm_max_h_sm
+
+		@media screen and ( max-height: 840px )
+			margin-bottom: 17px
 
 	&_last
 		margin-bottom: 0
@@ -267,10 +285,15 @@
 	&_m_b_sm
 
 		+md-mobile
-			margin-bottom: 25px
+			margin-bottom: 30px
 
 .-ol-form-body
 	margin-bottom: $m-form-body
+
+	&_max_h_sm
+
+		@media screen and ( max-height: 840px )
+			margin-bottom: 25px
 
 	&_m_b_sm
 		margin-bottom: 30px
