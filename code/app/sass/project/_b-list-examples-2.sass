@@ -1,0 +1,111 @@
+.b-list-examples-2
+	position: relative
+
+	&__inner
+		display: flex !important // to set js and collapse margins inside
+		flex-direction: column
+		height: calc( 100vh - 236px )
+
+	&__item
+		position: relative // for &__btn, &__title and &::before
+
+		display: flex
+		flex-direction: column
+		align-items: center
+
+		padding: 0 20px
+
+		cursor: pointer
+
+	&__item-inner // tag a
+		display: flex
+		flex-direction: column
+		pointer-events: none
+
+		height: 100%
+ 
+	&__item.slick-center &__item-inner
+		pointer-events: auto
+
+	&__btn
+		position: absolute
+		left: calc( 50% - 120px )
+		bottom: 15px
+		z-index: 1
+
+		opacity: 0
+
+		width: 240px
+
+		border-color: #f37101
+
+		background-color: #f37101
+
+		pointer-events: none
+
+		transition: all $anim_dur-b-list-examples
+
+		&:hover
+			border-color: #de6902
+			background-color: #de6902
+
+	&__item.slick-center &__btn
+		bottom: calc( -2.65% + 15px )
+		opacity: 1
+		pointer-events: auto
+
+	&__img
+		position: relative // for &__img-inner
+
+		height: 100%
+		max-width: none
+
+		border: 1px solid rgba( #de6902, 0 )
+
+		box-shadow: 0px 30px 120px 0 rgba( #171f26, .15 )
+
+		transition: all $anim_dur-b-list-examples
+
+		transform: scale( 1 )
+
+	&__item.slick-center &__img
+		transform: scale( 1.0526316 )
+
+	&__item.slick-center &__img
+		border-color: #de6902
+
+	&__img-plug
+		height: 100%
+
+	&__img-inner
+		position: absolute
+		top: 0
+		left: 0
+
+		width: 100%
+		height: 100%
+
+		background: center / cover no-repeat
+
+	&__title
+		position: absolute
+		top: calc( 100% + 23px )
+		left: 50%
+
+		margin: -5px 0 -6px
+
+		color: rgba( $black, .4 )
+		font-size: 10px
+		line-height: 18px
+		font-weight: 700
+		letter-spacing: .06em
+
+		text-transform: uppercase
+
+		transform: translateX( -50% )
+
+		transition: all $anim_dur-b-list-examples
+
+	&__item.slick-center &__title
+		top: calc( 102.65% + 23px )
+		color: $black

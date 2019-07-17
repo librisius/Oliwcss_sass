@@ -9,6 +9,31 @@
 	&_style_2 .slick-list
 		height: calc( 100% + 280px )
 
+	&_style_3 .slick-list
+		height: calc( 100% + 180px )
+		margin: -90px 0
+
+	&_style_4 .slick-list
+
+		&::before,
+		&::after
+			content: ''
+
+			position: absolute
+			top: 120px
+			z-index: 1
+
+			width: 160px
+			height: calc( 100% - 240px )
+
+		&::before
+			left: 0
+			background: linear-gradient( to left, rgba( #f8f9fb, 0 ), #f8f9fb 55% )
+
+		&::after
+			right: 0
+			background: linear-gradient( to right, rgba( #f8f9fb, 0 ), #f8f9fb 55% )
+
 	.slick-track
 		display: flex
 		align-items: center
@@ -16,6 +41,9 @@
 		height: 100%
 
 		padding: 140px 0
+
+	&_style_3 .slick-track
+		padding: 90px 0
 
 	.slick-slide
 		position: relative
@@ -67,6 +95,31 @@
 		&::after
 			font-size: 16px
 
+	&_style_3 .slick-arrow
+		position: absolute
+		top: 50%
+		z-index: 9
+
+		width: 50px
+		height: 50px
+
+		border-radius: 0
+
+		background-color: $black
+
+		transform: translateY( -50% )
+
+		@extend .i-arrow-5
+
+		&::after
+			position: absolute
+			top: 18px
+
+			color: $white
+			font-size: 14px
+
+			transition: all .2s
+
 	&_theme_2 .slick-arrow
 		background-color: #f37101
 
@@ -86,6 +139,9 @@
 	&_style_2 .slick-prev
 		left: 35px
 
+	&_style_3 .slick-prev
+		left: 0
+
 	.slick-next
 		right: 20px
 
@@ -97,3 +153,6 @@
 
 	&_style_2 .slick-next
 		right: 35px
+
+	&_style_3 .slick-next
+		right: 0
