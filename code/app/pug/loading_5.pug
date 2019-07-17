@@ -1,0 +1,34 @@
+extends extends/layout
+
+
+
+block content
+
+	.b-preloader-5.c-manipulate-class-timing( data-c-manipulate-class-timing-class="b-preloader-5_running" data-c-manipulate-class-timing-duration="1000" )
+		.b-preloader-5__logo
+		.b-preloader-5__list
+			.b-preloader-5__list-item.b-preloader-5__list-item_1
+				p.b-preloader-5__text Loading 20 Professional Resume Designs
+			.b-preloader-5__list-item.b-preloader-5__list-item_2
+				p.b-preloader-5__text 282 Pre-written Samples
+			.b-preloader-5__list-item.b-preloader-5__list-item_3
+				p.b-preloader-5__text 152 Writing Tips
+			.b-preloader-5__list-item.b-preloader-5__list-item_4
+				p.b-preloader-5__text Customer Service Help
+			.b-preloader-5__list-item.b-preloader-5__list-item_5
+				p.b-preloader-5__text Fonts and Design Tools
+			.b-preloader-5__list-item.b-preloader-5__list-item_6
+				p.b-preloader-5__text Finished
+		.b-preloader-5__icon
+		.b-preloader-5__status
+			h2.b-preloader-5__status-text Loading...
+
+
+
+append scripts
+
+	script(
+		src="dist/js/plugins/slick.js" )
+
+	script(
+		src="dist/js/specific/app.js" )

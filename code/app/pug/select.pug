@@ -1,0 +1,76 @@
+extends extends/layout
+
+
+
+block content
+
+	header.b-header
+		.b-header__item
+			.b-header__logo
+
+	.b-section-steps
+		.b-section-steps__inner
+
+			.b-section-steps__heading
+				.b-heading
+					h1.b-heading__title Select a Template
+					p.b-heading__subtitle To get started, select a resume template below.
+
+			.b-section-steps__list.b-list-examples
+				.b-list-examples__inner.c-slick-examples
+					.b-list-examples__item
+						a.b-list-examples__item-inner( href="#!" )
+							.b-list-examples__img
+								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
+								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/1.jpg )" )
+							button.b-list-examples__btn.-ol-btn Select
+							h2.b-list-examples__title Gaborone
+					.b-list-examples__item
+						a.b-list-examples__item-inner( href="#!" )
+							.b-list-examples__img
+								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
+								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/2.jpg )" )
+							button.b-list-examples__btn.-ol-btn Select
+							h2.b-list-examples__title Gaborone
+					.b-list-examples__item
+						a.b-list-examples__item-inner( href="#!" )
+							.b-list-examples__img
+								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
+								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/3.jpg )" )
+							button.b-list-examples__btn.-ol-btn Select
+							h2.b-list-examples__title Abuja
+					.b-list-examples__item
+						a.b-list-examples__item-inner( href="#!" )
+							.b-list-examples__img
+								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
+								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/4.jpg )" )
+							button.b-list-examples__btn.-ol-btn Select
+							h2.b-list-examples__title Nice
+					.b-list-examples__item
+						a.b-list-examples__item-inner( href="#!" )
+							.b-list-examples__img
+								img.b-list-examples__img-plug( src="media/img/b-list-examples/default.jpg" alt="Template is Loading" )
+								.b-list-examples__img-inner( style="background-image: url( media/img/b-list-examples/5.jpg )" )
+							button.b-list-examples__btn.-ol-btn Select
+							h2.b-list-examples__title Nice
+
+			.b-footer
+				.b-footer__list
+					.b-footer__list-item
+						a.b-footer__list-link( href="#!" ) Contact us
+					.b-footer__list-item
+						a.b-footer__list-link( href="#!" ) Privacy
+					.b-footer__list-item
+						a.b-footer__list-link( href="#!" ) Disclaimer
+					.b-footer__list-item
+						a.b-footer__list-link( href="#!" ) Terms of service
+
+
+
+append scripts
+
+	script(
+		src="dist/js/plugins/slick.js" )
+
+	script(
+		src="dist/js/specific/app.js" )

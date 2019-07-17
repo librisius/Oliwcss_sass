@@ -4,7 +4,10 @@
 	&__inner
 		display: flex !important // to set js and collapse margins inside
 		flex-direction: column
-		height: calc( 100vh - 236px )
+		height: calc( 100vh - 286px )
+
+	&_style_2 &__inner
+		height: calc( 100vh - 378px )
 
 	&__item
 		position: relative // for &__btn, &__title and &::before
@@ -17,6 +20,9 @@
 
 		cursor: pointer
 
+	&_style_2 &__item
+		padding: 0 17px
+
 	&__item-inner // tag a
 		display: flex
 		flex-direction: column
@@ -24,7 +30,7 @@
 
 		height: 100%
  
-	&__item.slick-center .b-list-examples__item-inner
+	&__item.slick-center &__item-inner
 		pointer-events: auto
 
 	&__btn
@@ -37,14 +43,53 @@
 
 		width: 240px
 
+		border-radius: 27px
+		border-color: #0099da
+
+		background-color: #0099da
+
 		pointer-events: none
 
 		transition: all $anim_dur-b-list-examples
 
-	&__item.slick-center .b-list-examples__btn
-		bottom: calc( -2.65% + 15px )
+		&:hover
+			border-color: #0087c1
+			background-color: #0087c1
+
+	&_style_2 &__btn
+		left: 22px
+		bottom: 22px
+
+		width: calc( 100% - 44px )
+
+		border-radius: 3px
+		border-color: #0099da
+		padding: 13px 20px
+
+		background-color: #0099da
+
+		font-size: 12px
+		text-transform: none
+
+		&:hover
+			border-color: #0087c1
+			background-color: #0087c1
+
+	&_theme_2 &__btn
+		border-color: #f37101
+		background-color: #f37101
+
+		&:hover
+			border-color: #de6902
+			background-color: #de6902
+
+	&__item.slick-center &__btn
+		bottom: calc( -2.65% + 20px )
 		opacity: 1
 		pointer-events: auto
+
+	&_style_2 &__item.slick-center &__btn
+		bottom: calc( -2.65% + 20px )
 
 	&__img
 		position: relative // for &__img-inner
@@ -52,19 +97,37 @@
 		height: 100%
 		max-width: none
 
-		border: 1px solid rgba( $brand-primary, 0 )
+		overflow: hidden
 
-		box-shadow: 0px 30px 120px 0 rgba( #171f26, .15 )
+		border-radius: 5px
+		border: 0 solid rgba( #0099da, 0 )
+
+		box-shadow: 0px 30px 120px 0 rgba( #171f26, .1 )
 
 		transition: all $anim_dur-b-list-examples
 
 		transform: scale( 1 )
 
-	&__item.slick-center .b-list-examples__img
+	&_style_2 &__img
+		border-radius: 2px
+		border: 1px solid rgb( 229, 233, 242 )
+
+		box-shadow: rgba( 0, 0, 0, .1 ) 0px 1px 3px
+
+	&__item.slick-center &__img
+		border-width: 2px
 		transform: scale( 1.0526316 )
 
-	&__item.slick-center .b-list-examples__img
-		border-color: $brand-primary
+	&__item.slick-center &__img
+		border-color: #0099da
+
+	&_style_2 &__item.slick-center &__img
+		border: 2px solid #0099da
+		box-shadow: rgba( #0099da, .6 ) 0px 1px 3px
+
+	&_theme_2 &__item.slick-center &__img
+		border: 2px solid #f37101
+		box-shadow: rgba( #f37101, .6 ) 0px 1px 3px
 
 	&__img-plug
 		height: 100%
@@ -81,12 +144,12 @@
 
 	&__title
 		position: absolute
-		top: calc( 100% + 23px )
+		bottom: calc( 100% + 15px )
 		left: 50%
 
 		margin: -5px 0 -6px
 
-		color: rgba( $black, .4 )
+		color: rgba( #98a1b3, .7 )
 		font-size: 10px
 		line-height: 18px
 		font-weight: 700
@@ -98,6 +161,22 @@
 
 		transition: all $anim_dur-b-list-examples
 
-	&__item.slick-center .b-list-examples__title
-		top: calc( 102.65% + 23px )
+	&_style_2 &__title
+		margin: -6px 0 -7px
+
+		color: #282b32
+		font-size: 16px
+		line-height: 24px
+		font-weight: 400
+
+		text-transform: none
+
+	&__item.slick-center &__title
+		bottom: calc( 102.65% + 15px )
 		color: $black
+
+	&_style_2 &__item.slick-center &__title
+		color: #0099da
+
+	&_theme_2 &__item.slick-center &__title
+		color: #f37101

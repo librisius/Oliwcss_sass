@@ -1,0 +1,53 @@
+extends extends/layout
+
+
+
+block content
+
+	.b-preloader.c-manipulate-class-timing( data-c-manipulate-class-timing-class="b-preloader_running" data-c-manipulate-class-timing-duration="1000" )
+		.b-preloader__logo
+		.b-preloader__list
+			.b-preloader__list-inner
+				.b-preloader__list-item.b-preloader__list-item_1
+					.b-preloader__box
+						.b-preloader__icon
+							include includes/s-tick
+						p.b-preloader__text Loading 20 Professional Resume Designs
+				.b-preloader__list-item.b-preloader__list-item_2
+					.b-preloader__box
+						.b-preloader__icon
+							include includes/s-tick
+						p.b-preloader__text Loading 282 Pre-written Samples
+				.b-preloader__list-item.b-preloader__list-item_3
+					.b-preloader__box
+						.b-preloader__icon
+							include includes/s-tick
+						p.b-preloader__text Loading 152 Writing Tips
+				.b-preloader__list-item.b-preloader__list-item_4
+					.b-preloader__box
+						.b-preloader__icon
+							include includes/s-tick
+						p.b-preloader__text Loading Customer Service Help
+				.b-preloader__list-item.b-preloader__list-item_5
+					.b-preloader__box
+						.b-preloader__icon
+							include includes/s-tick
+						p.b-preloader__text Loading Fonts and Design Tools
+				.b-preloader__list-item.b-preloader__list-item_6
+					.b-preloader__box
+						.b-preloader__icon
+							include includes/s-tick
+						p.b-preloader__text Loading Fonts and Finished
+
+		.b-preloader__state
+			.b-preloader__state-bar
+
+
+
+append scripts
+
+	script(
+		src="dist/js/plugins/slick.js" )
+
+	script(
+		src="dist/js/specific/app.js" )

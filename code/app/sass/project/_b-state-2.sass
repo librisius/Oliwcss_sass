@@ -1,0 +1,49 @@
+.b-state-2
+	width: 500px
+	height: 4px
+	position: relative
+	border-radius: 2px
+	background: #bfc5d6
+	margin: 37px auto 32px
+
+	&__progress
+		height: 100%
+		will-change: width
+		width: 12.5%
+		border-radius: 2px
+		background: #0099da
+
+	&_theme_2 &__progress
+		background: #f37101
+
+	&__bar
+		position: absolute
+		top: 0
+		left: -4px
+		right: -4px
+		bottom: 0
+
+		display: flex
+		flex-direction: row
+		align-items: flex-start
+		-webkit-box-pack: justify
+		justify-content: space-between
+		flex-wrap: nowrap
+
+	&__circle
+		position: relative
+		top: -6px
+
+		width: 16px
+		height: 16px
+
+		border-radius: 8px
+		border: 5px solid #bfc5d6
+
+		background: white
+
+		&_active
+			border-color: #0099da
+
+	&_theme_2 &__circle_active
+		border-color: #f37101

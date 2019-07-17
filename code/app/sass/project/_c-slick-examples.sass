@@ -3,8 +3,11 @@
 	@extend .c-slick
 
 	.slick-list
-		height: calc( 100% + 180px )
-		margin: -90px 0
+		height: calc( 100% + 240px )
+		margin: -140px 0
+
+	&_style_2 .slick-list
+		height: calc( 100% + 280px )
 
 	.slick-track
 		display: flex
@@ -12,7 +15,7 @@
 
 		height: 100%
 
-		padding: 90px 0
+		padding: 140px 0
 
 	.slick-slide
 		position: relative
@@ -26,14 +29,21 @@
 		top: 50%
 		z-index: 9
 
-		width: 50px
-		height: 50px
+		width: 52px
+		height: 52px
 
-		background-color: $black
+		border-radius: 50%
+
+		background-color: #0099da
+
+		font-size: 0
 
 		transform: translateY( -50% )
 
-		@extend .i-arrow-5
+		@extend .i-arrow-7
+
+		&:hover
+			background-color: #0087c1
 
 		&::after
 			position: absolute
@@ -44,8 +54,27 @@
 
 			transition: all .2s
 
+	&_style_2 .slick-arrow
+		top: calc( 50% - 20px )
+
+		background-color: #0099da
+
+		transition: background-color .2s
+
+		&:hover
+			background-color: #0087c1
+
+		&::after
+			font-size: 16px
+
+	&_theme_2 .slick-arrow
+		background-color: #f37101
+
+		&:hover
+			background-color: #de6902
+
 	.slick-prev
-		left: 0
+		left: 20px
 
 		&::after
 			left: 20px
@@ -54,11 +83,17 @@
 		&:hover::after
 			left: 17px
 
+	&_style_2 .slick-prev
+		left: 35px
+
 	.slick-next
-		right: 0
+		right: 20px
 
 		&::after
 			right: 20px
 
 		&:hover::after
 			right: 17px
+
+	&_style_2 .slick-next
+		right: 35px
