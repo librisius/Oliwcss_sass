@@ -35,18 +35,22 @@
 
 	&__btn
 		position: absolute
-		left: calc( 50% - 120px )
-		bottom: 15px
+		left: 28px
+		bottom: 22px
 		z-index: 1
 
 		opacity: 0
 
-		width: 240px
+		width: calc( 100% - 56px )
 
-		border-radius: 27px
+		border-radius: 3px
 		border-color: #0099da
+		padding: 13px 20px
 
 		background-color: #0099da
+
+		font-size: 12px
+		text-transform: none
 
 		pointer-events: none
 
@@ -58,22 +62,7 @@
 
 	&_style_2 &__btn
 		left: 22px
-		bottom: 22px
-
 		width: calc( 100% - 44px )
-
-		border-radius: 3px
-		border-color: #0099da
-		padding: 13px 20px
-
-		background-color: #0099da
-
-		font-size: 12px
-		text-transform: none
-
-		&:hover
-			border-color: #0087c1
-			background-color: #0087c1
 
 	&_theme_2 &__btn
 		border-color: #f37101
@@ -87,9 +76,6 @@
 		bottom: calc( -2.65% + 20px )
 		opacity: 1
 		pointer-events: auto
-
-	&_style_2 &__item.slick-center &__btn
-		bottom: calc( -2.65% + 20px )
 
 	&__img
 		position: relative // for &__img-inner
