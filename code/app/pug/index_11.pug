@@ -1,0 +1,39 @@
+extends extends/layout
+
+
+
+block content
+
+	.b-hero.b-hero_style_11
+		.b-hero__item.b-hero__item_content
+
+			header.b-header
+				.b-header__item
+					.b-header__logo
+
+			section.b-hero__content
+				.b-hero__heading
+					h1.b-hero__heading-text #[span.b-hero__heading-text_highlighted Easy] Online#[br]#[span.b-hero__heading-text_lg CV Builder]
+					p.b-hero__subheading-text Get all the help you need to create a professional CV in minutes
+
+				a.b-hero__btn( href="https://resumedone.io/onboard/start" )
+					span.b-hero__btn-inner
+						span.b-hero__btn-inner-2
+							span.b-hero__btn-text Create my CV
+
+				.b-hero__img
+
+		a.b-hero__item.b-hero__item_img( href="https://resumedone.io/onboard/start" )
+			.b-hero__demo
+				.b-hero__demo-item
+					.b-hero__demo-img.b-hero__demo-img_1
+						.b-hero__demo-img-inner
+					.b-hero__demo-img.b-hero__demo-img_2
+						.b-hero__demo-img-inner
+
+
+
+append scripts
+
+	script(
+		src="dist/js/specific/app.js" )

@@ -1,7 +1,13 @@
 .b-hero
 	display: flex
-	overflow: hidden
+	overflow: auto
 	height: 100vh
+
+	@media only screen and ( max-width: 1500px )
+		min-width: 600px
+
+	@media only screen and ( max-height: 500px )
+		min-height: 500px
 
 	&__item
 		width: 50%
@@ -23,15 +29,10 @@
 			@media only screen and ( max-width: 1640px )
 				padding: 100px 30px
 
-			@media only screen and ( max-width: 1500px )
-				min-width: 600px
-
-			@media only screen and ( max-height: 500px )
-				overflow: auto
-				min-height: 500px
-
 		&_img
 			position: relative // for &::before
+
+			overflow: hidden
 
 			background:
 				color: #e3e5e7
@@ -75,12 +76,28 @@
 		+md-tablet_h
 			padding: 100px 30px 50px
 
+	&_style_11 &__item_content,
+	&_style_13 &__item_content
+		padding: 40px 40px 100px
+
+		+md-tablet_h
+			padding: 30px 40px 30px
+
+	&_style_14 &__item_content
+		padding: 40px
+
+		+md-tablet_h
+			padding: 30px 40px
+
 	&__content
 		position: relative // for &__btn
 		max-width: 600px
 
 	&_style_5 &__content,
-	&_style_7 &__content
+	&_style_7 &__content,
+	&_style_11 &__content,
+	&_style_13 &__content,
+	&_style_14 &__content
 		position: static
 
 	&_style_5 &__content
@@ -99,7 +116,10 @@
 
 	&_style_8 &__content,
 	&_style_9 &__content,
-	&_style_10 &__content
+	&_style_10 &__content,
+	&_style_11 &__content,
+	&_style_13 &__content,
+	&_style_14 &__content
 		max-width: none
 
 	&__heading
@@ -151,7 +171,10 @@
 	&_style_7 &__heading,
 	&_style_8 &__heading,
 	&_style_9 &__heading,
-	&_style_10 &__heading
+	&_style_10 &__heading,
+	&_style_11 &__heading,
+	&_style_13 &__heading,
+	&_style_14 &__heading
 		border-bottom: none
 		padding-bottom: 0
 
@@ -172,8 +195,17 @@
 		+md-tablet_h
 			margin-bottom: 40px
 
-	&_style_10 &__heading
+	&_style_10 &__heading,
+	&_style_11 &__heading,
+	&_style_13 &__heading
 		margin-bottom: 55px
+		text-align: center
+
+		+md-tablet_h
+			margin-bottom: 50px
+
+	&_style_14 &__heading
+		margin-bottom: 60px
 		text-align: center
 
 		+md-tablet_h
@@ -217,7 +249,9 @@
 	&_style_5 &__heading-text,
 	&_style_6 &__heading-text,
 	&_style_9 &__heading-text,
-	&_style_10 &__heading-text
+	&_style_10 &__heading-text,
+	&_style_11 &__heading-text,
+	&_style_14 &__heading-text
 		margin: -16px 0 23px
 		line-height: 67px
 		font-weight: 800
@@ -230,7 +264,8 @@
 			margin-bottom: -17px
 
 	&_style_5 &__heading-text,
-	&_style_10 &__heading-text
+	&_style_10 &__heading-text,
+	&_style_11 &__heading-text
 
 		+md-tablet_h_sm
 			margin: -15px 0 14px
@@ -244,7 +279,8 @@
 	&_style_5 &__heading-text,
 	&_style_6 &__heading-text,
 	&_style_9 &__heading-text,
-	&_style_10 &__heading-text
+	&_style_10 &__heading-text,
+	&_style_11 &__heading-text
 
 		&_last
 
@@ -256,6 +292,18 @@
 
 		+md-tablet_h
 			margin-bottom: 14px
+
+		&_last
+			margin-bottom: -14px
+
+			+md-tablet_h
+				margin-bottom: -11px
+
+	&_style_14 &__heading-text
+		margin-bottom: 31px
+
+		+md-tablet_h
+			margin-bottom: 19px
 
 		&_last
 			margin-bottom: -14px
@@ -283,7 +331,10 @@
 	&_style_7 &__subheading-text,
 	&_style_8 &__subheading-text,
 	&_style_9 &__subheading-text,
-	&_style_10 &__subheading-text
+	&_style_10 &__subheading-text,
+	&_style_11 &__subheading-text,
+	&_style_13 &__subheading-text,
+	&_style_14 &__subheading-text
 		font-weight: 400
 
 	&_style_5 &__subheading-text
@@ -299,6 +350,28 @@
 		font-size: 13px
 		line-height: 26px
 
+	&__subheading
+		margin: -12px 0 37px
+
+		color: $black
+		font-size: 32px
+		line-height: 48px
+		font-weight: 800
+		letter-spacing: .04em
+
+		text-align: center
+
+		+md-tablet_h
+			margin: -10px 0 33px
+			font-size: 28px
+			line-height: 42px
+
+		&_last
+			margin-bottom: -13px
+
+			+md-tablet_h
+				margin-bottom: -12px
+
 	&__img
 		width: 285px
 		height: 230px
@@ -309,6 +382,14 @@
 
 		+md-tablet_h
 			height: 190px
+
+	&_style_13 &__img,
+	&_style_14 &__img
+		width: 380px
+		height: 324px
+
+		+md-tablet_h
+			height: 260px
 
 	&__list
 		counter-reset: list
@@ -344,9 +425,14 @@
 			margin-bottom: 28px
 
 	&_style_8 &__list,
-	&_style_9 &__list
+	&_style_9 &__list,
+	&_style_14 &__list
 		flex-wrap: nowrap
 		margin: -10px
+
+	&_style_14 &__list
+		max-width: calc( 100% - 60px )
+		margin: -10px auto
 
 	&__list-item
 		position: relative // for &::before
@@ -474,7 +560,8 @@
 
 	&_style_7 &__list-item,
 	&_style_8 &__list-item,
-	&_style_9 &__list-item
+	&_style_9 &__list-item,
+	&_style_14 &__list-item
 
 		&::before
 			content: counter( list )
@@ -491,7 +578,8 @@
 			top: -7px
 
 	&_style_8 &__list-item,
-	&_style_9 &__list-item
+	&_style_9 &__list-item,
+	&_style_14 &__list-item
 		width: auto
 		min-height: 0
 
@@ -529,7 +617,8 @@
 			background-image: url( '#{$img}/b-hero/item_3.jpg' )
 
 	&_style_8 &__list-item,
-	&_style_9 &__list-item
+	&_style_9 &__list-item,
+	&_style_14 &__list-item
 
 		+md-tablet_h
 			padding-bottom: 120px
@@ -542,6 +631,13 @@
 			+md-tablet_h
 				top: 40px
 				height: 140px
+
+	&_style_14 &__list-item
+
+		&::after
+
+			+md-tablet_h
+				top: 50px
 
 	&__list-text
 		margin: -9px 0 -10px
@@ -569,7 +665,8 @@
 		line-height: 28px
 
 	&_style_8 &__list-text,
-	&_style_9 &__list-text
+	&_style_9 &__list-text,
+	&_style_14 &__list-text
 		margin: -6px 0 -7px
 		font-size: 12px
 		line-height: 22px
@@ -643,7 +740,10 @@
 	&_style_3 &__btn,
 	&_style_4 &__btn,
 	&_style_5 &__btn,
-	&_style_7 &__btn
+	&_style_7 &__btn,
+	&_style_11 &__btn,
+	&_style_13 &__btn,
+	&_style_14 &__btn
 
 		&::after
 			display: none
@@ -664,33 +764,37 @@
 			background-color: transparent
 
 	&_style_5 &__btn,
-	&_style_7 &__btn
+	&_style_7 &__btn,
+	&_style_11 &__btn,
+	&_style_13 &__btn,
+	&_style_14 &__btn
 		position: absolute
 		top: calc( 50% - 60px )
 		bottom: auto
 		left: calc( 100% - 60px )
+		z-index: 9
 
 		width: auto
 
 		&::before
-			top: -40px
+			top: -35px
 			bottom: auto
-			left: -40px
+			left: -35px
 			right: auto
 
-			width: 200px
-			height: 200px
+			width: 190px
+			height: 190px
 
 			border-radius: 50%
 
 			background-color: rgba( $brand-primary-2, .2 )
 
 		&:hover::before
-			top: -65px
-			left: -65px
+			top: -55px
+			left: -55px
 
-			width: 250px
-			height: 250px
+			width: 230px
+			height: 230px
 
 			background-color: rgba( $brand-primary-2, .1 )
 
@@ -715,6 +819,9 @@
 
 		+md-tablet_h
 			margin-bottom: 40px
+
+	&_style_11 &__btn
+		top: calc( 50% - 40px )
 
 	&__btn-inner // tag span
 		position: relative
@@ -751,7 +858,10 @@
 	&_style_3 &__btn-inner,
 	&_style_4 &__btn-inner,
 	&_style_5 &__btn-inner,
-	&_style_7 &__btn-inner
+	&_style_7 &__btn-inner,
+	&_style_11 &__btn-inner,
+	&_style_13 &__btn-inner,
+	&_style_14 &__btn-inner
 
 		&::before,
 		&::after
@@ -789,7 +899,10 @@
 		box-shadow: none !important // to set :hover and :active
 
 	&_style_5 &__btn-inner-2,
-	&_style_7 &__btn-inner-2
+	&_style_7 &__btn-inner-2,
+	&_style_11 &__btn-inner-2,
+	&_style_13 &__btn-inner-2,
+	&_style_14 &__btn-inner-2
 		align-items: center
 
 		width: 120px
@@ -803,15 +916,21 @@
 	&__btn:hover &__btn-inner-2
 		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-2, .5 )
 
+	&_style_5 &__btn:hover &__btn-inner-2,
 	&_style_7 &__btn:hover &__btn-inner-2,
-	&_style_5 &__btn:hover &__btn-inner-2
+	&_style_11 &__btn:hover &__btn-inner-2,
+	&_style_13 &__btn:hover &__btn-inner-2,
+	&_style_14 &__btn:hover &__btn-inner-2
 		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-2, .5 )
 
 	&__btn:active &__btn-inner-2
 		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-2, 0 )
 
+	&_style_5 &__btn:active &__btn-inner-2,
 	&_style_7 &__btn:active &__btn-inner-2,
-	&_style_5 &__btn:active &__btn-inner-2
+	&_style_11 &__btn:active &__btn-inner-2,
+	&_style_13 &__btn:active &__btn-inner-2,
+	&_style_14 &__btn:active &__btn-inner-2
 		box-shadow: 0px 20px 60px 0 rgba( $brand-primary-2, 0 )
 
 	&__btn-text // tag span
@@ -850,7 +969,10 @@
 		left: 8px
 
 	&_style_5 &__btn-text,
-	&_style_7 &__btn-text
+	&_style_7 &__btn-text,
+	&_style_11 &__btn-text,
+	&_style_13 &__btn-text,
+	&_style_14 &__btn-text
 		left: 0 !important // to set :hover and :active
 		padding-right: 0
 		font-size: 12px
