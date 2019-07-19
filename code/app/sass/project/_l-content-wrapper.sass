@@ -4,12 +4,15 @@
 
 	min-height: 100vh
 
-	// padding-top: $h-b-header
+	padding-top: $h-b-header
 
 	transition: $anim_dur-b-modal filter
 
 	._modal_active &
 		filter: blur( 3px )
+
+	&_without_header
+		padding-top: 0
 
 	&__item
 

@@ -1,0 +1,103 @@
+.b-contacts
+	display: flex // to collapse margins inside
+	flex-direction: column
+
+	max-width: 1060px
+
+	margin: 0 auto
+	padding: 80px 0 60px
+
+	&__inner
+		display: flex
+		margin: -20px
+
+		+md-tablet_sm
+			flex-direction: column
+
+	&__item
+		padding: 20px
+
+		&_major
+			flex-grow: 1
+
+		&_shrink_none
+			flex-shrink: 0
+
+	&__info
+		width: 400px
+		padding: 40px
+		background-color: $grey-lighter
+
+		+md-tablet_sm
+			width: 100%
+			max-width: 500px
+
+	&__info-heading
+		margin: -8px 0 31px
+
+		color: $black
+		font-size: 26px
+		line-height: 36px
+		font-weight: 700
+		letter-spacing: .06em
+
+		&_last
+			margin-bottom: -9px
+
+	&__info-tel
+		position: relative // for &::after
+
+		display: block
+
+		margin: -7px 0 33px
+		padding-left: 30px
+
+		color: $brand-primary
+		font-size: 15px
+		line-height: 25px
+		font-weight: 500
+		letter-spacing: .06em
+
+		@extend .i-phone
+
+		&::after
+			position: absolute
+			top: 4px
+			left: 0
+
+			font-size: 17px
+
+		&_last
+			margin-bottom: -7px
+
+	&__info-list
+
+	&__info-list-item
+		display: flex
+		flex-wrap: wrap
+		margin: -10px -10px ( 25px ) -10px
+
+		&_last
+			margin-bottom: -10px
+
+	&__info-list-heading
+		width: 180px
+
+		margin: -7px 0
+		padding: 10px 15px 10px 10px
+
+		color: $black
+		font-size: 15px
+		line-height: 25px
+		font-weight: 600
+		letter-spacing: .06em
+
+	&__info-list-text
+		margin: -7px 0
+		padding: 10px
+
+		color: $grey
+		font-size: 15px
+		line-height: 25px
+		font-style: italic
+		letter-spacing: .06em

@@ -1,0 +1,88 @@
+extends extends/layout
+
+
+
+block content
+
+	header.b-header
+		.b-header__item
+			.b-header__logo
+
+	.l-content-wrapper
+
+		.l-content-wrapper__item.l-content-wrapper__item_major
+
+			.-ol-container
+				.-ol-row
+					.-ol-col-10.-ol-col-offset-1
+
+						.b-contacts
+
+							.b-heading-4
+								h2.b-heading-4__title Contact Us
+								p.b-heading-4__subtitle We're here for you. Just fill this in and you'll hear from us soon.
+
+							.b-contacts__inner
+								.b-contacts__item.b-contacts__item_major
+									.-ol-form-body
+										.-ol-row-input.-ol-row-input_max_h_sm
+											.-ol-row
+												.-ol-col-6.-ol-col-tb-6.-ol-col-mb-12
+													.-ol-input-wrap
+														label.-ol-label.-ol-label_max_h_sm
+															span.-ol-label-text Full Name
+														input.-ol-input( type="text" )
+
+												.-ol-col-6.-ol-col-tb-6.-ol-col-mb-12
+													.-ol-input-wrap
+														label.-ol-label.-ol-label_max_h_sm
+															span.-ol-label-text Email
+														input.-ol-input( type="text" )
+
+										.-ol-row-input.-ol-row-input_max_h_sm
+											.-ol-row
+												.-ol-col-12
+													.-ol-input-wrap
+														label.-ol-label.-ol-label_max_h_sm
+															span.-ol-label-text Subject
+														input.-ol-input( type="text" )
+
+										.-ol-row-input.-ol-row-input_max_h_sm.-ol-row-input_last
+											.-ol-row
+												.-ol-col-12
+													.-ol-input-wrap
+														label.-ol-label.-ol-label_max_h_sm
+															span.-ol-label-text Message
+														textarea.-ol-textarea( type="text" )
+
+									button.-ol-btn.-ol-btn_w_fix_md Send
+
+								.b-contacts__item.b-contacts__item_shrink_none
+									.b-contacts__info
+										h3.b-contacts__info-heading France
+										.l-flex
+											a.b-contacts__info-tel( href="tel:+33769211222" ) +33 (769) 211-222
+										.b-contacts__info-list
+											dl.b-contacts__info-list-item
+												dt.b-contacts__info-list-heading Monday-Friday
+												dd.b-contacts__info-list-text 8:00-20:00
+											dl.b-contacts__info-list-item
+												dt.b-contacts__info-list-heading Saturday
+												dd.b-contacts__info-list-text 8:00-17:00
+											dl.b-contacts__info-list-item.b-contacts__info-list-item_last
+												dt.b-contacts__info-list-heading Sunday
+												dd.b-contacts__info-list-text 10:00-18:00
+
+		.l-content-wrapper__item.l-content-wrapper__item_shrink_none
+
+			+b-footer
+
+
+
+append scripts
+
+	script(
+		src="dist/js/plugins/slick.js" )
+
+	script(
+		src="dist/js/specific/app.js" )

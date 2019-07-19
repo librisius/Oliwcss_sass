@@ -1,0 +1,41 @@
+.b-footer-2
+	position: relative // for &::before
+	padding: 41px 20px 50px
+
+	&::before
+		content: ''
+
+		position: absolute
+		top: 0
+		left: calc( 50% - 32px )
+
+		width: 64px
+		height: 1px
+
+		background-color: #d5d8e0
+
+	&_style_2::before
+		background-color: #c5c9d4
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+
+		margin: -16px
+
+	&__list-item
+		padding: 16px
+
+	&__list-link
+		display: block
+
+		margin: -6px 0
+
+		color: #bfc5d6
+		font-size: 13px
+		line-height: 21px
+		font-weight: 500
+
+	&_style_2 &__list-link
+		color: #8a8e99

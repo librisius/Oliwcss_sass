@@ -1,41 +1,44 @@
 .b-footer
 	position: relative // for &::before
-	padding: 41px 20px 50px
+	padding: 25px 30px
+	background-color: $white
 
-	&::before
-		content: ''
+	&__inner
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
 
-		position: absolute
-		top: 0
-		left: calc( 50% - 32px )
+		margin: -10px ( -25px )
 
-		width: 64px
-		height: 1px
-
-		background-color: #d5d8e0
-
-	&_style_2::before
-		background-color: #c5c9d4
+	&__item
+		padding: 10px 25px
 
 	&__list
 		display: flex
 		flex-wrap: wrap
 		justify-content: center
 
-		margin: -16px
+		margin: -10px -25px
 
 	&__list-item
-		padding: 16px
+		padding: 10px 25px
 
-	&__list-link
+	&__list-link,
+	&__text
 		display: block
 
-		margin: -6px 0
+		margin: -7px 0 -8px
 
-		color: #bfc5d6
-		font-size: 13px
-		line-height: 21px
-		font-weight: 500
+		color: $grey
+		font-size: 12px
+		line-height: 2
+		font-style: italic
+		letter-spacing: .06em
 
-	&_style_2 &__list-link
-		color: #8a8e99
+		text-align: center
+
+	&__list-link
+		transition: color .2s
+
+		&:hover
+			color: $brand-primary

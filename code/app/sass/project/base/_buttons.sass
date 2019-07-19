@@ -22,9 +22,6 @@
 
 	+btn-variant( $c-btn-filled, $bg_c-btn-primary )
 
-	padding-top: 17px
-	padding-bottom: 15px
-
 	&_default
 
 		+btn-variant( $c-btn-default, $bg_c-btn-default )
@@ -81,6 +78,10 @@
 	&_xs
 
 		+btn-size( $h-btn_xs, $brd_rd-btn_xs, $p_vert-btn_xs, $p_horiz-btn_xs, $f_sz-btn_xs, $lh-btn_xs, $brd_w-btn )
+
+	&_w_fix_md
+		width: 200px
+		max-width: 100%
 
 	&_min_w_initial
 		min-width: 0 !important
