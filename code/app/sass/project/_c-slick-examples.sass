@@ -3,36 +3,8 @@
 	@extend .c-slick
 
 	.slick-list
-		height: calc( 100% + 240px )
-		margin: -140px 0
-
-	&_style_2 .slick-list
 		height: calc( 100% + 280px )
-
-	&_style_3 .slick-list
-		height: calc( 100% + 180px )
-		margin: -90px 0
-
-	&_style_4 .slick-list
-
-		&::before,
-		&::after
-			content: ''
-
-			position: absolute
-			top: 120px
-			z-index: 1
-
-			width: 160px
-			height: calc( 100% - 240px )
-
-		&::before
-			left: 0
-			background: linear-gradient( to left, rgba( #f8f9fb, 0 ), #f8f9fb 55% )
-
-		&::after
-			right: 0
-			background: linear-gradient( to right, rgba( #f8f9fb, 0 ), #f8f9fb 55% )
+		margin: -140px 0
 
 	.slick-track
 		display: flex
@@ -41,9 +13,6 @@
 		height: 100%
 
 		padding: 140px 0
-
-	&_style_3 .slick-track
-		padding: 90px 0
 
 	.slick-slide
 		position: relative
@@ -54,7 +23,7 @@
 
 	.slick-arrow
 		position: absolute
-		top: 50%
+		top: calc( 50% - 20px )
 		z-index: 9
 
 		width: 52px
@@ -68,6 +37,8 @@
 
 		transform: translateY( -50% )
 
+		transition: background-color .2s
+
 		@extend .i-arrow-7
 
 		&:hover
@@ -78,56 +49,12 @@
 			top: 18px
 
 			color: $white
-			font-size: 14px
-
-			transition: all .2s
-
-	&_style_2 .slick-arrow
-		top: calc( 50% - 20px )
-
-		background-color: #0099da
-
-		transition: background-color .2s
-
-		&:hover
-			background-color: #0087c1
-
-		&::after
 			font-size: 16px
 
-	&_style_3 .slick-arrow
-		position: absolute
-		top: 50%
-		z-index: 9
-
-		width: 50px
-		height: 50px
-
-		border-radius: 0
-
-		background-color: $black
-
-		transform: translateY( -50% )
-
-		@extend .i-arrow-5
-
-		&::after
-			position: absolute
-			top: 18px
-
-			color: $white
-			font-size: 14px
-
 			transition: all .2s
 
-	&_theme_2 .slick-arrow
-		background-color: #f37101
-
-		&:hover
-			background-color: #de6902
-
 	.slick-prev
-		left: 20px
+		left: 35px
 
 		&::after
 			left: 20px
@@ -136,23 +63,11 @@
 		&:hover::after
 			left: 17px
 
-	&_style_2 .slick-prev
-		left: 35px
-
-	&_style_3 .slick-prev
-		left: 0
-
 	.slick-next
-		right: 20px
+		right: 35px
 
 		&::after
 			right: 20px
 
 		&:hover::after
 			right: 17px
-
-	&_style_2 .slick-next
-		right: 35px
-
-	&_style_3 .slick-next
-		right: 0

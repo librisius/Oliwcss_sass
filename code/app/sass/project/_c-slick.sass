@@ -48,6 +48,25 @@
 			cursor: pointer
 			cursor: hand
 
+		&::before,
+		&::after
+			content: ''
+
+			position: absolute
+			top: 120px
+			z-index: 1
+
+			width: 160px
+			height: calc( 100% - 240px )
+
+		&::before
+			left: 0
+			background: linear-gradient( to left, rgba( #f8f9fb, 0 ), #f8f9fb 55% )
+
+		&::after
+			right: 0
+			background: linear-gradient( to right, rgba( #f8f9fb, 0 ), #f8f9fb 55% )
+
 	.slick-track
 		position: relative
 		left: 0

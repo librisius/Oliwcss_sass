@@ -4,9 +4,6 @@
 	&__inner
 		display: flex !important // to set js and collapse margins inside
 		flex-direction: column
-		height: calc( 100vh - 286px )
-
-	&_style_2 &__inner
 		height: calc( 100vh - 378px )
 
 	&__item
@@ -16,12 +13,9 @@
 		flex-direction: column
 		align-items: center
 
-		padding: 0 20px
+		padding: 0 17px
 
 		cursor: pointer
-
-	&_style_2 &__item
-		padding: 0 17px
 
 	&__item-inner // tag a
 		display: flex
@@ -35,13 +29,13 @@
 
 	&__btn
 		position: absolute
-		left: 28px
+		left: 22px
 		bottom: 22px
 		z-index: 1
 
 		opacity: 0
 
-		width: calc( 100% - 56px )
+		width: calc( 100% - 44px )
 
 		border-radius: 3px
 		border-color: #0099da
@@ -57,23 +51,426 @@
 		transition: all $anim_dur-b-list-examples
 
 		&:hover
-			border-color: #0087c1
-			background-color: #0087c1
-
-	&_style_2 &__btn
-		left: 22px
-		width: calc( 100% - 44px )
-
-	&_theme_2 &__btn
-		border-color: #f37101
-		background-color: #f37101
-
-		&:hover
-			border-color: #de6902
-			background-color: #de6902
+			border-color: #0099da
+			background-color: #0099da
 
 	&__item.slick-center &__btn
 		bottom: calc( -2.65% + 20px )
+		opacity: 1
+		pointer-events: auto
+
+	&__btn-2
+		position: absolute
+		top: calc( 50% - 60px )
+		left: calc( 50% - 60px )
+
+		opacity: 0
+
+		align-items: center
+
+		width: 120px
+		height: 120px
+
+		border-radius: 50%
+		padding: 10px
+
+		background: #0099da
+		box-shadow: 0px 20px 60px 0 rgba( #0099da, .17 )
+
+		pointer-events: none
+
+		transition: all .2s
+
+		&:hover
+			box-shadow: 0px 20px 60px 0 rgba( #0099da, .5 )
+
+		&:active
+			box-shadow: 0px 20px 60px 0 rgba( #0099da, 0 )
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: -35px
+			left: -35px
+
+			width: 190px
+			height: 190px
+
+			border-radius: 50%
+
+			background-color: rgba( #0099da, .2 )
+
+			transition: all .2s
+
+		&:hover::before
+			top: -55px
+			left: -55px
+
+			width: 230px
+			height: 230px
+
+			background-color: rgba( #0099da, .1 )
+
+		&:active::before
+			top: 0px
+			left: 0px
+
+			width: 120px
+			height: 120px
+
+			background-color: rgba( #0099da, 0 )
+
+		&_style_2
+			position: absolute
+			top: calc( 100% - 60px )
+			left: calc( 50% - 50px )
+
+			width: 100px
+			height: 100px
+
+			&::before
+				top: -25px
+				left: -25px
+
+				width: 150px
+				height: 150px
+
+			&:hover::before
+				top: -35px
+				left: -35px
+
+				width: 170px
+				height: 170px
+
+				background-color: rgba( #0099da, .1 )
+
+			&:active::before
+				top: 0px
+				left: 0px
+
+				width: 100px
+				height: 100px
+
+				background-color: rgba( #0099da, 0 )
+
+	&__item.slick-center &__btn-2
+		opacity: 1
+		pointer-events: auto
+
+	&__btn-2-text // tag span
+		position: relative // for &:: after
+
+		display: block
+
+		color: $white
+		font-size: 12px
+		line-height: 24px
+		font-weight: 700
+		letter-spacing: .06em
+
+		text-align: center
+		text-transform: uppercase
+
+		transition: all .2s
+
+	&__btn-3
+		position: absolute
+		top: calc( 102.65% - 100px )
+		left: calc( 50% - 38px )
+
+		opacity: 0
+
+		width: 76px
+		height: 76px
+
+		border-radius: 50%
+		box-shadow: 0 0 0 25px rgba( #0099da, .2 )
+
+		pointer-events: none
+
+		transition: all .2s
+
+		&:hover
+			box-shadow: 0 0 0 15px rgba( #0099da, .2 )
+
+		&:active
+			box-shadow: 0 0 0 0 rgba( #0099da, .2 )
+
+		&::before,
+		&::after
+			content: ''
+
+			position: absolute
+
+			width: 30px
+			height: 2px
+
+			border-radius: 1px
+
+			background-color: #0099da
+
+			transform: rotateZ( -45deg )
+
+			transition: all .2s
+
+		&::before
+			top: -14px
+			right: -20px
+
+		&:hover::before
+			top: -4px
+			right: -10px
+
+		&:active::before
+			top: 14px
+			right: 20px
+
+		&::after
+			bottom: -14px
+			left: -20px
+
+		&:hover::after
+			bottom: -4px
+			left: -10px
+
+		&:active::after
+			bottom: 20px
+			left: 14px
+
+	&__btn-3-inner
+		position: absolute
+		top: -30px
+		left: -24px
+		z-index: 1
+
+		width: 117px
+		height: 132px
+
+		background:
+			image: url( '#{$img}/b-list-examples/btn.png' )
+			position: center
+			size: cover
+			repeat: no-repeat
+
+		+md-retina
+			background-image: url( '#{$img}/b-list-examples/btn@2x.png' )
+
+	&__item.slick-center &__btn-3
+		opacity: 1
+		pointer-events: auto
+
+	&__btn-4
+		position: absolute
+		top: calc( 50% - 38px )
+		left: calc( 50% - 38px )
+
+		opacity: 0
+
+		width: 76px
+		height: 76px
+
+		border-radius: 50%
+		box-shadow: 0 0 0 20px rgba( #0099da, .15 ), 0 0 0 40px rgba( #0099da, .12 )
+
+		pointer-events: none
+
+		transition: all .2s
+
+		&_style_2
+			top: calc( 102.65% - 60px )
+
+		&:hover
+			box-shadow: 0 0 0 15px rgba( #0099da, .2 ), 0 0 0 30px rgba( #0099da, .15 )
+
+		&:active
+			box-shadow: 0 0 0 0 rgba( #0099da, .2 ), 0 0 0 0 rgba( #0099da, .15 )
+
+	&__btn-4-inner
+		position: absolute
+		top: -30px
+		left: -24px
+		z-index: 1
+
+		width: 117px
+		height: 132px
+
+		background:
+			image: url( '#{$img}/b-list-examples/btn.png' )
+			position: center
+			size: cover
+			repeat: no-repeat
+
+		+md-retina
+			background-image: url( '#{$img}/b-list-examples/btn@2x.png' )
+
+	&__item.slick-center &__btn-4
+		opacity: 1
+		pointer-events: auto
+
+	&__btn-5
+		position: absolute
+		top: calc( 102.65% - 24px )
+		left: calc( 50% - 110px )
+
+		display: flex
+		align-items: center
+		justify-content: center
+
+		opacity: 0
+
+		width: 220px
+		height: 49px
+
+		text-align: center
+
+		transition: all .2s
+
+		pointer-events: none
+
+		&::before,
+		&::after
+			content: ''
+
+			position: absolute
+
+			width: 100%
+			height: 100%
+
+			border-radius: 3px
+			background-color: #0099da
+
+			transform: skewX( 20deg )
+
+			transition: all .2s
+
+		&::before
+			top: -10px
+			left: -18px
+
+			opacity: .2
+
+		&:hover::before
+			top: -15px
+			left: -23px
+
+		&:active::before
+			top: 0
+			left: 0
+
+		&:hover::after
+			background-color: #0087c1
+
+		&::after
+			top: 0
+			left: 0
+
+	&__btn-5-text
+		position: relative
+		z-index: 1
+
+		display: block
+
+		padding-right: 47px
+
+		color: $white
+		font-size: 12px
+		line-height: 21px
+		font-weight: 700
+		letter-spacing: .1em
+
+		text-transform: uppercase
+
+		@extend .i-arrow-3
+
+		&::after
+			position: absolute
+			top: 5px
+			right: 0
+
+			font-size: 11px
+
+			transition: all .2s
+
+	&__btn-5:hover &__btn-5-text::after
+		right: -3px
+
+	&__btn-5:active &__btn-5-text::after
+		right: 0
+
+	&__item.slick-center &__btn-5
+		opacity: 1
+		pointer-events: auto
+
+	&__btn-6
+		position: absolute
+		bottom: calc( -2.65% + 16px )
+		left: calc( 50% - 110px )
+
+		display: flex
+		align-items: center
+		justify-content: center
+
+		opacity: 0
+
+		width: 200px
+		height: 49px
+
+		border-radius: 24.5px
+
+		background-image: linear-gradient( to top, #0099da, #39c4ff )
+
+		color: $white
+		font-size: 12px
+		line-height: 21px
+		font-weight: 700
+		letter-spacing: .1em
+
+		text-transform: uppercase
+
+		transition: all .2s
+
+		pointer-events: none
+
+		@extend .i-arrow-7
+
+		&:hover
+			background-image: linear-gradient( to top, #008fcc, #35baf2 )
+
+		&:active
+			background-image: linear-gradient( to top, #0099da, #39c4ff )
+
+		&::before
+			content: ''
+
+			position: absolute
+			top: 7px
+			right: 9px
+
+			width: 35px
+			height: 35px
+
+			border-radius: 50%
+
+			box-shadow: 2.8px 2.8px 15px 0 rgba( 3, 155, 220, .3 ), inset 2.1px 2.1px 3px 0 rgba( 7, 100, 139, .3 )
+			background-color: rgba( $white, .2 )
+
+		&::after
+			position: absolute
+			top: 19px
+			right: 21px
+
+			font-size: 11px
+
+			transition: all .2s
+
+		&:hover::after
+			right: 19px
+
+		&:active::after
+			right: 21px
+
+	&__item.slick-center &__btn-6
 		opacity: 1
 		pointer-events: auto
 
@@ -85,35 +482,22 @@
 
 		overflow: hidden
 
-		border-radius: 5px
-		border: 0 solid rgba( #0099da, 0 )
+		border-radius: 2px
+		border: 1px solid rgb( 229, 233, 242 )
 
-		box-shadow: 0px 30px 120px 0 rgba( #171f26, .1 )
+		box-shadow: 0px 1px 3px rgba( $black, .1 )
 
 		transition: all $anim_dur-b-list-examples
 
 		transform: scale( 1 )
-
-	&_style_2 &__img
-		border-radius: 2px
-		border: 1px solid rgb( 229, 233, 242 )
-
-		box-shadow: rgba( 0, 0, 0, .1 ) 0px 1px 3px
 
 	&__item.slick-center &__img
 		border-width: 2px
 		transform: scale( 1.0526316 )
 
 	&__item.slick-center &__img
-		border-color: #0099da
-
-	&_style_2 &__item.slick-center &__img
 		border: 2px solid #0099da
 		box-shadow: rgba( #0099da, .6 ) 0px 1px 3px
-
-	&_theme_2 &__item.slick-center &__img
-		border: 2px solid #f37101
-		box-shadow: rgba( #f37101, .6 ) 0px 1px 3px
 
 	&__img-plug
 		height: 100%
@@ -133,36 +517,18 @@
 		bottom: calc( 100% + 15px )
 		left: 50%
 
-		margin: -5px 0 -6px
-
-		color: rgba( #98a1b3, .7 )
-		font-size: 10px
-		line-height: 18px
-		font-weight: 700
-		letter-spacing: .06em
-
-		text-transform: uppercase
-
-		transform: translateX( -50% )
-
-		transition: all $anim_dur-b-list-examples
-
-	&_style_2 &__title
 		margin: -6px 0 -7px
 
 		color: #282b32
 		font-size: 16px
 		line-height: 24px
 		font-weight: 400
+		letter-spacing: .06em
 
-		text-transform: none
+		transform: translateX( -50% )
+
+		transition: all $anim_dur-b-list-examples
 
 	&__item.slick-center &__title
 		bottom: calc( 102.65% + 15px )
-		color: $black
-
-	&_style_2 &__item.slick-center &__title
 		color: #0099da
-
-	&_theme_2 &__item.slick-center &__title
-		color: #f37101
