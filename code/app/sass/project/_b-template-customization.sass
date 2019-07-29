@@ -13,14 +13,15 @@
 			display: flex
 			flex-direction: column
 
-			overflow: auto
-
 			min-width: 710px
 
 			box-shadow: 0px 10px 60px 0 rgba( $b_sh_c, .2 )
 
 			@media only screen and ( max-width: 1500px )
 				min-width: 600px
+
+		&_img
+			background-color: #97a0b2
 
 		&_img_style_1
 			background:
@@ -68,22 +69,31 @@
 				background-image: url( '#{$img}/b-template-customization/4/jar@2x.png' ), url( '#{$img}/b-template-customization/4/pencil@2x.png' ), url( '#{$img}/b-template-customization/4/paperclip@2x.png' ), url( '#{$img}/b-template-customization/4/paperclip-2@2x.png' ), url( '#{$img}/b-template-customization/4/pin-2@2x.png' ), url( '#{$img}/b-template-customization/4/sharpenings@2x.png' ), url( '#{$img}/b-template-customization/4/sharpenings@2x.png' ), url( '#{$img}/b-template-customization/4/sharpenings-2@2x.png' )
 
 	&__content
+		height: 100%
+		overflow: auto
+
+	&__content-inner
 		display: flex
 		align-items: center
 		justify-content: center
 		flex-grow: 1
+
+		height: 100%
 
 		padding: 60px 40px
 
 		@media screen and ( max-height: 840px )
 			padding: 30px 40px
 
-	&__content-inner
+	&__content-inner-2
 		width: 600px
 		max-width: 100%
 
 		&_style_2
 			max-width: 400px
+
+		&_round_cta
+			padding-right: 90px
 
 	&__heading
 		display: flex // to collapse margins inside
@@ -214,6 +224,54 @@
 	&__btn-next:active &__btn-next-text
 		left: 8px
 
+	&__btn-next-2
+		position: absolute
+		top: calc( 50% - 60px )
+		bottom: auto
+		left: calc( 100% - 60px )
+		z-index: 9
+
+		width: auto
+
+	&__btn-next-2-inner // tag span
+		position: relative
+		z-index: 1 // to be over &__btn::before, &__btn::after and &__btn-inner::before, &__btn::before
+		display: flex
+		align-items: center
+		justify-content: center
+
+		width: 120px
+		height: 120px
+
+		border: 10px solid $white
+		border-radius: 50%
+		padding: 10px
+
+		background: $brand-primary-2
+
+		transition: all .2s
+
+	&__btn-next-2:hover &__btn-next-2-inner
+		background: darken( $brand-primary-2, $per-btn_hover )
+
+	&__btn-next-2:active &__btn-next-2-inner
+		background: darken( $brand-primary-2, $per-btn_hover + $per-btn_active )
+
+	&__btn-next-2-text // tag span
+		position: relative // for &:: after
+		left: 0
+
+		display: block
+
+		color: $white
+		font-size: 14px
+		line-height: 24px
+		font-weight: 700
+		letter-spacing: .06em
+
+		text-align: center
+		text-transform: uppercase
+
 	&__demo
 		position: relative // for &__demo-img
 
@@ -226,14 +284,14 @@
 		margin-left: 0
 
 	&__demo-img
-		width: 36.0625vw
-		max-width: 577px
+		width: 42vw
+		max-width: 640px
 
 		background: $white
 		box-shadow: 0px 20px 100px 0 rgba( #171f26, .2 )
 
 		@media screen and ( max-height: 900px )
-			width: 64.1111111vh
+			width: 68.5vh
 
 	&__item_img_style_1 &__demo-img
 		position: relative

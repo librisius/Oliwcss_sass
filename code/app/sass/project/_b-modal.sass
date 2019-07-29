@@ -1,0 +1,80 @@
+.b-modal
+	position: fixed
+	top: -100%
+	left: -100%
+	z-index: $z_i-b-modal
+
+	opacity: 0
+	visibility: hidden
+
+	width: 100%
+	height: 100%
+
+	overflow-x: hidden
+	overflow-y: auto
+
+	transition-duration: $anim_dur-b-modal
+	transition-property: all, opacity
+	transition-timing-function: step-end, ease-out
+
+	// for iOS smooth scroll and
+	// and to switch on touch scroll when focusing on inputs
+	// more info: http://stackoverflow.com/questions/25596960/issues-with-touch-scroll-on-ios-when-focusing-inputs
+	-webkit-overflow-scrolling: touch
+
+	&_active
+		visibility: visible
+		top: 0
+		left: 0
+
+		opacity: 1
+
+		transition-timing-function: step-start, ease-out
+
+	&__overlay
+		position: absolute
+		left: 0
+		top: 0
+
+		width: 100%
+		height: 100%
+
+		background-color: $bg_overlay
+
+		cursor: pointer
+
+	&__close
+		cursor: pointer
+
+	&__inner
+		position: relative
+		display: table
+		table-layout: fixed
+
+		width: 100%
+		height: 100%
+
+	&__inner-item
+		display: table-cell
+		vertical-align: middle
+
+		&_top
+			vertical-align: top
+
+	&__box-wrapper // leave this element in the structure.
+		// This element should not stretch to the full window height as &__inner-item (display: table-cell)
+		// to calculate the window height if the modal is smaller
+		// than the window height ( plug-in c-height-responsive)
+
+		margin: 0 auto
+		padding: $p-b-modal__box-wrapper
+		// Looks like there is no the bug descriped below
+		// overflow: hidden // to fix Edge scroll which appears due to &__overlay
+
+		&_without_inside_space_horiz
+			padding-left: 0
+			padding-right: 0
+
+	&__box
+		position: relative
+		z-index: $z_i-b-modal__box

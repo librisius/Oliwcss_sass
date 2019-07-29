@@ -1,0 +1,95 @@
+.b-dashboard-heading
+	margin-bottom: 35px
+	border-bottom: 1px solid $brd_c_dark
+	padding-bottom: 30px
+
+	+md-desk_sm
+		padding-bottom: 20px
+
+	+md-mobile
+		padding-bottom: 30px
+
+	&__inner
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+
+		+md-mobile
+			flex-direction: column
+			margin: -13px
+
+	&__item
+
+		+md-mobile
+			padding: 13px
+
+	&__btn
+		min-width: 180px
+
+		border-radius: 27.5px
+		padding: 15px 20px
+
+		font-size: 13px
+		line-height: 23px
+
+		+md-tablet_sm
+			min-width: 160px
+
+			border-radius: 25.5px
+			padding: 13px 20px
+
+			font-size: 12px
+			line-height: 23px
+
+		+md-mobile
+			position: relative
+
+			display: block
+
+			min-width: 0
+
+			margin: -7px 0
+			border: 0
+			border-radius: 0
+			padding: 0 0 0 25px
+
+			color: $brand-primary
+			font-size: 12px
+			line-height: 23px
+
+			background: transparent
+
+		&:hover,
+		&:active
+
+			+md-mobile
+				background: transparent !important // to set default styles
+				color: $brand-primary !important // to set default styles
+
+		&::before,
+		&::after
+			content: ''
+
+			position: absolute
+
+			display: none
+
+			background-color: $brand-primary
+
+			+md-mobile
+				display: block
+
+		&::before
+			left: 0
+			top: 10px
+
+			width: 10px
+			height: 2px
+
+		&::after
+			left: 4px
+			top: 6px
+
+			width: 2px
+			height: 10px

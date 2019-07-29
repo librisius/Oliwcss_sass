@@ -1,0 +1,84 @@
+extends extends/layout
+
+
+
+block content
+
+	+b-header( true )( class="b-header_style_2")
+
+	.l-content-wrapper
+
+		.l-content-wrapper__item.l-content-wrapper__item_major._bg_lighter
+
+			.-ol-container
+				.b-dashboard
+
+					.b-dashboard-heading
+						.b-dashboard-heading__inner
+							.b-dashboard-heading__item
+								h2.b-heading-4__title.b-heading-4__title_last Dashboard
+							.b-dashboard-heading__item
+								button.b-dashboard-heading__btn.-ol-btn Create New
+
+					.b-dashboard-list
+						.b-dashboard-list__inner
+							.b-dashboard-list__item
+								.b-dashboard-list__view( style="background-image: url( media/img/b-list-examples/8.jpg )" )
+									.b-dashboard-list__overlay
+										.b-dashboard-list__options.b-dashboard-list__options_top
+											button.b-dashboard-list__option.b-dashboard-list__option_remove
+												.b-dashboard-list__option-text Delete
+										.b-dashboard-list__options
+											button.b-dashboard-list__option.b-dashboard-list__option_download
+												.b-dashboard-list__option-text Download
+											button.b-dashboard-list__option.b-dashboard-list__option_duplicate.b-dashboard-list__option_last
+												.b-dashboard-list__option-text Duplicate
+								h2.b-dashboard-list__name Untitled
+								p.b-dashboard-list__date Updated 18 July, 15:35
+							.b-dashboard-list__item
+								.b-dashboard-list__view( style="background-image: url( media/img/b-list-examples/9.jpg )" )
+									.b-dashboard-list__overlay
+										.b-dashboard-list__options.b-dashboard-list__options_top
+											button.b-dashboard-list__option.b-dashboard-list__option_remove
+												.b-dashboard-list__option-text Delete
+										.b-dashboard-list__options
+											button.b-dashboard-list__option.b-dashboard-list__option_download
+												.b-dashboard-list__option-text Download
+											button.b-dashboard-list__option.b-dashboard-list__option_duplicate.b-dashboard-list__option_last
+												.b-dashboard-list__option-text Duplicate
+								h2.b-dashboard-list__name Untitled 2
+								p.b-dashboard-list__date Updated 18 July, 15:35
+							.b-dashboard-list__item
+								.b-dashboard-list__view( style="background-image: url( media/img/b-list-examples/10.jpg )" )
+									.b-dashboard-list__overlay
+										.b-dashboard-list__options.b-dashboard-list__options_top
+											button.b-dashboard-list__option.b-dashboard-list__option_remove
+												.b-dashboard-list__option-text Delete
+										.b-dashboard-list__options
+											button.b-dashboard-list__option.b-dashboard-list__option_download
+												.b-dashboard-list__option-text Download
+											button.b-dashboard-list__option.b-dashboard-list__option_duplicate.b-dashboard-list__option_last
+												.b-dashboard-list__option-text Duplicate
+								h2.b-dashboard-list__name Untitled 3
+								p.b-dashboard-list__date Updated 18 July, 15:35
+							.b-dashboard-list__item
+								.b-dashboard-list__add
+									.b-dashboard-list__add-content
+										.b-dashboard-list__add-content-inner
+											p.b-dashboard-list__add-text Create New
+
+
+
+		.l-content-wrapper__item.l-content-wrapper__item_shrink_none
+
+			+b-footer( class="b-footer_style_2")
+
+
+
+append scripts
+
+	script(
+		src="dist/js/plugins/slick.js" )
+
+	script(
+		src="dist/js/specific/app.js" )

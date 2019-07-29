@@ -1,0 +1,48 @@
+.b-box
+	display: flex // to collapse margins inside
+	flex-direction: column
+
+	max-width: 100%
+
+	margin: $m_vert-b-box auto
+	border-radius: $brd_rd-b-box
+
+	background-color: $white
+
+	+md-tablet
+		margin: $m_vert-b-box_tb auto
+
+	&_with_shadow
+		box-shadow: 0 15px 50px rgba( $b_sh_c, .07 )
+
+	&_without_outside_space_horiz
+		margin-left: 0
+		margin-right: 0
+
+	&_without_outside_space_vert
+		margin-top: 0
+		margin-bottom: 0
+
+	&_without_outside_space
+		margin: 0
+
+	&_light
+		background-color: rgba( $white, .05 )
+
+	&_xl
+		width: $w-b-box_xl
+
+	&_md
+		width: $w-b-box_md
+
+	&_sm
+		width: $w-b-box_sm
+
+	&_sm_mb
+
+		+md-mobile
+			width: $w-b-box_sm
+
+
+
+	&__close

@@ -1,5 +1,28 @@
-mixin b-header( active )
+mixin b-header( login )
 
-	header.b-header
+	header.b-header&attributes(attributes)
 		.b-header__item
 			.b-header__logo
+
+		if login
+
+			.b-header__item
+				.b-header__nav
+					.b-header__nav-item._none_mb
+						button.b-header__btn.b-header__btn_upgrade Upgrade
+					.b-header__nav-item._none_mb
+						button.b-header__btn Dashboard
+					.b-header__nav-item
+						.b-header__user
+							.b-header__user-inner
+								.b-header__photo( style="background-image: url( media/img/content/users/1.jpg )" )
+								.b-header__text Anna Shapo
+							.b-header__user-dropdown
+								a.b-header__user-dropdown-item._only_mb
+									p.b-header__user-dropdown-text Dashboard
+								a.b-header__user-dropdown-item
+									p.b-header__user-dropdown-text Get premium
+								a.b-header__user-dropdown-item
+									p.b-header__user-dropdown-text Account settings
+								a.b-header__user-dropdown-item
+									p.b-header__user-dropdown-text Log out

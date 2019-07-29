@@ -4,9 +4,7 @@ extends extends/layout
 
 block content
 
-	header.b-header
-		.b-header__item
-			.b-header__logo
+	+b-header
 
 	.l-content-wrapper
 
@@ -28,10 +26,11 @@ block content
 										.-ol-row-input.-ol-row-input_max_h_sm
 											.-ol-row
 												.-ol-col-6.-ol-col-tb-6.-ol-col-mb-12
-													.-ol-input-wrap
-														label.-ol-label.-ol-label_max_h_sm
-															span.-ol-label-text Full Name
-														input.-ol-input( type="text" )
+													.-ol-row-input-mb
+														.-ol-input-wrap
+															label.-ol-label.-ol-label_max_h_sm
+																span.-ol-label-text Full Name
+															input.-ol-input( type="text" )
 
 												.-ol-col-6.-ol-col-tb-6.-ol-col-mb-12
 													.-ol-input-wrap

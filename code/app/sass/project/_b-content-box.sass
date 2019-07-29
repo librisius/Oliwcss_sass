@@ -1,0 +1,78 @@
+.b-content-box
+	padding: 40px
+	text-align: center
+
+	&__icon
+		position: relative // for &::after
+
+		width: 70px
+		height: 70px
+
+		margin: 0 auto 35px
+		border-radius: 50%
+
+		background-color: rgba( $brand-primary, .15 )
+
+		@extend .i-info
+
+		&::after
+			position: absolute
+			top: 23px
+			left: 30px
+
+			color: $brand-primary
+			font-size: 24px
+
+	&__heading
+		display: flex // to collapse margins inside
+		flex-direction: column
+		margin-bottom: 40px
+
+	&__heading-title
+		margin: -12px 0 18px
+
+		color: $black
+		font-size: 30px
+		line-height: 45px
+		font-weight: 700
+		letter-spacing: .04em
+
+		&_highlight
+			color: $brand-primary
+
+		&_last
+			margin-bottom: -12px
+
+	&__heading-subtitle
+		margin: -9px 0
+
+		color: $grey
+		font-size: 14px
+		line-height: 28px
+		font-weight: 500
+		letter-spacing: .06em
+
+	&__options
+		display: flex
+		flex-direction: column
+		align-items: center
+
+	&__options-item
+		max-width: 100%
+		margin-bottom: 40px
+
+		&_last
+			margin-bottom: 0
+
+	&__btn
+		width: 285px
+		max-width: 100%
+
+	&__link
+		margin: -9px 0
+
+		color: $brand-primary
+		font-size: 14px
+		line-height: 28px
+		font-weight: 600
+		letter-spacing: .06em

@@ -1,0 +1,205 @@
+.b-dashboard-list
+
+	&__inner
+		display: flex
+		flex-wrap: wrap
+		margin: -20px
+
+		+md-tablet_sm
+			margin: -15px
+
+		+md-mobile
+			margin: -10px
+
+	&__item
+		width: 25%
+		padding: 20px
+
+		+md-tablet_sm
+			width: 33.3333333%
+			padding: 15px
+
+		+md-mobile
+			width: 50%
+			padding: 10px
+
+	&__view
+		position: relative // for &__overlay
+
+		padding-top: 141.7021277%
+		margin-bottom: 18px
+
+		background: url( '#{$img}/b-list-examples/default.jpg' ) center / cover no-repeat
+		box-shadow: 0 10px 40px rgba( $b_sh_c, .12 )
+
+		&_last
+			margin-bottom: 0
+
+	&__overlay
+		position: absolute
+		top: 0
+		left: 0
+
+		opacity: 0
+
+		width: 100%
+		height: 100%
+
+		background-color: rgba( $black, .65 )
+
+		transition: all .2s
+
+		&:hover
+			opacity: 1
+
+	&__options
+		position: absolute
+		bottom: 15px
+		right: 12px
+
+		&_top
+			top: 15px
+			bottom: auto
+
+	&__option
+		position: relative // for &::after
+		margin: 0 0 27px auto
+		padding-right: 24px
+
+		&_download
+
+			@extend .i-download
+
+		&_duplicate
+
+			@extend .i-copy
+
+		&_remove
+
+			@extend .i-trash
+
+			&::after
+				right: 1px !important
+
+		&_last
+			margin-bottom: 0
+
+		&::after
+			position: absolute
+			top: -4px
+			right: 0
+
+			color: $white
+			font-size: 14px
+
+	&__option-text
+		margin: -5px 0
+
+		color: $white
+		font-size: 10px
+		line-height: 17px
+		font-weight: 700
+		letter-spacing: .08em
+
+		text-transform: uppercase
+
+	&__name
+		margin: -7px 0 5px
+
+		color: $black
+		font-size: 13px
+		line-height: 23px
+		font-weight: 600
+		letter-spacing: .08em
+
+		text-align: center
+
+		+md-mobile
+			margin-bottom: 3px
+
+		&_last
+			margin-bottom: -7px
+
+	&__date
+		margin: -6px 0 -7px
+
+		color: $grey
+		font-size: 12px
+		line-height: 22px
+		font-weight: 300
+		font-style: italic
+		letter-spacing: .08em
+
+		text-align: center
+
+		+md-mobile
+			margin: -6px 0 -7px
+			font-size: 10px
+			line-height: 20px
+
+	&__add
+		position: relative // for &__add-content
+
+		border: solid 1px $brd_c
+		padding-top: 141.7021277%
+
+		background-color: $white
+
+	&__add-content
+		position: absolute
+		top: 0
+		left: 0
+
+		display: flex
+		align-items: center
+		justify-content: center
+
+		width: 100%
+		height: 100%
+
+	&__add-content-inner
+		position: relative // for &::before and &::after
+		padding-top: 52px
+
+		@extend .i-plus
+
+		&::before
+			$d:	36px
+
+			content: ''
+
+			position: absolute
+			top: 0
+			left: calc( 50% - #{ $d /2 } )
+
+			width: $d
+			height: $d
+
+			border-radius: 50%
+
+			background: $brand-primary
+
+		&::after
+			position: absolute
+			top: 11px
+			left: calc( 50% - 7px )
+
+			color: $white
+			font-size: 14px
+
+	&__add-text
+		margin: -7px 0
+
+		color: $brand-primary
+		font-size: 13px
+		line-height: 23px
+		font-weight: 700
+		letter-spacing: .06em
+
+		text-align: center
+		text-transform: uppercase
+
+		+md-mobile
+			margin: -6px 0 -7px
+			font-size: 12px
+			line-height: 22px
